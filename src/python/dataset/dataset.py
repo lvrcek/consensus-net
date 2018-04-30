@@ -22,7 +22,7 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
     X_train, X_validate, y_train, y_validate).
     :rtype: tuple of np.ndarray
     """
-    if not validation_size == None:
+    if validation_size is None:
         if validation_size < 0 or validation_size > 1.0:
             raise ValueError('Validation size must be float from [0, 1], but {}'
                              ' given.'.format(validation_size))
@@ -51,7 +51,7 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
     print('X shape after reshaping:', X.shape)
     print('y shape after reshaping:', y.shape)
 
-    if validation_size == None:
+    if validation_size is None:
         return X, y
     else:
         print('Splitting to train and validation set.')
@@ -63,3 +63,75 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
         print('y_validate:', y_validate.shape)
         return X, y, X_train, X_validate, y_train, y_validate
 
+
+def _calc_empty_rows(X):
+    """
+    Calculates which rows in X are empty rows (i.e. all numbers in that row
+    are equal to 0).
+
+    :param X: 2-D data
+    :type X: np.ndarray
+    :return: 1-D array with 1s on positions which correspond to empty rows.
+    :rtype: np.ndarray
+    """
+    empty_row = np.zeros((1, 4))
+    empty_rows = [int(v) for v in np.all(empty_row == X, axis=1)]
+    return empty_rows
+
+
+def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size):
+    """
+    Creates datasets by mixing all pileups with given neighbourhood_size.
+
+    Datasets are concatenated after extracting neighbourhood_size positions in
+    given datasets separately.
+
+    Dataset at i-th positino in X_paths should match given labels at i-th
+    positino in y_paths.
+
+    :param X_paths: list of paths to X pileup dataset
+    :type X_paths: list of str
+    :param y_paths: list of paths to y pileup dataset
+    :type y_paths: list of str
+    :param neighbourhood_size: number of neighbours to use from one size (eg.
+        if you set this parameter to 3, it will take 3 neighbours from both
+        sides so total number of positions in one example will be 7 -
+        counting the middle position)
+    :type neighbourhood_size: float
+    :return:
+    :rtype tuple of np.ndarray
+    """
+    if not len(X_paths) == len(y_paths):
+        raise ValueError('Number of X_paths and y_paths should be the same!')
+
+    new_X, new_y = list(), list()
+    for X_path, y_path in zip(X_paths, y_paths):
+        print('Parsing ', X_path, ' and ', y_path)
+
+        X, y = np.load(X_path), np.load(y_path)
+        # Removing last column which everything which was not 'A' nor 'C' nor
+        #  'G' nor 'T'.
+        y = y[:, :4]
+
+        empty_rows = _calc_empty_rows(X)
+
+        print('Creating dataset with neighbrouhood ...')
+        with progressbar.ProgressBar(max_value=X.shape[0]) as progress_bar:
+            # TODO(ajuric): Check if this can be speed up.
+            for i in range(X.shape[0]):
+                progress_bar.update(i)
+                if empty_rows[i] == 1:
+                    continue  # current row is empty row
+                if i < neighbourhood_size or \
+                   i >= X.shape[0] - neighbourhood_size:
+                    # Current position is not suitable to build an example.
+                    continue
+                zeros_to_left = np.sum(empty_rows[i - neighbourhood_size:i])
+                zeros_to_right = np.sum(
+                    empty_rows[i + 1:i + neighbourhood_size + 1])
+                if zeros_to_left == 0 and zeros_to_right == 0:
+                    new_X.append(
+                        X[i - neighbourhood_size:i + neighbourhood_size + 1])
+                    new_y.append(y[i])
+
+    return new_X, new_y

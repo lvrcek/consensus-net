@@ -24,8 +24,8 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
     """
     if not validation_size == None:
         if validation_size < 0 or validation_size > 1.0:
-            raise ValueError('Validation size must be float from [0, 1], but {} '
-                             'given.'.format(validation_size))
+            raise ValueError('Validation size must be float from [0, 1], but {}'
+                             ' given.'.format(validation_size))
 
     X, y = np.load(path_X), np.load(path_y)
     print('X shape before reshaping:', X.shape)

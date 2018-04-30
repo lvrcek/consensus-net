@@ -63,7 +63,7 @@ def visualize_sample(xi, yi, probabilities, predictions):
     plt.ylabel('Count')
     plt.title('Sample visualization')
     x_axis_labels = _generate_x_axis_labels(num_positions)
-    plt.xticks(indices + (len(labels) * width) / 2, x_axis_labels)
+    plt.xticks(indices + ((len(labels) - 1) * width) / 2, x_axis_labels)
     plt.legend(loc='best')
     plt.show()
 

@@ -79,5 +79,9 @@ def visualize_sample(xi, yi, probabilities, predictions):
              color=colors[pi_class], size=20, **text_params)
     plt.text(0.5, 0.8, 'Probabilities: {}'.format(probabilities), color='black',
              size=20, **text_params)
+    plt.text(0.35, 0.7, 'A', color=colors[0], size=20, **text_params)
+    plt.text(0.50, 0.7, 'C', color=colors[1], size=20, **text_params)
+    plt.text(0.65, 0.7, 'G', color=colors[2], size=20, **text_params)
+    plt.text(0.80, 0.7, 'T', color=colors[3], size=20, **text_params)
     plt.axis('off')
     plt.show()

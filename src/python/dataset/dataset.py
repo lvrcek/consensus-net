@@ -51,7 +51,7 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
     print('X shape after reshaping:', X.shape)
     print('y shape after reshaping:', y.shape)
 
-    if validation_size is not None:
+    if validation_size is None:
         return X, y
     else:
         print('Splitting to train and validation set.')

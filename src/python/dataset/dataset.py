@@ -22,7 +22,7 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
     X_train, X_validate, y_train, y_validate).
     :rtype: tuple of np.ndarray
     """
-    if validation_size is None:
+    if validation_size is not None:
         if validation_size < 0 or validation_size > 1.0:
             raise ValueError('Validation size must be float from [0, 1], but {}'
                              ' given.'.format(validation_size))
@@ -51,7 +51,7 @@ def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
     print('X shape after reshaping:', X.shape)
     print('y shape after reshaping:', y.shape)
 
-    if validation_size is None:
+    if validation_size is not None:
         return X, y
     else:
         print('Splitting to train and validation set.')

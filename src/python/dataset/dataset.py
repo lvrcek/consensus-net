@@ -1,6 +1,9 @@
 import numpy as np
 import progressbar
+import os
 from sklearn.model_selection import train_test_split
+
+ALL_CPU = -1
 
 
 def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
@@ -86,7 +89,7 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size):
     Datasets are concatenated after extracting neighbourhood_size positions in
     given datasets separately.
 
-    Dataset at i-th positino in X_paths should match given labels at i-th
+    Dataset at i-th position in X_paths should match given labels at i-th
     positino in y_paths.
 
     :param X_paths: list of paths to X pileup dataset
@@ -135,3 +138,235 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size):
                     new_y.append(y[i])
 
     return new_X, new_y
+
+
+# Parameters '-L100 -Sw5 -m0' are suggested params from minimap tool. See
+# https://github.com/lh3/minimap/blob/master/README.md.
+OVERLAP_CMD = '{}/minimap/minimap -t {} -L100 -Sw5 -m0 {} {} > {}/ovl.paf ' \
+               '2>> {}/err'
+
+LAYOUT_CMD_1 = '{}/miniasm/miniasm -f {} {}/ovl.paf > {}/lay.gfa 2>> {}/err'
+LAYOUT_CMD_2 = 'awk \'$1 ~/S/ {print ">"$2"\n"$3}\' {}/lay.gfa > ' \
+               '{}/iter0.fasta'
+
+CONSENSUS_ITER1_CMD_1 = '{}/miniamp/minimap -t {} {}/iter0.fasta {} > ' \
+                        '{}/iter1.paf 2>> {}/err'
+CONSENSUS_ITER1_CMD_2 = '/usr/bin/time -v -a -o {}/time_memory_new.txt ' \
+                        '{}/racon/build/bin/racon -t {} {} {}/iter1.paf ' \
+                        '{}/iter0.fasta > {}/iter1.fasta 2>> {}/err'
+
+CONSENSUS_ITER2_CMD_1 = '{}/miniamp/minimap -t {} {}/iter1.fasta {} > ' \
+                        '{}/iter2.paf 2>> {}/err'
+CONSENSUS_ITER2_CMD_2 = '/usr/bin/time -v -a -o {}/time_memory_new.txt ' \
+                        '{}/racon/build/bin/racon -t {} {} {}/iter2.paf ' \
+                        '{}/iter1.fasta > {}/iter2.fasta 2>> {}/err'
+
+ASSEMBLY_SUMMARY_CMD_1 = '{}/mummer3.23/dnadiff -p {}/out {} {}/iter2.fasta ' \
+                         '2>> {}/err'
+ASSEMBLY_SUMMARY_CMD_2 = 'head -n 24 {}/out.report | tail -n 20'
+
+
+def _create_assembly(reads_path, reference_path, output_dir,
+                     tools_dir, num_threads):
+    """
+    Creates assembly as described by OLC paradigm: overlap, layout and
+    consensus phase.
+
+    :param reads_path: path to reads
+    :type reads_path: str
+    :param reference_path: path to reference
+    :type reference_path: str
+    :param output_dir: output directory
+    :type output_dir: str
+    :param tools_dir: tools directory (specifies where the tools which are used
+    during assembly creation are installed)
+    :type tools_dir: str
+    :param num_threads: number of threads to use
+    :type num_threads: int
+    """
+    print('##### Creating assembly #####')
+
+    print('-----> 1. Overlap phase. <-----')
+    os.system(OVERLAP_CMD.format(tools_dir, num_threads, reads_path,
+                                 reads_path, output_dir, output_dir))
+
+    print('-----> 2. Layout phase. <-----')
+    os.system(LAYOUT_CMD_1.format(tools_dir, reads_path, output_dir,
+                                  output_dir, output_dir))
+    os.system(LAYOUT_CMD_2.format(output_dir, output_dir))
+
+    print('-----> 3. Consensus phase. <-----')
+    print('----------> 3.1. First iteration. <----------')
+    os.system(CONSENSUS_ITER1_CMD_1.format(tools_dir, output_dir, reads_path,
+                                           output_dir, output_dir))
+    os.system(CONSENSUS_ITER1_CMD_2.format(output_dir, tools_dir,
+                                           num_threads, reads_path,
+                                           output_dir, output_dir,
+                                           output_dir, output_dir))
+
+    print('----------> 3.2. Second iteration. <----------')
+    os.system(CONSENSUS_ITER2_CMD_1.format(tools_dir, output_dir, reads_path,
+                                           output_dir, output_dir))
+    os.system(CONSENSUS_ITER2_CMD_2.format(output_dir, tools_dir,
+                                           num_threads, reads_path,
+                                           output_dir, output_dir,
+                                           output_dir, output_dir))
+
+    print('-----> 4. Assembly summary. <-----')
+    os.system(ASSEMBLY_SUMMARY_CMD_1.format(tools_dir, output_dir,
+                                            reference_path, output_dir,
+                                            output_dir))
+    os.system(ASSEMBLY_SUMMARY_CMD_2.format(output_dir))
+
+
+ALIGN_READS_TO_REF_CMD_1 = '{}/minimap2/minimap2/ -ax {} -t {} {} {} >' \
+                           '{}/reads-to-ref.sam'
+ALIGN_READS_TO_REF_CMD_2 = '{}/samtools-1.3.1/samtools view -b ' \
+                           '{}/reads-to-ref.sam > {}/reads-to-ref.bam'
+ALIGN_READS_TO_REF_CMD_3 = '{}/samtools-1.3.1/samtools sort ' \
+                           '{}/reads-to-ref.bam > {}/reads-to-ref-sorted.bam'
+ALIGN_READS_TO_REF_CMD_4 = '{}/samtools-1.3.1/samtools index' \
+                           '{}/reads-to-ref-sorted.bam'
+
+
+def _align_reads_to_reference(reads_path, reference_path, output_dir,
+                              tools_dir, num_threads, reads_type):
+    """
+    Aligns reads to reference.
+
+    Those alignments are later used for generating pileups.
+
+    :param reads_path: path to reads
+    :type reads_path: str
+    :param reference_path: path to reference
+    :type reference_path: str
+    :param output_dir: output directory
+    :type output_dir: str
+    :param tools_dir: tools directory (specifies where the tools which are used
+    during assembly creation are installed)
+    :type tools_dir: str
+    :param num_threads: number of threads to use
+    :type num_threads: int
+    :param reads_type: one of 'pb' or 'ont', indicates which technology was
+    used to create reads (PacBio or Oxford Nanopore)
+    :type reads_type: str
+    """
+    reads_types_to_cmd_mapping = {'pb': 'map-pb', 'ont': 'map-ont'}
+    if reads_type not in reads_types_to_cmd_mapping:
+        raise ValueError('Supported reads_types are {}, but {} '
+                         'given.'.format(reads_types_to_cmd_mapping.keys(),
+                                         reads_type))
+
+    command_type = reads_types_to_cmd_mapping[reads_type]
+
+    print('##### Align reads to reference. #####')
+
+    print('-----> 1. Align reads. <-----')
+    os.system(ALIGN_READS_TO_REF_CMD_1.format(tools_dir, command_type,
+                                              num_threads, reference_path,
+                                              reads_path, output_dir))
+
+    print('-----> 2. Convert .sam to .bam. <-----')
+    os.system(ALIGN_READS_TO_REF_CMD_2.format(tools_dir, output_dir,
+                                              output_dir))
+
+    print('-----> 3. Sort alignments. <-----')
+    os.system(ALIGN_READS_TO_REF_CMD_3.format(tools_dir, output_dir,
+                                              output_dir))
+
+    print('-----> 4. Create index. <-----')
+    os.system(ALIGN_READS_TO_REF_CMD_4.format(tools_dir, output_dir))
+
+ALIGN_READS_TO_ASM_CMD_1 = '{}/minimap2/minimap2/ -ax {} -t {} {}/iter2.fasta' \
+                           '{} > {}/reads-to-asm.sam'
+ALIGN_READS_TO_ASM_CMD_2 = '{}/samtools-1.3.1/samtools view -b ' \
+                           '{}/reads-to-asm.sam > {}/reads-to-asm.bam'
+ALIGN_READS_TO_ASM_CMD_3 = '{}/samtools-1.3.1/samtools sort ' \
+                           '{}/reads-to-asm.bam > {}/reads-to-asm-sorted.bam'
+ALIGN_READS_TO_ASM_CMD_4 = '{}/samtools-1.3.1/samtools index' \
+                           '{}/reads-to-asm-sorted.bam'
+
+
+def _align_reads_to_assembly(reads_path, output_dir,
+                             tools_dir, num_threads, reads_type):
+    """
+    Aligns reads to assembly.
+
+    Those alignments are later used for generating pileups.
+
+    :param reads_path: path to reads
+    :type reads_path: str
+    :param output_dir: output directory
+    :type output_dir: str
+    :param tools_dir: tools directory (specifies where the tools which are used
+    during assembly creation are installed)
+    :type tools_dir: str
+    :param num_threads: number of threads to use
+    :type num_threads: int
+    :param reads_type: one of 'pb' or 'ont', indicates which technology was
+    used to create reads (PacBio or Oxford Nanopore)
+    :type reads_type: str
+    """
+    reads_types_to_cmd_mapping = {'pb': 'map-pb', 'ont': 'map-ont'}
+    if reads_type not in reads_types_to_cmd_mapping:
+        raise ValueError('Supported reads_types are {}, but {} '
+                         'given.'.format(reads_types_to_cmd_mapping.keys(),
+                                         reads_type))
+
+    command_type = reads_types_to_cmd_mapping[reads_type]
+
+    print('##### Align reads to assembly. #####')
+
+    print('-----> 1. Align reads. <-----')
+    os.system(ALIGN_READS_TO_ASM_CMD_1.format(tools_dir, command_type,
+                                              num_threads,
+                                              reads_path, output_dir))
+
+    print('-----> 2. Convert .sam to .bam. <-----')
+    os.system(ALIGN_READS_TO_ASM_CMD_2.format(tools_dir, output_dir,
+                                              output_dir))
+
+    print('-----> 3. Sort alignments. <-----')
+    os.system(ALIGN_READS_TO_ASM_CMD_3.format(tools_dir, output_dir,
+                                              output_dir))
+
+    print('-----> 4. Create index. <-----')
+    os.system(ALIGN_READS_TO_ASM_CMD_4.format(tools_dir, output_dir))
+
+
+def generate_assembly_and_alignments(reads_path, reference_path, output_dir,
+                                     tools_dir, reads_type,
+                                     num_threads=-1):
+    """
+    Generates assembly from given reads and aligns reads to given reference
+    and created assembly.
+
+    :param reads_path: path to reads
+    :type reads_path: str
+    :param reference_path: path to reference
+    :type reference_path: str
+    :param output_dir: output directory
+    :type output_dir: str
+    :param tools_dir: tools directory (specifies where the tools which are used
+    during assembly creation are installed)
+    :type tools_dir: str
+    :param num_threads: number of threads to use, set to -1 to use all cpu
+    available
+    :type num_threads: int
+    :param reads_type: one of 'pb' or 'ont', indicates which technology was
+    used to create reads (PacBio or Oxford Nanopore)
+    :type reads_type: str
+    """
+
+    if num_threads == ALL_CPU:
+        num_threads = os.cpu_count()
+    elif num_threads == 0 or num_threads < -2 or num_threads > os.cpu_count():
+        raise ValueError('Number of threads -1 or from 1 to {}, but {} '
+                         'given.'.format(os.cpu_count(), num_threads))
+
+    _create_assembly(reads_path, reference_path, output_dir, tools_dir,
+                     num_threads)
+    _align_reads_to_reference(reads_path, reference_path, output_dir,
+                              tools_dir, num_threads, reads_type)
+    _align_reads_to_assembly(reads_path, output_dir, tools_dir, num_threads,
+                             reads_type)

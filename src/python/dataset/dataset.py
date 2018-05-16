@@ -81,7 +81,7 @@ def _calc_empty_rows(X):
     :return: 1-D array with 1s on positions which correspond to empty rows.
     :rtype: np.ndarray
     """
-    empty_row = np.zeros((1, 4))
+    empty_row = np.zeros((1, X.shape[1])) # size is second axis of X
     empty_rows = [int(v) for v in np.all(empty_row == X, axis=1)]
     return empty_rows
 

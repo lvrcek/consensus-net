@@ -1,7 +1,11 @@
 import numpy as np
 import progressbar
+import pysam
+import pysamstats
 import os
+
 from sklearn.model_selection import train_test_split
+from Bio import SeqIO
 
 ALL_CPU = -1
 
@@ -118,7 +122,7 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size):
 
         empty_rows = _calc_empty_rows(X)
 
-        print('Creating dataset with neighbrouhood ...')
+        print('Creating dataset with neighbourhood ...')
         with progressbar.ProgressBar(max_value=X.shape[0]) as progress_bar:
             # TODO(ajuric): Check if this can be speed up.
             for i in range(X.shape[0]):
@@ -370,3 +374,108 @@ def generate_assembly_and_alignments(reads_path, reference_path, output_dir,
                               tools_dir, num_threads, reads_type)
     _align_reads_to_assembly(reads_path, output_dir, tools_dir, num_threads,
                              reads_type)
+
+
+def _generate_pileups(contig, bam_file_path, reference_fasta_path,
+                      include_indels=True):
+    """
+    Generate pileups from reads alignment to reference.
+
+    :param contig: name of contig in .fasta file, needed for generating pileups
+    :type contig: str
+    :param bam_file_path: path to .bam file containing alignments
+    :type bam_file_path: str
+    :param reference_fasta_path: path to .fasta file
+    :type reference_fasta_path: str
+    :param include_indels: flag which indicates whether to include indels in
+        pileups
+    :type include_indels: bool
+    :return: pileups (X)
+    :rtype: np.ndarray
+    """
+    bamfile = pysam.AlignmentFile(bam_file_path)
+
+    if include_indels:
+        info_of_interest = ['A', 'C', 'G', 'T', 'insertions', 'deletions']
+    else:
+        info_of_interest = ['A', 'C', 'G', 'T']
+
+    pileups = np.zeros(
+        (bamfile.get_reference_length(contig), len(info_of_interest)))
+    with progressbar.ProgressBar(
+            max_value=bamfile.get_reference_length(contig)) as progress_bar:
+        for record in pysamstats.stat_variation(bamfile, chrom=contig,
+                                                fafile=reference_fasta_path):
+            progress_bar.update(record['pos'])
+            for i, info in enumerate(info_of_interest):
+                pileups[i] += record[info]
+    return pileups
+
+
+def _generate_ground_truth(contig, reference_fasta_path):
+    """
+    Generates ground truth - nucleus bases from reference.
+
+    :param contig: name of contig in .fasta file, needed for generating pileups
+    :type contig: str
+    :param reference_fasta_path: path to .fasta file
+    :type reference_fasta_path: str
+    :return: nucleus bases from reference (y)
+    :rtype: np.ndarray
+    """
+    record_dict = SeqIO.to_dict(SeqIO.parse(reference_fasta_path, 'fasta'))
+    reference = record_dict[contig]
+    y_oh = np.zeros((len(reference.seq), 4))
+    mapping = {'A': 0, 'a': 0, 'C': 1, 'c': 1, 'G': 2, 'g': 2, 'T': 3, 't': 3}
+
+    with progressbar.ProgressBar(max_value=len(reference.seq)) as progress_bar:
+        for position, base in enumerate(reference.seq):
+            progress_bar.update(position)
+            y_oh[position][mapping[base]]  = 1
+    return y_oh
+
+
+def generate_pileups(contig, bam_file_path, reference_fasta_path,
+                     save_directory_path=None, include_indels=True):
+    """
+    Generates pileups from given alignment stored in bam file.
+
+    If save_directory_path is provided, generated pileups are stored in that
+    directory.
+
+    If include_indels is set to True, indels will also we included in
+    pileups. Otherwise, only nucleus bases will be in pileup (A, C, G and T).
+
+    :param contig: name of contig in .fasta file, needed for generating pileups
+    :type contig: str
+    :param bam_file_path: path to .bam file containing alignments
+    :type bam_file_path: str
+    :param reference_fasta_path: path to .fasta file
+    :type reference_fasta_path: str
+    :param save_directory_path: path to directory for storing pileups
+    :type save_directory_path: str
+    :param include_indels: flag which indicates whether to include indels in
+        pileups
+    :type include_indels: bool
+    :return: pileups (X) and matching nucleus bases from reference (y)
+    :rtype: tuple of np.ndarray
+    """
+    print(
+        '##### Generate training pileups from read alignments to reference. #####')
+
+    print('-----> 1. Generate pileups. <-----')
+    X = _generate_pileups(contig, bam_file_path, reference_fasta_path,
+                          include_indels=include_indels)
+
+    print('-----> 2. Generate ground truth. <-----')
+    y_oh = _generate_ground_truth(contig, reference_fasta_path)
+
+    if save_directory_path is not None:
+        X_save_path = os.path.join(
+            save_directory_path,
+            'pileups-X-ref{}'.format('-indels' if include_indels else ''))
+        y_save_path = os.path.join(save_directory_path, 'pileups-y-ref')
+        np.save(X_save_path, X)
+        np.save(y_save_path, y_oh)
+
+    return X, y_oh

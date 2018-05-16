@@ -141,7 +141,7 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size):
                         X[i - neighbourhood_size:i + neighbourhood_size + 1])
                     new_y.append(y[i])
 
-    return new_X, new_y
+    return np.array(new_X), np.array(new_y)
 
 
 # Parameters '-L100 -Sw5 -m0' are suggested params from minimap tool. See

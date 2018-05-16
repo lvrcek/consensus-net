@@ -471,6 +471,8 @@ def generate_pileups(contig, bam_file_path, reference_fasta_path,
     y_oh = _generate_ground_truth(contig, reference_fasta_path)
 
     if save_directory_path is not None:
+        if not os.path.exists(save_directory_path):
+            os.makedirs(save_directory_path)
         X_save_path = os.path.join(
             save_directory_path,
             'pileups-X-ref{}'.format('-indels' if include_indels else ''))

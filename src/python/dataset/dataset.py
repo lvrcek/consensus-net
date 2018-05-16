@@ -94,7 +94,7 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size):
     given datasets separately.
 
     Dataset at i-th position in X_paths should match given labels at i-th
-    positino in y_paths.
+    position in y_paths.
 
     :param X_paths: list of paths to X pileup dataset
     :type X_paths: list of str
@@ -408,7 +408,7 @@ def _generate_pileups(contig, bam_file_path, reference_fasta_path,
                                                 fafile=reference_fasta_path):
             progress_bar.update(record['pos'])
             for i, info in enumerate(info_of_interest):
-                pileups[i] += record[info]
+                pileups[record['pos']][i] += record[info]
     return pileups
 
 

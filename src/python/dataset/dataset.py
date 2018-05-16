@@ -425,13 +425,15 @@ def _generate_ground_truth(contig, reference_fasta_path):
     """
     record_dict = SeqIO.to_dict(SeqIO.parse(reference_fasta_path, 'fasta'))
     reference = record_dict[contig]
-    y_oh = np.zeros((len(reference.seq), 4))
+    # Last number in shape - 5 - is for letters other than A, C, G and T.
+    total_options = 5
+    y_oh = np.zeros((len(reference.seq), total_options))
     mapping = {'A': 0, 'a': 0, 'C': 1, 'c': 1, 'G': 2, 'g': 2, 'T': 3, 't': 3}
 
     with progressbar.ProgressBar(max_value=len(reference.seq)) as progress_bar:
         for position, base in enumerate(reference.seq):
             progress_bar.update(position)
-            y_oh[position][mapping[base]]  = 1
+            y_oh[position][mapping.get(base, -1)] = 1
     return y_oh
 
 
@@ -460,8 +462,7 @@ def generate_pileups(contig, bam_file_path, reference_fasta_path,
     :return: pileups (X) and matching nucleus bases from reference (y)
     :rtype: tuple of np.ndarray
     """
-    print(
-        '##### Generate training pileups from read alignments to reference. #####')
+    print('##### Generate pileups from read alignments to reference. #####')
 
     print('-----> 1. Generate pileups. <-----')
     X = _generate_pileups(contig, bam_file_path, reference_fasta_path,

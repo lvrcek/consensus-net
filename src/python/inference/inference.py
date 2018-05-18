@@ -4,6 +4,10 @@ import os
 from keras.models import load_model
 from src.python.dataset import dataset
 
+CONSENSUS_SUMMARY_CMD_1 = '{}/mummer3.23/dnadiff -p {}/dnadiff-output {} {} ' \
+                          '2>> {}/err'
+CONSENSUS_SUMMARY_CMD_2 = 'head -n 24 {}/dnadiff-output.report | tail -n 20'
+
 
 def _convert_predictions_to_genome(predictions):
     mapping = {0: 'A', 1: 'C', 2: 'G', 3: 'T'}
@@ -18,7 +22,8 @@ def _write_genome_to_fasta(genome, fasta_file_path, contig_name):
 
 
 def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
-                   neighbourhood_size, output_dir, include_indels=True):
+                   neighbourhood_size, output_dir, tools_dir,
+                   include_indels=True):
     print('----> Create pileups from assembly. <----')
     X, y = dataset.generate_pileups(contig, bam_file_path,
                                     assembly_fasta_path,
@@ -53,3 +58,9 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
     genome = _convert_predictions_to_genome(predictions)
     consensus_path = os.path.join(output_dir, 'consensus.fasta')
     _write_genome_to_fasta(genome, consensus_path, contig)
+
+    print('----> Create consensus summary. <----')
+    os.system(CONSENSUS_SUMMARY_CMD_1.format(tools_dir, output_dir,
+                                             assembly_fasta_path,
+                                             consensus_path, output_dir))
+    os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))

@@ -71,3 +71,27 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
                                              assembly_fasta_path,
                                              consensus_path, output_dir))
     os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))
+
+
+# @TODO(ajuric): Refactor this consensus methods.
+def make_consensus_before_shapeing_tmp(X_path, y_path, model_path,
+                                       output_dir, tools_dir,
+                                       assembly_fasta_path, contig):
+    print('----> Reshape dataset for convolutional network. <----')
+    X, y = dataset.read_dataset_and_reshape_for_conv(X_path, y_path)
+
+    print('----> Load model and make predictions (consensus). <----')
+    model = load_model(model_path)
+
+    probabilities = model.predict(X)
+    predictions = np.argmax(probabilities, axis=1)
+
+    genome = _convert_predictions_to_genome(predictions)
+    consensus_path = os.path.join(output_dir, 'consensus.fasta')
+    _write_genome_to_fasta(genome, consensus_path, contig)
+
+    print('----> Create consensus summary. <----')
+    os.system(CONSENSUS_SUMMARY_CMD_1.format(tools_dir, output_dir,
+                                             assembly_fasta_path,
+                                             consensus_path, output_dir))
+    os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))

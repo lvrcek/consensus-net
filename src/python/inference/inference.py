@@ -27,7 +27,6 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
     print('----> Create pileups from assembly. <----')
     X, y = dataset.generate_pileups(contig, bam_file_path,
                                     assembly_fasta_path,
-                                    save_directory_path=output_dir,
                                     include_indels=include_indels)
 
     if not os.path.exists(output_dir):

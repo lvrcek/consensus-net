@@ -2,7 +2,7 @@ import numpy as np
 import os
 
 from keras.models import load_model
-from src.python.dataset import dataset
+from ..dataset import dataset
 
 CONSENSUS_SUMMARY_CMD_1 = '{}/mummer3.23/dnadiff -p {}/dnadiff-output {} {} ' \
                           '2>> {}/err'

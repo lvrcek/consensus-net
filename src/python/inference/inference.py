@@ -42,8 +42,8 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
     np.save(y_save_path, y)
 
     print('----> Create dataset with neighbourhood from pileups. <----')
-    X, y = dataset.create_dataset_with_neighbourhood([X_save_path],
-                                                     [y_save_path],
+    X, y = dataset.create_dataset_with_neighbourhood([X_save_path + '.npy'],
+                                                     [y_save_path + '.npy'],
                                                      neighbourhood_size)
     X_save_path = os.path.join(output_dir, 'X-pileups-n{}{}'.format(
         neighbourhood_size, 'indels' if include_indels else ''))
@@ -53,7 +53,8 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
     np.save(y_save_path, y)
 
     print('----> Reshape dataset for convolutional network. <----')
-    X, y = dataset.read_dataset_and_reshape_for_conv(X_save_path, y_save_path)
+    X, y = dataset.read_dataset_and_reshape_for_conv(X_save_path + '.npy',
+                                                     y_save_path + '.npy')
 
     print('----> Load model and make predictions (consensus). <----')
     model = load_model(model_path)

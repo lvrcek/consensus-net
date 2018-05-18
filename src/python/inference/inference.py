@@ -29,6 +29,10 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
                                     assembly_fasta_path,
                                     save_directory_path=output_dir,
                                     include_indels=include_indels)
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     X_save_path = os.path.join(output_dir, 'X-pileups{}'.format(
         'indels' if include_indels else ''))
     y_save_path = os.path.join(output_dir, 'y-pileups')

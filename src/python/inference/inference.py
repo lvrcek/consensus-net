@@ -21,9 +21,9 @@ def _write_genome_to_fasta(genome, fasta_file_path, contig_name):
         f.write('{}'.format(''.join(genome)))
 
 
-def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
-                   neighbourhood_size, output_dir, tools_dir,
-                   include_indels=True):
+def make_consensus(model_path, assembly_fasta_path, reference_path,
+                   bam_file_path, contig, neighbourhood_size, output_dir,
+                   tools_dir, include_indels=True):
     print('----> Create pileups from assembly. <----')
     X, y = dataset.generate_pileups(contig, bam_file_path,
                                     assembly_fasta_path,
@@ -68,7 +68,7 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
 
     print('----> Create consensus summary. <----')
     os.system(CONSENSUS_SUMMARY_CMD_1.format(tools_dir, output_dir,
-                                             assembly_fasta_path,
+                                             reference_path,
                                              consensus_path, output_dir))
     os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))
 
@@ -76,7 +76,7 @@ def make_consensus(model_path, assembly_fasta_path, bam_file_path, contig,
 # @TODO(ajuric): Refactor this consensus methods.
 def make_consensus_before_shapeing_tmp(X_path, y_path, model_path,
                                        output_dir, tools_dir,
-                                       assembly_fasta_path, contig):
+                                       reference_path, contig):
     print('----> Reshape dataset for convolutional network. <----')
     X, y = dataset.read_dataset_and_reshape_for_conv(X_path, y_path)
 
@@ -92,6 +92,6 @@ def make_consensus_before_shapeing_tmp(X_path, y_path, model_path,
 
     print('----> Create consensus summary. <----')
     os.system(CONSENSUS_SUMMARY_CMD_1.format(tools_dir, output_dir,
-                                             assembly_fasta_path,
+                                             reference_path,
                                              consensus_path, output_dir))
     os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))

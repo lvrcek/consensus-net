@@ -95,3 +95,26 @@ def make_consensus_before_shapeing_tmp(X_path, y_path, model_path,
                                              reference_path,
                                              consensus_path, output_dir))
     os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))
+
+# @TODO(ajuric): Refactor this consensus methods.
+def make_consensus_only(X_path, y_path, model_path,
+                                       output_dir, tools_dir,
+                                       reference_path, contig):
+    print('----> Load X and y. <----')
+    X, y = np.load(X_path), np.load(y_path)
+
+    print('----> Load model and make predictions (consensus). <----')
+    model = load_model(model_path)
+
+    probabilities = model.predict(X)
+    predictions = np.argmax(probabilities, axis=1)
+
+    genome = _convert_predictions_to_genome(predictions)
+    consensus_path = os.path.join(output_dir, 'consensus.fasta')
+    _write_genome_to_fasta(genome, consensus_path, contig)
+
+    print('----> Create consensus summary. <----')
+    os.system(CONSENSUS_SUMMARY_CMD_1.format(tools_dir, output_dir,
+                                             reference_path,
+                                             consensus_path, output_dir))
+    os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))

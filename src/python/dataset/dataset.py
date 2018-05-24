@@ -376,13 +376,12 @@ def generate_assembly_and_alignments(reads_path, reference_path, output_dir,
                              reads_type)
 
 
-def _generate_pileups(contig, bam_file_path, reference_fasta_path,
-                      include_indels=True):
+def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
     """
     Generate pileups from reads alignment to reference.
 
-    :param contig: name of contig in .fasta file, needed for generating pileups
-    :type contig: str
+    Pileups are generated for all contigs.
+
     :param bam_file_path: path to .bam file containing alignments
     :type bam_file_path: str
     :param reference_fasta_path: path to .fasta file
@@ -393,51 +392,66 @@ def _generate_pileups(contig, bam_file_path, reference_fasta_path,
     :return: pileups (X)
     :rtype: np.ndarray
     """
-    bamfile = pysam.AlignmentFile(bam_file_path)
+    bam_file = pysam.AlignmentFile(bam_file_path)
 
     if include_indels:
         info_of_interest = ['A', 'C', 'G', 'T', 'insertions', 'deletions']
     else:
         info_of_interest = ['A', 'C', 'G', 'T']
 
-    pileups = np.zeros(
-        (bamfile.get_reference_length(contig), len(info_of_interest)))
-    with progressbar.ProgressBar(
-            max_value=bamfile.get_reference_length(contig)) as progress_bar:
-        for record in pysamstats.stat_variation(bamfile, chrom=contig,
-                                                fafile=reference_fasta_path):
-            progress_bar.update(record['pos'])
-            for i, info in enumerate(info_of_interest):
-                pileups[record['pos']][i] += record[info]
-    return pileups
+    pileups = [np.zeros(
+        (bam_file.get_reference_length(contig_name),
+         len(info_of_interest)
+         )) for contig_name in bam_file.references]
+
+    total_length = np.sum(
+        [bam_file.get_reference_length(contig_name) for contig_name in
+         bam_file.references])
+    with progressbar.ProgressBar(max_value=total_length) as progress_bar:
+        for contig_id, contig_name in enumerate(bam_file.references):
+            for record in pysamstats.stat_variation(
+                    bam_file, chrom=contig_name, fafile=reference_fasta_path):
+                progress_bar.update(record['pos'])
+                for i, info in enumerate(info_of_interest):
+                    pileups[contig_id][record['pos']][i] += record[info]
+
+    return np.concatenate(pileups), bam_file.references
 
 
-def _generate_ground_truth(contig, reference_fasta_path):
+def _generate_ground_truth(reference_fasta_path, ordered_contigs):
     """
     Generates ground truth - nucleus bases from reference.
 
-    :param contig: name of contig in .fasta file, needed for generating pileups
-    :type contig: str
+    It parses all contigs in same order as when generating pileups to make
+    sure that every X corresponds to correct y.
+
     :param reference_fasta_path: path to .fasta file
     :type reference_fasta_path: str
+    :param ordered_contigs: list of contigs
+    :type ordered_contigs: list of str
     :return: nucleus bases from reference (y)
     :rtype: np.ndarray
     """
     record_dict = SeqIO.to_dict(SeqIO.parse(reference_fasta_path, 'fasta'))
-    reference = record_dict[contig]
-    # Last number in shape - 5 - is for letters other than A, C, G and T.
     total_options = 5
-    y_oh = np.zeros((len(reference.seq), total_options))
+    y_oh = [np.zeros((len(record_dict[contig_name]), total_options)) for
+            contig_name in ordered_contigs]
+    # Last number in shape - 5 - is for letters other than A, C, G and T.
     mapping = {'A': 0, 'a': 0, 'C': 1, 'c': 1, 'G': 2, 'g': 2, 'T': 3, 't': 3}
 
-    with progressbar.ProgressBar(max_value=len(reference.seq)) as progress_bar:
-        for position, base in enumerate(reference.seq):
-            progress_bar.update(position)
-            y_oh[position][mapping.get(base, -1)] = 1
-    return y_oh
+    total_length = np.sum(
+        len(record_dict[contig_name]) for contig_name in ordered_contigs)
+    with progressbar.ProgressBar(max_value=total_length) as progress_bar:
+        for contig_id, contig_name in enumerate(ordered_contigs):
+            contig = record_dict[contig_name]
+            print(contig_name, len(contig))
+            for position, base in enumerate(contig.seq):
+                progress_bar.update(position)
+                y_oh[contig_id][position][mapping.get(base, -1)] = 1
+    return np.concatenate(y_oh, axis=0)
 
 
-def generate_pileups(contig, bam_file_path, reference_fasta_path,
+def generate_pileups(bam_file_path, reference_fasta_path,
                      save_directory_path=None, include_indels=True):
     """
     Generates pileups from given alignment stored in bam file.
@@ -448,8 +462,6 @@ def generate_pileups(contig, bam_file_path, reference_fasta_path,
     If include_indels is set to True, indels will also we included in
     pileups. Otherwise, only nucleus bases will be in pileup (A, C, G and T).
 
-    :param contig: name of contig in .fasta file, needed for generating pileups
-    :type contig: str
     :param bam_file_path: path to .bam file containing alignments
     :type bam_file_path: str
     :param reference_fasta_path: path to .fasta file
@@ -465,11 +477,11 @@ def generate_pileups(contig, bam_file_path, reference_fasta_path,
     print('##### Generate pileups from read alignments to reference. #####')
 
     print('-----> 1. Generate pileups. <-----')
-    X = _generate_pileups(contig, bam_file_path, reference_fasta_path,
+    X, ordered_contigs = _generate_pileups(bam_file_path, reference_fasta_path,
                           include_indels=include_indels)
 
     print('-----> 2. Generate ground truth. <-----')
-    y_oh = _generate_ground_truth(contig, reference_fasta_path)
+    y_oh = _generate_ground_truth(reference_fasta_path, ordered_contigs)
 
     if save_directory_path is not None:
         if not os.path.exists(save_directory_path):

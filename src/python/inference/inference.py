@@ -36,7 +36,7 @@ def make_consensus(model_path, assembly_fasta_path, reference_path,
                          '{} given.'.format(output_dir))
 
     X_save_path = os.path.join(output_dir, 'X-pileups{}'.format(
-        'indels' if include_indels else ''))
+        '-indels' if include_indels else ''))
     y_save_path = os.path.join(output_dir, 'y-pileups')
     np.save(X_save_path, X)
     np.save(y_save_path, y)
@@ -46,7 +46,7 @@ def make_consensus(model_path, assembly_fasta_path, reference_path,
                                                      [y_save_path + '.npy'],
                                                      neighbourhood_size)
     X_save_path = os.path.join(output_dir, 'X-pileups-n{}{}'.format(
-        neighbourhood_size, 'indels' if include_indels else ''))
+        neighbourhood_size, '-indels' if include_indels else ''))
     y_save_path = os.path.join(output_dir, 'y-pileups-n{}'.format(
         neighbourhood_size))
     np.save(X_save_path, X)

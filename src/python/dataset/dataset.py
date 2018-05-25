@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from Bio import SeqIO
 
 ALL_CPU = -1
+modes = ['training', 'inference']
 
 
 def read_dataset_and_reshape_for_conv(path_X, path_y, validation_size=None):
@@ -390,7 +391,7 @@ def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
         pileups
     :type include_indels: bool
     :return: pileups (X)
-    :rtype: np.ndarray
+    :rtype: tuple of np.ndarray and list of str
     """
     bam_file = pysam.AlignmentFile(bam_file_path)
 
@@ -415,7 +416,7 @@ def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
                 for i, info in enumerate(info_of_interest):
                     pileups[contig_id][record['pos']][i] += record[info]
 
-    return np.concatenate(pileups), bam_file.references
+    return pileups, bam_file.references
 
 
 def _generate_ground_truth(reference_fasta_path, ordered_contigs):
@@ -448,13 +449,19 @@ def _generate_ground_truth(reference_fasta_path, ordered_contigs):
             for position, base in enumerate(contig.seq):
                 progress_bar.update(position)
                 y_oh[contig_id][position][mapping.get(base, -1)] = 1
-    return np.concatenate(y_oh, axis=0)
+    return y_oh
 
 
-def generate_pileups(bam_file_path, reference_fasta_path,
+def generate_pileups(bam_file_path, reference_fasta_path, mode,
                      save_directory_path=None, include_indels=True):
     """
     Generates pileups from given alignment stored in bam file.
+
+    Mode must be one of 'training' or 'inference' string indicating pileups
+    generation mode. If 'training' is selected, pileups from different
+    contigs are all be concatenated. If 'inference' is selected, pileups from
+    different contig will be hold separate to enable to make consensus with
+    same number of contigs.
 
     If save_directory_path is provided, generated pileups are stored in that
     directory.
@@ -466,34 +473,59 @@ def generate_pileups(bam_file_path, reference_fasta_path,
     :type bam_file_path: str
     :param reference_fasta_path: path to .fasta file
     :type reference_fasta_path: str
+    :param mode: either 'training' or 'inference' string, representing the
+        mode for pileups generation
+    :type mode: str
     :param save_directory_path: path to directory for storing pileups
     :type save_directory_path: str
     :param include_indels: flag which indicates whether to include indels in
         pileups
     :type include_indels: bool
-    :return: pileups (X) and matching nucleus bases from reference (y)
-    :rtype: tuple of np.ndarray
+    :return: pileups (X) and matching nucleus bases from reference (y) with
+        concatenated contigs for inference mode, or separate contigs for
+        training mode
+    :rtype: tuple of np.ndarray or tuple of list of np.ndarray
     """
+    if not mode in modes:
+        raise ValueError('You must provide either \'training\' or '
+                         '\'inference\' mode, but \'{}\' given.'.format(mode))
+
+    if save_directory_path is not None:
+        if os.path.exists(save_directory_path):
+            raise ValueError('You must provide non-existing save output '
+                             'directory, {} given.'.format(save_directory_path))
+        else:
+            os.makedirs(save_directory_path)
+
     print('##### Generate pileups from read alignments to reference. #####')
 
     print('-----> 1. Generate pileups. <-----')
-    X, ordered_contigs = _generate_pileups(bam_file_path, reference_fasta_path,
-                          include_indels=include_indels)
+    X, ordered_contigs = _generate_pileups(bam_file_path,
+                                           reference_fasta_path,
+                                           include_indels=include_indels)
 
     print('-----> 2. Generate ground truth. <-----')
     y_oh = _generate_ground_truth(reference_fasta_path, ordered_contigs)
 
+    total_pileups = len(X)
+    if mode == 'training': # training mode
+        X, y_oh = np.concatenate(X, axis=0), np.concatenate(y_oh, axis=0)
+        total_pileups = 1
+    else:  # inference mode
+        pass  # nothing to do
+
     if save_directory_path is not None:
-        if not os.path.exists(save_directory_path):
-            os.makedirs(save_directory_path)
-        else:
-            raise ValueError('You must provide non-existing save output '
-                             'directory, {} given.'.format(save_directory_path))
-        X_save_path = os.path.join(
-            save_directory_path,
-            'pileups-X-ref{}'.format('-indels' if include_indels else ''))
-        y_save_path = os.path.join(save_directory_path, 'pileups-y-ref')
-        np.save(X_save_path, X)
-        np.save(y_save_path, y_oh)
+        X_save_paths = [
+            os.path.join(
+                save_directory_path,
+                'pileups-X-{}-ref{}'.format(
+                    i, '-indels' if include_indels else ''))
+            for i in range(total_pileups)]
+        y_save_paths = [os.path.join(save_directory_path,
+                        'pileups-y-{}-ref'.format(i))
+                        for i in range(total_pileups)]
+        for X_save_path, y_save_path in zip(X_save_paths, y_save_paths):
+            np.save(X_save_path, X)
+            np.save(y_save_path, y_oh)
 
     return X, y_oh

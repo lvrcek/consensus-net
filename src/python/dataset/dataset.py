@@ -518,14 +518,14 @@ def generate_pileups(bam_file_path, reference_fasta_path, mode,
         X_save_paths = [
             os.path.join(
                 save_directory_path,
-                'pileups-X-{}-ref{}'.format(
-                    i, '-indels' if include_indels else ''))
+                'pileups-X-{}{}'.format(i, '-indels' if include_indels else ''))
             for i in range(total_pileups)]
         y_save_paths = [os.path.join(save_directory_path,
-                        'pileups-y-{}-ref'.format(i))
+                        'pileups-y-{}'.format(i))
                         for i in range(total_pileups)]
         for X_save_path, y_save_path in zip(X_save_paths, y_save_paths):
             np.save(X_save_path, X)
             np.save(y_save_path, y_oh)
+        return X, y_oh, X_save_paths, y_save_paths
 
     return X, y_oh

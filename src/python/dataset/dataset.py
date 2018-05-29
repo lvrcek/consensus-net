@@ -408,11 +408,13 @@ def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
     total_length = np.sum(
         [bam_file.get_reference_length(contig_name) for contig_name in
          bam_file.references])
+    progress_counter = 0
     with progressbar.ProgressBar(max_value=total_length) as progress_bar:
         for contig_id, contig_name in enumerate(bam_file.references):
             for record in pysamstats.stat_variation(
                     bam_file, chrom=contig_name, fafile=reference_fasta_path):
-                progress_bar.update(record['pos'])
+                progress_bar.update(progress_counter)
+                progress_counter += 1
                 for i, info in enumerate(info_of_interest):
                     pileups[contig_id][record['pos']][i] += record[info]
 
@@ -442,12 +444,14 @@ def _generate_ground_truth(reference_fasta_path, ordered_contigs):
 
     total_length = np.sum(
         len(record_dict[contig_name]) for contig_name in ordered_contigs)
+    progress_counter = 0
     with progressbar.ProgressBar(max_value=total_length) as progress_bar:
         for contig_id, contig_name in enumerate(ordered_contigs):
             contig = record_dict[contig_name]
-            print(contig_name, len(contig))
+            print('Parsing contig {}, len: {}'.format(contig_name, len(contig)))
             for position, base in enumerate(contig.seq):
-                progress_bar.update(position)
+                progress_bar.update(progress_counter)
+                progress_counter += 1
                 y_oh[contig_id][position][mapping.get(base, -1)] = 1
     return y_oh
 

@@ -15,56 +15,54 @@ def _convert_predictions_to_genome(predictions):
     return genome
 
 
-def _write_genome_to_fasta(genome, fasta_file_path, contig_name):
+def _write_genome_to_fasta(contigs, fasta_file_path, contig_names):
     with open(fasta_file_path, 'w') as f:
-        f.write('>{} LN:{}\n'.format(contig_name, len(genome)))
-        f.write('{}'.format(''.join(genome)))
+        for contig, contig_name in zip(contigs, contig_names):
+            f.write('>{} LN:{}\n'.format(contig_name, len(contig)))
+            f.write('{}\n'.format(''.join(contig)))
 
 
 def make_consensus(model_path, assembly_fasta_path, reference_path,
-                   bam_file_path, contig, neighbourhood_size, output_dir,
+                   bam_file_path, neighbourhood_size, output_dir,
                    tools_dir, include_indels=True):
+    # TODO(ajuric): Currently, y is also created while calculating consensus, due to
+    # reuising existing code from training. But, here in inference y is not used.
+    # This needs to be removed to reduce the unnecessary overhead.
+
     print('----> Create pileups from assembly. <----')
-    X, y = dataset.generate_pileups(contig, bam_file_path,
-                                    assembly_fasta_path,
-                                    include_indels=include_indels)
-
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    else:
-        raise ValueError('You must provide non-existing output directory, '
-                         '{} given.'.format(output_dir))
-
-    X_save_path = os.path.join(output_dir, 'X-pileups{}'.format(
-        '-indels' if include_indels else ''))
-    y_save_path = os.path.join(output_dir, 'y-pileups')
-    np.save(X_save_path, X)
-    np.save(y_save_path, y)
+    X, y, X_save_paths, y_save_paths, contig_names = dataset.generate_pileups(
+        bam_file_path,
+        assembly_fasta_path,
+        mode='inference',
+        save_directory_path=output_dir,
+        include_indels=include_indels)
 
     print('----> Create dataset with neighbourhood from pileups. <----')
-    X, y = dataset.create_dataset_with_neighbourhood([X_save_path + '.npy'],
-                                                     [y_save_path + '.npy'],
-                                                     neighbourhood_size)
-    X_save_path = os.path.join(output_dir, 'X-pileups-n{}{}'.format(
-        neighbourhood_size, '-indels' if include_indels else ''))
-    y_save_path = os.path.join(output_dir, 'y-pileups-n{}'.format(
-        neighbourhood_size))
-    np.save(X_save_path, X)
-    np.save(y_save_path, y)
+    X, y, X_save_paths, y_save_paths = \
+        dataset.create_dataset_with_neighbourhood(
+        X_save_paths,
+        y_save_paths,
+        neighbourhood_size,
+        mode='inference',
+        save_directory_path=output_dir)
 
     print('----> Reshape dataset for convolutional network. <----')
-    X, y = dataset.read_dataset_and_reshape_for_conv(X_save_path + '.npy',
-                                                     y_save_path + '.npy')
+    X_list, y_list = dataset.read_dataset_and_reshape_for_conv(X_save_paths,
+                                                       y_save_paths)
 
     print('----> Load model and make predictions (consensus). <----')
     model = load_model(model_path)
 
-    probabilities = model.predict(X)
-    predictions = np.argmax(probabilities, axis=1)
+    contigs = list()
+    for X, y, contig_name in zip(X_list, y_list, contig_names):
+        probabilities = model.predict(X)
+        predictions = np.argmax(probabilities, axis=1)
 
-    genome = _convert_predictions_to_genome(predictions)
+        contig = _convert_predictions_to_genome(predictions)
+        contigs.append(contig)
+
     consensus_path = os.path.join(output_dir, 'consensus.fasta')
-    _write_genome_to_fasta(genome, consensus_path, contig)
+    _write_genome_to_fasta(contigs, consensus_path, contig_names)
 
     print('----> Create consensus summary. <----')
     os.system(CONSENSUS_SUMMARY_CMD_1.format(tools_dir, output_dir,

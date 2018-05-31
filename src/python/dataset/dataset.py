@@ -37,7 +37,7 @@ def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None):
         if validation_size < 0 or validation_size > 1.0:
             raise ValueError('Validation size must be float from [0, 1], but {}'
                              ' given.'.format(validation_size))
-        if not len(path_X) == 1:
+        if not len(X_paths) == 1:
             raise ValueError(
                 'Validation size can only be provided if there is only one X_path and y_path.')
 
@@ -603,7 +603,7 @@ def generate_pileups(bam_file_path, reference_fasta_path, mode,
 
     total_pileups = len(X)
     if mode == 'training': # training mode
-        X, y_oh = np.concatenate(X, axis=0), np.concatenate(y_oh, axis=0)
+        X, y_oh = [np.concatenate(X, axis=0)], [np.concatenate(y_oh, axis=0)]
         total_pileups = 1
     else:  # inference mode
         pass  # nothing to do

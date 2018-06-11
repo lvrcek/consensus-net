@@ -5,7 +5,6 @@ import pysamstats
 import os
 
 from sklearn.model_selection import train_test_split
-from Bio import SeqIO
 
 ALL_CPU = -1
 modes = ['training', 'inference']
@@ -514,8 +513,9 @@ def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
         [bam_file.get_reference_length(contig_name) for contig_name in
          bam_file.references])
     progress_counter = 0
+    contig_names = bam_file.references
     with progressbar.ProgressBar(max_value=total_length) as progress_bar:
-        for contig_id, contig_name in enumerate(bam_file.references):
+        for contig_id, contig_name in enumerate(contig_names):
             for record in pysamstats.stat_variation(
                     bam_file, chrom=contig_name, fafile=reference_fasta_path):
                 progress_bar.update(progress_counter)
@@ -547,7 +547,7 @@ def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
                         y_oh[contig_id][curr_position][
                             mapping.get(record['ref'], -1)] = 1
 
-    return pileups, y_oh
+    return pileups, y_oh, contig_names
 
 
 def generate_pileups(bam_file_path, reference_fasta_path, mode,
@@ -597,7 +597,7 @@ def generate_pileups(bam_file_path, reference_fasta_path, mode,
 
     print('##### Generate pileups from read alignments to reference. #####')
 
-    X, y_oh = _generate_pileups(bam_file_path,
+    X, y_oh, contig_names = _generate_pileups(bam_file_path,
                                 reference_fasta_path,
                                 include_indels=include_indels)
 
@@ -622,9 +622,9 @@ def generate_pileups(bam_file_path, reference_fasta_path, mode,
                 X_save_paths, y_save_paths, X, y_oh):
             np.save(X_save_path, Xi)
             np.save(y_save_path, yi)
-        return X, y_oh, X_save_paths, y_save_paths
+        return X, y_oh, X_save_paths, y_save_paths, contig_names
 
-    return X, y_oh
+    return X, y_oh, contig_names
 
 
 def _check_mode(mode):

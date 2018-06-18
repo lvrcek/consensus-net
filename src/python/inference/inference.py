@@ -10,7 +10,7 @@ CONSENSUS_SUMMARY_CMD_2 = 'head -n 24 {}/dnadiff-output.report | tail -n 20'
 
 
 def _convert_predictions_to_genome(predictions):
-    mapping = {0: 'A', 1: 'C', 2: 'G', 3: 'T'}
+    mapping = {0: 'A', 1: 'C', 2: 'G', 3: 'T', 4: '', 5: 'N'}
     genome = [mapping[prediction] for prediction in predictions]
     return genome
 

@@ -5,13 +5,13 @@ import pysamstats
 import os
 
 from sklearn.model_selection import train_test_split
-from Bio import SeqIO
 
 ALL_CPU = -1
 modes = ['training', 'inference']
 
 
-def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None):
+def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None,
+                                      save_directory_path=None):
     """
     Reads X and y from given paths and reshapes them for applying in
     convolutional networks.
@@ -19,10 +19,10 @@ def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None):
     Reshaping is done by splitting different letters in separate channels,
     eg. letter 'A' has it's own channel, letter 'C' has it's own channel, etc.
 
-    :param path_X: list of paths to X data
-    :type path_X: list of str
-    :param path_y: list of paths to y data
-    :type path_y: list of str
+    :param X_paths: list of paths to X data
+    :type X_paths: list of str
+    :param y_paths: list of paths to y data
+    :type y_paths: list of str
     :param validation_size: specifies percentage of dataset used for validation
     :type validation_size: float
     :return: If validation_size is None, returns just X and y reshaped. If
@@ -40,6 +40,10 @@ def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None):
         if not len(X_paths) == 1:
             raise ValueError(
                 'Validation size can only be provided if there is only one X_path and y_path.')
+
+    X_save_paths, y_save_paths = None, None
+    if save_directory_path is not None:
+        pass
 
     X_list, y_list = list(), list()
     for X_path, y_path in zip(X_paths, y_paths):
@@ -153,7 +157,7 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size,
         curr_X, curr_y = np.load(X_path), np.load(y_path)
         # Removing last column which contains everything which was not 'A' nor
         # 'C' nor 'G' nor 'T'.
-        curr_y = curr_y[:, :4]
+        curr_y = curr_y[:, :-1]
         new_curr_X, new_curr_y = list(), list()
         empty_rows = _calc_empty_rows(curr_X)
 
@@ -480,70 +484,70 @@ def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
     :param include_indels: flag which indicates whether to include indels in
         pileups
     :type include_indels: bool
-    :return: pileups (X)
-    :rtype: tuple of np.ndarray and list of str
+    :return: pileups (X) and labels (y)
+    :rtype: tuple of np.ndarrays
     """
     bam_file = pysam.AlignmentFile(bam_file_path)
 
     if include_indels:
         info_of_interest = ['A', 'C', 'G', 'T', 'insertions', 'deletions']
+        indel_positions = [4, 5]
     else:
         info_of_interest = ['A', 'C', 'G', 'T']
+
+    # Last number in shape - 5 - is for letters other than A, C, G and T.
+    mapping = {'A': 0, 'a': 0, 'C': 1, 'c': 1, 'G': 2, 'g': 2, 'T': 3, 't': 3}
+    total_options = len(info_of_interest) + 1
 
     pileups = [np.zeros(
         (bam_file.get_reference_length(contig_name),
          len(info_of_interest)
          )) for contig_name in bam_file.references]
 
+    y_oh = [np.zeros(
+        (bam_file.get_reference_length(contig_name),
+         total_options
+         )) for contig_name in bam_file.references]
+
     total_length = np.sum(
         [bam_file.get_reference_length(contig_name) for contig_name in
          bam_file.references])
     progress_counter = 0
+    contig_names = bam_file.references
     with progressbar.ProgressBar(max_value=total_length) as progress_bar:
-        for contig_id, contig_name in enumerate(bam_file.references):
+        for contig_id, contig_name in enumerate(contig_names):
             for record in pysamstats.stat_variation(
                     bam_file, chrom=contig_name, fafile=reference_fasta_path):
                 progress_bar.update(progress_counter)
                 progress_counter += 1
+
+                curr_position = record['pos']
+
+                # Parsing X.
+                # Note: Commented code is slower due to the fact that in
+                # python when using list comprehension new list is created
+                # everytime which is expensive. In other languages, like C++,
+                # you could create one array and use it every time.
+                # curr_pileup = [record[info] for info in info_of_interest]
+                # pileups[contig_id][curr_position] = curr_pileup
                 for i, info in enumerate(info_of_interest):
-                    pileups[contig_id][record['pos']][i] += record[info]
+                    pileups[contig_id][curr_position][i] += record[info]
 
-    return pileups, bam_file.references
+                # Parsing y.
+                # argmax_pileup = np.argmax(curr_pileup)
+                # y_oh[contig_id][curr_position][argmax_pileup] = 1
+                if not include_indels:
+                    y_oh[contig_id][curr_position][
+                        mapping.get(record['ref'], -1)] = 1
+                else:
+                    pileup_argmax = np.argmax(pileups[contig_id][curr_position])
+                    if pileup_argmax in indel_positions:
+                        y_oh[contig_id][curr_position][pileup_argmax] = 1
+                    else:
+                        y_oh[contig_id][curr_position][
+                            mapping.get(record['ref'], -1)] = 1
 
-
-def _generate_ground_truth(reference_fasta_path, ordered_contigs):
-    """
-    Generates ground truth - nucleus bases from reference.
-
-    It parses all contigs in same order as when generating pileups to make
-    sure that every X corresponds to correct y.
-
-    :param reference_fasta_path: path to .fasta file
-    :type reference_fasta_path: str
-    :param ordered_contigs: list of contigs
-    :type ordered_contigs: list of str
-    :return: nucleus bases from reference (y)
-    :rtype: np.ndarray
-    """
-    record_dict = SeqIO.to_dict(SeqIO.parse(reference_fasta_path, 'fasta'))
-    total_options = 5
-    y_oh = [np.zeros((len(record_dict[contig_name]), total_options)) for
-            contig_name in ordered_contigs]
-    # Last number in shape - 5 - is for letters other than A, C, G and T.
-    mapping = {'A': 0, 'a': 0, 'C': 1, 'c': 1, 'G': 2, 'g': 2, 'T': 3, 't': 3}
-
-    total_length = np.sum(
-        len(record_dict[contig_name]) for contig_name in ordered_contigs)
-    progress_counter = 0
-    with progressbar.ProgressBar(max_value=total_length) as progress_bar:
-        for contig_id, contig_name in enumerate(ordered_contigs):
-            contig = record_dict[contig_name]
-            print('Parsing contig {}, len: {}'.format(contig_name, len(contig)))
-            for position, base in enumerate(contig.seq):
-                progress_bar.update(progress_counter)
-                progress_counter += 1
-                y_oh[contig_id][position][mapping.get(base, -1)] = 1
-    return y_oh
+    return pileups, y_oh, contig_names
 
 
 def generate_pileups(bam_file_path, reference_fasta_path, mode,
@@ -593,16 +597,12 @@ def generate_pileups(bam_file_path, reference_fasta_path, mode,
 
     print('##### Generate pileups from read alignments to reference. #####')
 
-    print('-----> 1. Generate pileups. <-----')
-    X, ordered_contigs = _generate_pileups(bam_file_path,
-                                           reference_fasta_path,
-                                           include_indels=include_indels)
-
-    print('-----> 2. Generate ground truth. <-----')
-    y_oh = _generate_ground_truth(reference_fasta_path, ordered_contigs)
+    X, y_oh, contig_names = _generate_pileups(bam_file_path,
+                                reference_fasta_path,
+                                include_indels=include_indels)
 
     total_pileups = len(X)
-    if mode == 'training': # training mode
+    if mode == 'training':  # training mode
         X, y_oh = [np.concatenate(X, axis=0)], [np.concatenate(y_oh, axis=0)]
         total_pileups = 1
     else:  # inference mode
@@ -616,15 +616,15 @@ def generate_pileups(bam_file_path, reference_fasta_path, mode,
                     i, '-indels' if include_indels else ''))
             for i in range(total_pileups)]
         y_save_paths = [os.path.join(save_directory_path,
-                        'pileups-y-{}.npy'.format(i))
+                                     'pileups-y-{}.npy'.format(i))
                         for i in range(total_pileups)]
         for X_save_path, y_save_path, Xi, yi in zip(
                 X_save_paths, y_save_paths, X, y_oh):
             np.save(X_save_path, Xi)
             np.save(y_save_path, yi)
-        return X, y_oh, X_save_paths, y_save_paths, ordered_contigs
+        return X, y_oh, X_save_paths, y_save_paths, contig_names
 
-    return X, y_oh, ordered_contigs
+    return X, y_oh, contig_names
 
 
 def _check_mode(mode):
@@ -639,4 +639,3 @@ def _check_mode(mode):
     if mode not in modes:
         raise ValueError('You must provide either \'training\' or '
                          '\'inference\' mode, but \'{}\' given.'.format(mode))
-

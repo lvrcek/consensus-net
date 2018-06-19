@@ -38,10 +38,11 @@ def read_dataset_and_reshape_for_conv(X_list=None, y_list=None, X_paths=None,
         if validation_size < 0 or validation_size > 1.0:
             raise ValueError('Validation size must be float from [0, 1], but {}'
                              ' given.'.format(validation_size))
-        if not len(X_paths) == 1:
-            raise ValueError(
-                'Validation size can only be provided if there is only one X '
-                'path and y_path.')
+        if X_paths is not None:
+            if not len(X_paths) == 1:
+                raise ValueError(
+                    'Validation size can only be provided if there is only '
+                    'one X path and y_path.')
 
     if not ((X_list is None and y_list is None)
             or (X_paths is None and y_paths is None)):

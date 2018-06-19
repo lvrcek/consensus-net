@@ -22,20 +22,15 @@ def _write_genome_to_fasta(contigs, fasta_file_path, contig_names):
             f.write('{}\n'.format(''.join(contig)))
 
 
-def make_consensus(model_path, assembly_fasta_path, reference_path,
-                   bam_file_path, neighbourhood_size, output_dir,
-                   tools_dir, include_indels=True):
+def make_consensus(model_path, reference_path, pileup_generator,
+                   neighbourhood_size, output_dir, tools_dir):
     # TODO(ajuric): Currently, y is also created while calculating consensus, due to
     # reuising existing code from training. But, here in inference y is not used.
     # This needs to be removed to reduce the unnecessary overhead.
 
     print('----> Create pileups from assembly. <----')
-    X, y, X_save_paths, y_save_paths, contig_names = dataset.generate_pileups(
-        bam_file_path,
-        assembly_fasta_path,
-        mode='inference',
-        save_directory_path=output_dir,
-        include_indels=include_indels)
+    X, y, X_save_paths, y_save_paths, contig_names = \
+        pileup_generator.generate_pileups()
 
     print('----> Create dataset with neighbourhood from pileups. <----')
     X, y, X_save_paths, y_save_paths = \

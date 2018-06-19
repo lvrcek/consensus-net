@@ -7,18 +7,23 @@ import os
 from sklearn.model_selection import train_test_split
 
 ALL_CPU = -1
-modes = ['training', 'inference']
 
 
-def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None,
-                                      save_directory_path=None):
+def read_dataset_and_reshape_for_conv(X_list=None, y_list=None, X_paths=None,
+                                      y_paths=None, validation_size=None):
     """
     Reads X and y from given paths and reshapes them for applying in
     convolutional networks.
 
+    If X_list and y_list are given, X_paths and y_paths are ignored.
+
     Reshaping is done by splitting different letters in separate channels,
     eg. letter 'A' has it's own channel, letter 'C' has it's own channel, etc.
 
+    :param X_list: list of X pileup dataset
+    :type X_list: list of np.ndarray
+    :param y_list: list of y pileup dataset
+    :type y_list: list of np.ndarray
     :param X_paths: list of paths to X data
     :type X_paths: list of str
     :param y_paths: list of paths to y data
@@ -39,15 +44,20 @@ def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None,
                              ' given.'.format(validation_size))
         if not len(X_paths) == 1:
             raise ValueError(
-                'Validation size can only be provided if there is only one X_path and y_path.')
+                'Validation size can only be provided if there is only one X '
+                'path and y_path.')
 
-    X_save_paths, y_save_paths = None, None
-    if save_directory_path is not None:
-        pass
+    if not ((X_list is None and y_list is None)
+            or (X_paths is None and y_paths is None)):
+        raise ValueError('Either X_list and y_list or X_paths and y_paths '
+                         'must be provided!')
 
-    X_list, y_list = list(), list()
-    for X_path, y_path in zip(X_paths, y_paths):
-        X, y = np.load(X_path), np.load(y_path)
+    if X_list is None and y_list is None:
+        X_list = [np.load(X_path) for X_path in X_paths]
+        y_list = [np.load(y_path) for y_path in y_paths]
+
+    reshaped_X_list, reshaped_y_list = list(), list()
+    for X, y in zip(X_list, y_list):
         print('X shape before reshaping:', X.shape)
         print('y shape before reshaping:', y.shape)
 
@@ -71,13 +81,14 @@ def read_dataset_and_reshape_for_conv(X_paths, y_paths, validation_size=None,
         print('X shape after reshaping:', X.shape)
         print('y shape after reshaping:', y.shape)
 
-        X_list.append(X), y_list.append(y)
+        reshaped_X_list.append(X), reshaped_y_list.append(y)
 
     if validation_size is None:
-        return X_list, y_list
+        return reshaped_X_list, reshaped_y_list
     else:
-        # There is only one X and y (because, all datasets are concatenated for training).
-        X, y = X_list[0], y_list[0]
+        # There is only one X and y (because, all datasets are concatenated
+        # for training).
+        X, y = reshaped_X_list[0], reshaped_y_list[0]
         print('Splitting to train and validation set.')
         X_train, X_validate, y_train, y_validate = train_test_split(
             X, y, test_size=validation_size)
@@ -103,10 +114,13 @@ def _calc_empty_rows(X):
     return empty_rows
 
 
-def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size,
-                                      mode, save_directory_path=None):
+def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
+                                      y_list=None, X_paths=None,
+                                      y_paths=None, save_directory_path=None):
     """
     Creates datasets by mixing all pileups with given neighbourhood_size.
+
+    If X_list and y_list are given, X_paths and y_paths are ignored.
 
     Datasets are concatenated after extracting neighbourhood_size positions in
     given datasets separately if 'training' mode is selected. If 'inference'
@@ -119,10 +133,6 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size,
     If save_directory_path is provided, generated pileups are stored in that
     directory.
 
-    :param X_paths: list of paths to X pileup dataset
-    :type X_paths: list of str
-    :param y_paths: list of paths to y pileup dataset
-    :type y_paths: list of str
     :param neighbourhood_size: number of neighbours to use from one size (eg.
         if you set this parameter to 3, it will take 3 neighbours from both
         sides so total number of positions in one example will be 7 -
@@ -131,15 +141,20 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size,
     :param mode: either 'training' or 'inference' string, representing the
         mode for pileups generation
     :type mode: str
+    :param X_list: list of X pileup dataset
+    :type X_list: list of np.ndarray
+    :param y_list: list of y pileup dataset
+    :type y_list: list of np.ndarray
+    :param X_paths: list of paths to X pileup dataset
+    :type X_paths: list of str
+    :param y_paths: list of paths to y pileup dataset
+    :type y_paths: list of str
     :param save_directory_path: path to directory for storing dataset
     :type save_directory_path: str
     :return:
     :rtype tuple of np.ndarray or tuple of np.array and list of str
     """
     _check_mode(mode)
-
-    if not len(X_paths) == len(y_paths):
-        raise ValueError('Number of X_paths and y_paths should be the same!')
 
     # If training mode is selected, all pileups will be concatenated.
     total_pileups = 1 if mode == 'training' else len(X_paths)
@@ -151,10 +166,20 @@ def create_dataset_with_neighbourhood(X_paths, y_paths, neighbourhood_size,
                                                           total_pileups)
 
     X_neighbourhood_list, y_neighbourhood_list = list(), list()
-    for X_path, y_path in zip(X_paths, y_paths):
-        print('Parsing ', X_path, ' and ', y_path)
 
-        curr_X, curr_y = np.load(X_path), np.load(y_path)
+    if not ((X_list is None and y_list is None)
+            or (X_paths is None and y_paths is None)):
+        raise ValueError('Either X_list and y_list or X_paths and y_paths '
+                         'must be provided!')
+
+    if X_list is None and y_list is None:
+        X_list = [np.load(X_path) for X_path in X_paths]
+        y_list = [np.load(y_path) for y_path in y_paths]
+
+    for pileup_pair, (curr_X, curr_y) in enumerate(zip(X_list, y_list)):
+        print('Parsing pileup pair {}'.format(pileup_pair))
+
+        # curr_X, curr_y = np.load(X_path), np.load(y_path)
         # Removing last column which contains everything which was not 'A' nor
         # 'C' nor 'G' nor 'T'.
         curr_y = curr_y[:, :-1]

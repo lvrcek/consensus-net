@@ -1,7 +1,5 @@
 import numpy as np
 import progressbar
-import pysam
-import pysamstats
 import os
 
 from sklearn.model_selection import train_test_split
@@ -35,8 +33,6 @@ def read_dataset_and_reshape_for_conv(X_list=None, y_list=None, X_paths=None,
     X_train, X_validate, y_train, y_validate).
     :rtype: tuple of np.ndarray
     """
-    if not len(X_paths) == len(y_paths):
-        raise ValueError('Number of X_paths and y_paths must be the same!')
 
     if validation_size is not None:
         if validation_size < 0 or validation_size > 1.0:
@@ -494,162 +490,6 @@ def generate_assembly_and_alignments(reads_path, reference_path, output_dir,
                               tools_dir, num_threads, reads_type)
     _align_reads_to_assembly(reads_path, output_dir, tools_dir, num_threads,
                              reads_type)
-
-
-def _generate_pileups(bam_file_path, reference_fasta_path, include_indels=True):
-    """
-    Generate pileups from reads alignment to reference.
-
-    Pileups are generated for all contigs.
-
-    :param bam_file_path: path to .bam file containing alignments
-    :type bam_file_path: str
-    :param reference_fasta_path: path to .fasta file
-    :type reference_fasta_path: str
-    :param include_indels: flag which indicates whether to include indels in
-        pileups
-    :type include_indels: bool
-    :return: pileups (X) and labels (y)
-    :rtype: tuple of np.ndarrays
-    """
-    bam_file = pysam.AlignmentFile(bam_file_path)
-
-    if include_indels:
-        info_of_interest = ['A', 'C', 'G', 'T', 'insertions', 'deletions']
-        indel_positions = [4, 5]
-    else:
-        info_of_interest = ['A', 'C', 'G', 'T']
-
-    # Last number in shape - 5 - is for letters other than A, C, G and T.
-    mapping = {'A': 0, 'a': 0, 'C': 1, 'c': 1, 'G': 2, 'g': 2, 'T': 3, 't': 3}
-    total_options = len(info_of_interest) + 1
-
-    pileups = [np.zeros(
-        (bam_file.get_reference_length(contig_name),
-         len(info_of_interest)
-         )) for contig_name in bam_file.references]
-
-    y_oh = [np.zeros(
-        (bam_file.get_reference_length(contig_name),
-         total_options
-         )) for contig_name in bam_file.references]
-
-    total_length = np.sum(
-        [bam_file.get_reference_length(contig_name) for contig_name in
-         bam_file.references])
-    progress_counter = 0
-    contig_names = bam_file.references
-    with progressbar.ProgressBar(max_value=total_length) as progress_bar:
-        for contig_id, contig_name in enumerate(contig_names):
-            for record in pysamstats.stat_variation(
-                    bam_file, chrom=contig_name, fafile=reference_fasta_path):
-                progress_bar.update(progress_counter)
-                progress_counter += 1
-
-                curr_position = record['pos']
-
-                # Parsing X.
-                # Note: Commented code is slower due to the fact that in
-                # python when using list comprehension new list is created
-                # everytime which is expensive. In other languages, like C++,
-                # you could create one array and use it every time.
-                # curr_pileup = [record[info] for info in info_of_interest]
-                # pileups[contig_id][curr_position] = curr_pileup
-                for i, info in enumerate(info_of_interest):
-                    pileups[contig_id][curr_position][i] += record[info]
-
-                # Parsing y.
-                # argmax_pileup = np.argmax(curr_pileup)
-                # y_oh[contig_id][curr_position][argmax_pileup] = 1
-                if not include_indels:
-                    y_oh[contig_id][curr_position][
-                        mapping.get(record['ref'], -1)] = 1
-                else:
-                    pileup_argmax = np.argmax(pileups[contig_id][curr_position])
-                    if pileup_argmax in indel_positions:
-                        y_oh[contig_id][curr_position][pileup_argmax] = 1
-                    else:
-                        y_oh[contig_id][curr_position][
-                            mapping.get(record['ref'], -1)] = 1
-
-    return pileups, y_oh, contig_names
-
-
-def generate_pileups(bam_file_path, reference_fasta_path, mode,
-                     save_directory_path=None, include_indels=True):
-    """
-    Generates pileups from given alignment stored in bam file.
-
-    Mode must be one of 'training' or 'inference' string indicating pileups
-    generation mode. If 'training' is selected, pileups from different
-    contigs are all be concatenated. If 'inference' is selected, pileups from
-    different contig will be hold separate to enable to make consensus with
-    same number of contigs.
-
-    If save_directory_path is provided, generated pileups are stored in that
-    directory.
-
-    If include_indels is set to True, indels will also we included in
-    pileups. Otherwise, only nucleus bases will be in pileup (A, C, G and T).
-
-    :param bam_file_path: path to .bam file containing alignments
-    :type bam_file_path: str
-    :param reference_fasta_path: path to .fasta file
-    :type reference_fasta_path: str
-    :param mode: either 'training' or 'inference' string, representing the
-        mode for pileups generation
-    :type mode: str
-    :param save_directory_path: path to directory for storing pileups
-    :type save_directory_path: str
-    :param include_indels: flag which indicates whether to include indels in
-        pileups
-    :type include_indels: bool
-    :return: pileups (X) and matching nucleus bases from reference (y) with
-        concatenated contigs for inference mode, or separate contigs for
-        training mode; also, if save_directory_path is provided, list of
-        paths to saved files is returned in tuple (X, y_oh, X_save_paths,
-        y_save_paths). In both cases list of contig names is also returned.
-    :rtype tuple of np.ndarray and list of str or tuple of np.array and list of str
-    """
-    _check_mode(mode)
-
-    if save_directory_path is not None:
-        if os.path.exists(save_directory_path):
-            raise ValueError('You must provide non-existing save output '
-                             'directory, {} given.'.format(save_directory_path))
-        else:
-            os.makedirs(save_directory_path)
-
-    print('##### Generate pileups from read alignments to reference. #####')
-
-    X, y_oh, contig_names = _generate_pileups(bam_file_path,
-                                reference_fasta_path,
-                                include_indels=include_indels)
-
-    total_pileups = len(X)
-    if mode == 'training':  # training mode
-        X, y_oh = [np.concatenate(X, axis=0)], [np.concatenate(y_oh, axis=0)]
-        total_pileups = 1
-    else:  # inference mode
-        pass  # nothing to do
-
-    if save_directory_path is not None:
-        X_save_paths = [
-            os.path.join(
-                save_directory_path,
-                'pileups-X-{}{}.npy'.format(
-                    i, '-indels' if include_indels else ''))
-            for i in range(total_pileups)]
-        y_save_paths = [os.path.join(save_directory_path,
-                                     'pileups-y-{}.npy'.format(i))
-                        for i in range(total_pileups)]
-        for X_save_path, y_save_path, Xi, yi in zip(
-                X_save_paths, y_save_paths, X, y_oh):
-            np.save(X_save_path, Xi)
-            np.save(y_save_path, yi)
-        return X, y_oh, X_save_paths, y_save_paths, contig_names
-
-    return X, y_oh, contig_names
 
 
 def _check_mode(mode):

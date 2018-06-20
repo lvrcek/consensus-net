@@ -435,28 +435,27 @@ class RaconMSAGenerator(PileupGenerator):
         y_oh = [np.zeros(
             (len(reference), total_options)) for reference in references]
 
+        # Transpose pileups to make one example to have shape: (1,
+        # num_features).
+        pileups = [pileup.T for pileup in pileups]
+
         total_length = np.sum([len(reference) for reference in references])
         progress_counter = 0
         with progressbar.ProgressBar(max_value=total_length) as progress_bar:
-            for contig_id, contig in enumerate(references):
-                for position in range(len(references)):
+            for contig_id, reference in enumerate(references):
+                for position, base in enumerate(reference):
                     progress_bar.update(progress_counter)
                     progress_counter += 1
 
-                    contig_base = contig[position]
                     num_Ds = pileups[contig_id][position][4]
                     num_bases = np.max(pileups[contig_id][position][:4])
 
-                    if contig_base == '-':  # insertion
+                    if base == '-':  # insertion
                         y_oh[contig_id][position][4] = 1  # 4 is insertion id
                     elif num_Ds > num_bases:  # deletion
                         y_oh[contig_id][position][5] = 1  # 5 is insertion id
                     else:
                         y_oh[contig_id][position][
-                            mapping.get(contig[position], -1)] = 1
-
-        # Transpose pileups to make one example to have shape: (1,
-        # num_features).
-        pileups = [pileup.T for pileup in pileups]
+                            mapping.get(base, -1)] = 1
 
         return pileups, y_oh, contig_names

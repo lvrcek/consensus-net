@@ -29,21 +29,19 @@ def make_consensus(model_path, reference_path, pileup_generator,
     # This needs to be removed to reduce the unnecessary overhead.
 
     print('----> Create pileups from assembly. <----')
-    X, y, X_save_paths, y_save_paths, contig_names = \
+    X, y, contig_names = \
         pileup_generator.generate_pileups()
 
     print('----> Create dataset with neighbourhood from pileups. <----')
-    X, y, X_save_paths, y_save_paths = \
-        dataset.create_dataset_with_neighbourhood(
-        X_save_paths,
-        y_save_paths,
-        neighbourhood_size,
-        mode='inference',
-        save_directory_path=output_dir)
+    X, y = dataset.create_dataset_with_neighbourhood(
+            neighbourhood_size,
+            mode='inference',
+            X_list=X,
+            y_list=y)
 
     print('----> Reshape dataset for convolutional network. <----')
-    X_list, y_list = dataset.read_dataset_and_reshape_for_conv(X_save_paths,
-                                                       y_save_paths)
+    X_list, y_list = dataset.read_dataset_and_reshape_for_conv(X_list=X,
+                                                               y_list=y)
 
     print('----> Load model and make predictions (consensus). <----')
     model = load_model(model_path)

@@ -153,8 +153,19 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
     """
     _check_mode(mode)
 
+    if not ((X_list is None and y_list is None)
+            or (X_paths is None and y_paths is None)):
+        raise ValueError('Either X_list and y_list or X_paths and y_paths '
+                         'must be provided!')
+
     # If training mode is selected, all pileups will be concatenated.
-    total_pileups = 1 if mode == 'training' else len(X_paths)
+    if mode == 'training':
+        total_pileups = 1
+    else:
+        if X_list is not None:
+            total_pileups = len(X_list)
+        else:
+            total_pileups = len(X_paths)
 
     X_save_paths, y_save_paths = None, None
     if save_directory_path is not None:
@@ -163,11 +174,6 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
                                                           total_pileups)
 
     X_neighbourhood_list, y_neighbourhood_list = list(), list()
-
-    if not ((X_list is None and y_list is None)
-            or (X_paths is None and y_paths is None)):
-        raise ValueError('Either X_list and y_list or X_paths and y_paths '
-                         'must be provided!')
 
     if X_list is None and y_list is None:
         X_list = [np.load(X_path) for X_path in X_paths]

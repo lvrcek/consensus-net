@@ -28,6 +28,12 @@ def make_consensus(model_path, reference_path, pileup_generator,
     # reuising existing code from training. But, here in inference y is not used.
     # This needs to be removed to reduce the unnecessary overhead.
 
+    if os.path.exists(output_dir):
+        raise FileExistsError('Given directory already exists: {}! Provide '
+                              'non-existing directory.')
+
+    os.makedirs(output_dir)
+
     print('----> Create pileups from assembly. <----')
     X, y, contig_names = \
         pileup_generator.generate_pileups()

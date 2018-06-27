@@ -395,7 +395,7 @@ class RaconMSAGenerator(PileupGenerator):
 
     @staticmethod
     def _generate_contig_names(num_contigs):
-        return ['contig_'.format(i) for i in range(num_contigs)]
+        return ['contig_{}'.format(i) for i in range(num_contigs)]
 
     def _generate_pileups(self):
         timestamp = str(int(time()))

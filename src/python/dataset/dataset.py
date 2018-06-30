@@ -179,21 +179,25 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
         X_list = [np.load(X_path) for X_path in X_paths]
         y_list = [np.load(y_path) for y_path in y_paths]
 
-    for pileup_pair, (curr_X, curr_y) in enumerate(zip(X_list, y_list)):
-        print('Parsing pileup pair {}'.format(pileup_pair))
+    total_length = np.sum([curr_X.shape[0] for curr_X in X_list])
+    progress_counter = 0
 
-        # curr_X, curr_y = np.load(X_path), np.load(y_path)
-        # Removing last column which contains everything which was not 'A' nor
-        # 'C' nor 'G' nor 'T'.
-        curr_y = curr_y[:, :-1]
-        new_curr_X, new_curr_y = list(), list()
-        empty_rows = _calc_empty_rows(curr_X)
+    with progressbar.ProgressBar(max_value=total_length) as progress_bar:
+        for pileup_pair_id, (curr_X, curr_y) in enumerate(zip(X_list, y_list)):
 
-        print('Creating dataset with neighbourhood ...')
-        with progressbar.ProgressBar(max_value=curr_X.shape[0]) as progress_bar:
+            # Removing last column which contains everything which was not
+            # 'A' nor 'C' nor 'G' nor 'T'.
+            curr_y = curr_y[:, :-1]
+            new_curr_X, new_curr_y = list(), list()
+            empty_rows = _calc_empty_rows(curr_X)
+
+            print('Creating dataset with neighbourhood ...')
             # TODO(ajuric): Check if this can be speed up.
             for i in range(curr_X.shape[0]):
-                progress_bar.update(i)
+
+                progress_bar.update(progress_counter)
+                progress_counter += 1
+
                 if empty_rows[i] == 1:
                     continue  # current row is empty row
                 if i < neighbourhood_size or \
@@ -210,8 +214,8 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
                             i + neighbourhood_size + 1])
                     new_curr_y.append(curr_y[i])
 
-        X_neighbourhood_list.append(np.array(new_curr_X))
-        y_neighbourhood_list.append(np.array(new_curr_y))
+            X_neighbourhood_list.append(np.array(new_curr_X))
+            y_neighbourhood_list.append(np.array(new_curr_y))
 
     if mode == 'training':
         X_neighbourhood_list = [np.concatenate(X_neighbourhood_list, axis=0)]

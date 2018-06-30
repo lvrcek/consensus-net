@@ -45,15 +45,11 @@ def make_consensus(model_path, reference_path, pileup_generator,
             X_list=X,
             y_list=y)
 
-    print('----> Reshape dataset for convolutional network. <----')
-    X_list, y_list = dataset.read_dataset_and_reshape_for_conv(X_list=X,
-                                                               y_list=y)
-
     print('----> Load model and make predictions (consensus). <----')
     model = load_model(model_path)
 
     contigs = list()
-    for X, y, contig_name in zip(X_list, y_list, contig_names):
+    for X, y, contig_name in zip(X, y, contig_names):
         probabilities = model.predict(X)
         predictions = np.argmax(probabilities, axis=1)
 

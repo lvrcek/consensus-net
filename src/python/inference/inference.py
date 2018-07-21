@@ -8,6 +8,8 @@ CONSENSUS_SUMMARY_CMD_1 = '{}/mummer3.23/dnadiff -p {}/dnadiff-output {} {} ' \
                           '2>> {}/err'
 CONSENSUS_SUMMARY_CMD_2 = 'head -n 24 {}/dnadiff-output.report | tail -n 20'
 
+RESULT_CMD = 'cp {}/dnadiff-output.report {}'
+
 
 def _convert_predictions_to_genome(predictions):
     mapping = {0: 'A', 1: 'C', 2: 'G', 3: 'T', 4: '', 5: 'N'}
@@ -23,10 +25,39 @@ def _write_genome_to_fasta(contigs, fasta_file_path, contig_names):
 
 
 def make_consensus(model_path, reference_path, pileup_generator,
-                   neighbourhood_size, output_dir, tools_dir):
-    # TODO(ajuric): Currently, y is also created while calculating consensus, due to
-    # reuising existing code from training. But, here in inference y is not used.
-    # This needs to be removed to reduce the unnecessary overhead.
+                   neighbourhood_size, output_dir, tools_dir, result_file_path):
+    """
+    Creates consensus which is polished by trained neural network.
+
+    Pileup generator creates pileups by using it's own pileup strategy. Those
+    pileups are used to create dataset (examples with given neighbourhood
+    size). Given model makes predictions (contigs) for created dataset. Those
+    contigs are concatenated the same way as in .sam file. At last, polished
+    genome is compared with reference.
+
+    :param model_path: Path to trained model.
+    :type model_path: str
+    :param reference_path: Path to reference.
+    :type reference_path: str
+    :param pileup_generator: Pileup Generator object which creates pileups
+        using it's own strategy.
+    :type pileup_generator: PileupGenerator
+    :param neighbourhood_size: Number of neighbours to use from one size (eg.
+        if you set this parameter to 3, it will take 3 neighbours from both
+        sides so total number of positions in one example will be 7 -
+        counting the middle position).
+    :type neighbourhood_size: int
+    :param output_dir: Path to output directory. There will all outputs be
+        saved.
+    :type output_dir: str
+    :param tools_dir: Path to directory where are used tools are installed.
+    :type tools_dir: str
+    :param result_file_path: Path where will results be copied to.
+    :type result_file_path: str
+    """
+    # TODO(ajuric): Currently, y is also created while calculating consensus,
+    # due to reuising existing code from training. But, here in inference y
+    # is not used. This needs to be removed to reduce the unnecessary overhead.
 
     if os.path.exists(output_dir):
         raise FileExistsError('Given directory already exists: {}! Provide '
@@ -64,6 +95,7 @@ def make_consensus(model_path, reference_path, pileup_generator,
                                              reference_path,
                                              consensus_path, output_dir))
     os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))
+    os.system(RESULT_CMD.format(output_dir, result_file_path))
 
 
 # @TODO(ajuric): Refactor this consensus methods.

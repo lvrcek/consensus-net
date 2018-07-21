@@ -8,7 +8,8 @@ CONSENSUS_SUMMARY_CMD_1 = '{}/mummer3.23/dnadiff -p {}/dnadiff-output {} {} ' \
                           '2>> {}/err'
 CONSENSUS_SUMMARY_CMD_2 = 'head -n 24 {}/dnadiff-output.report | tail -n 20'
 
-RESULT_CMD = 'cp {}/dnadiff-output.report {}'
+RESULT_CMD_1 = 'mkdir -p {}'
+RESULT_CMD_2 = 'cp {}/dnadiff-output.report {}'
 
 
 def _convert_predictions_to_genome(predictions):
@@ -95,7 +96,10 @@ def make_consensus(model_path, reference_path, pileup_generator,
                                              reference_path,
                                              consensus_path, output_dir))
     os.system(CONSENSUS_SUMMARY_CMD_2.format(output_dir))
-    os.system(RESULT_CMD.format(output_dir, result_file_path))
+
+    result_directory = os.path.dirname(result_file_path)
+    os.system(RESULT_CMD_1.format(result_directory))
+    os.system(RESULT_CMD_2.format(output_dir, result_file_path))
 
 
 # @TODO(ajuric): Refactor this consensus methods.

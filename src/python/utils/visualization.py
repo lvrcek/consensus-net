@@ -130,7 +130,7 @@ def visualize_prediction(xi, yi, probabilities, predictions):
     ax0.set_yticks(np.arange(len(bases)))
     # ... and label them with the respective list entries
     ax0.set_xticklabels(positions)
-    ax0.set_yticklabels(labels)
+    ax0.set_yticklabels(bases)
 
     # Rotate the tick labels and set their alignment.
     plt.setp(ax0.get_xticklabels(), rotation=90, ha="right",

@@ -127,7 +127,7 @@ def visualize_prediction(xi, yi, probabilities, predictions):
 
     # We want to show all ticks...
     ax0.set_xticks(np.arange(len(positions)))
-    ax0.set_yticks(np.arange(len(labels)))
+    ax0.set_yticks(np.arange(len(bases)))
     # ... and label them with the respective list entries
     ax0.set_xticklabels(positions)
     ax0.set_yticklabels(labels)

@@ -117,6 +117,7 @@ def visualize_prediction(xi, yi, probabilities, predictions):
     positions = _generate_x_axis_labels(num_positions)
 
     bases = ['A', 'C', 'G', 'T', 'D']
+    output_bases = ['A', 'C', 'G', 'T', 'I', 'D']
 
     fig = plt.figure(figsize=(14, 3))
     gs = gridspec.GridSpec(1, 2, width_ratios=[5, 1])
@@ -147,7 +148,7 @@ def visualize_prediction(xi, yi, probabilities, predictions):
     cbar = ax0.figure.colorbar(im, cax=cax)
     cbar.ax.set_ylabel(cbarlabel, rotation=-90, va="bottom")
 
-    true_label = bases[np.argmax(yi)]
+    true_label = output_bases[np.argmax(yi)]
     ax0.set_title('Example, true_label = {}'.format(true_label))
     fig.tight_layout()
 
@@ -156,7 +157,6 @@ def visualize_prediction(xi, yi, probabilities, predictions):
     probabilities = np.array([probabilities]).T
     im = ax1.imshow(probabilities)
 
-    output_bases = ['A', 'C', 'G', 'T', 'I', 'D']
     ax1.set_yticks(np.arange(len(output_bases)))
     ax1.set_xticks(np.arange(0))
     # ... and label them with the respective list entries

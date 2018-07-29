@@ -156,7 +156,7 @@ def visualize_prediction(xi, yi, probabilities, predictions):
     probabilities = np.array([probabilities]).T
     im = ax1.imshow(probabilities)
 
-    output_bases = ['A', 'C', 'G', 'T', 'D', 'I']
+    output_bases = ['A', 'C', 'G', 'T', 'I', 'D']
     ax1.set_yticks(np.arange(len(output_bases)))
     ax1.set_xticks(np.arange(0))
     # ... and label them with the respective list entries

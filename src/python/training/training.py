@@ -10,7 +10,7 @@ EXPERIMENT_MOVE_CMD = 'mv {} {}'
 
 
 def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
-                     tensorboard_output_dir, finished_experiments_dir_path):
+                     tensorboard_output_dirs, finished_experiments_dir_path):
     """
     Starts list of experiments (models) for training models.
 
@@ -42,9 +42,9 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
     :type dataset_paths: dict
     :param model_save_paths: path for saving trained model
     :type model_save_paths: list of str
-    :param tensorboard_output_dir: Path to directory where Tensorboard data
+    :param tensorboard_output_dirs: Path to directory where Tensorboard data
     will be saved.
-    :type tensorboard_output_dir: str
+    :type tensorboard_output_dirs: list of str
     :param finished_experiments_dir_path: directory where to move finished
         experiments to mark them as finished
     :type finished_experiments_dir_path: str
@@ -63,8 +63,8 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
     X_validate_path = dataset_paths[X_VALIDATE_PATH]
     y_validate_path = dataset_paths[Y_VALIDATE_PATH]
 
-    for experiment_path, model_save_path in zip(
-            experiment_paths, model_save_paths):
+    for experiment_path, model_save_path, tensorboard_output_dir in zip(
+            experiment_paths, model_save_paths, tensorboard_output_dirs):
         print('----> Starting experiment {}. <----'.format(experiment_path))
         os.system(EXPERIMENT_START_CMD.format(
             experiment_path, X_train_path, y_train_path, X_validate_path,

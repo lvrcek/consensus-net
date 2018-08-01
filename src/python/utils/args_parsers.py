@@ -22,5 +22,7 @@ def parse_train_args(args):
     parser.add_argument('y_validate', type=str, help='y_validate path.')
     parser.add_argument('model_save_path', type=str,
                         help='Path for trained model saving.')
+    parser.add_argument('tensorboard_output_dir', type=str,
+                        help='Path for Tensorboard output data.')
 
     return parser.parse_args(args)

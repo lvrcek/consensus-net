@@ -5,12 +5,12 @@ Y_TRAIN_PATH = 'y_train_path'
 X_VALIDATE_PATH = 'X_validate_path'
 Y_VALIDATE_PATH = 'y_validate_path'
 
-EXPERIMENT_START_CMD = 'python3 {} {} {} {} {} {}'
+EXPERIMENT_START_CMD = 'python3 {} {} {} {} {} {} {}'
 EXPERIMENT_MOVE_CMD = 'mv {} {}'
 
 
 def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
-                     finished_experiments_dir_path):
+                     tensorboard_output_dir, finished_experiments_dir_path):
     """
     Starts list of experiments (models) for training models.
 
@@ -28,6 +28,7 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
         - X_validate_path: path to X_validate
         - y_validate_path: path to y_validate
         - model_save_path: path where saved model will be saved
+        - tensorboard_output_dir: path where data for Tensorboard will be saved
 
     After experiment is finished, it is moved to
     finished_experiments_dir_path directory to separate it from unfinished
@@ -41,6 +42,9 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
     :type dataset_paths: dict
     :param model_save_paths: path for saving trained model
     :type model_save_paths: list of str
+    :param tensorboard_output_dir: Path to directory where Tensorboard data
+    will be saved.
+    :type tensorboard_output_dir: str
     :param finished_experiments_dir_path: directory where to move finished
         experiments to mark them as finished
     :type finished_experiments_dir_path: str
@@ -64,7 +68,7 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
         print('----> Starting experiment {}. <----'.format(experiment_path))
         os.system(EXPERIMENT_START_CMD.format(
             experiment_path, X_train_path, y_train_path, X_validate_path,
-            y_validate_path, model_save_path))
+            y_validate_path, model_save_path, tensorboard_output_dir))
 
         print('----> Marking experiment {} as finished... <----'.format(
             experiment_path))

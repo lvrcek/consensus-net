@@ -5,12 +5,13 @@ Y_TRAIN_PATH = 'y_train_path'
 X_VALIDATE_PATH = 'X_validate_path'
 Y_VALIDATE_PATH = 'y_validate_path'
 
-EXPERIMENT_START_CMD = 'python3 {} {} {} {} {} {} {}'
+EXPERIMENT_START_CMD = 'python3 {} {} {} {} {} {} {} {}'
 EXPERIMENT_MOVE_CMD = 'mv {} {}'
 
 
 def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
-                     tensorboard_output_dirs, finished_experiments_dir_path):
+                     tensorboard_output_dirs, finished_experiments_dir_path,
+                     class_weights_train=None):
     """
     Starts list of experiments (models) for training models.
 
@@ -21,7 +22,7 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
     'y_train_path', 'X_validate_path' and 'y_validate_path' with
     corresponding paths.
 
-    Every experiment file should be formatted in a way that it receives two
+    Every experiment file should be formatted in a way that it receives this
     arguments:
         - X_train_path: path to X_train
         - y_train_path: path to y_train
@@ -29,6 +30,8 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
         - y_validate_path: path to y_validate
         - model_save_path: path where saved model will be saved
         - tensorboard_output_dir: path where data for Tensorboard will be saved
+        - class_weights_train (optional): class weights used for training to
+            put weight on specific classes
 
     After experiment is finished, it is moved to
     finished_experiments_dir_path directory to separate it from unfinished
@@ -48,6 +51,8 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
     :param finished_experiments_dir_path: directory where to move finished
         experiments to mark them as finished
     :type finished_experiments_dir_path: str
+    :param class_weights_train: path to class weights for training
+    :type class_weights_train: str
     """
 
     for experiment_path in experiment_paths:
@@ -68,7 +73,9 @@ def experiment_queue(experiment_paths, dataset_paths, model_save_paths,
         print('----> Starting experiment {}. <----'.format(experiment_path))
         os.system(EXPERIMENT_START_CMD.format(
             experiment_path, X_train_path, y_train_path, X_validate_path,
-            y_validate_path, model_save_path, tensorboard_output_dir))
+            y_validate_path, model_save_path, tensorboard_output_dir,
+            '' if class_weights_train is None else
+            '--class-weights={}'.format(class_weights_train)))
 
         print('----> Marking experiment {} as finished... <----'.format(
             experiment_path))

@@ -24,5 +24,6 @@ def parse_train_args(args):
                         help='Path for trained model saving.')
     parser.add_argument('tensorboard_output_dir', type=str,
                         help='Path for Tensorboard output data.')
+    parser.add_argument('--class-weights', type=str, help='Class weights path.')
 
     return parser.parse_args(args)

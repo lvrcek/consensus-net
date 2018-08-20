@@ -21,8 +21,9 @@ def _convert_predictions_to_genome(predictions):
 def _write_genome_to_fasta(contigs, fasta_file_path, contig_names):
     with open(fasta_file_path, 'w') as f:
         for contig, contig_name in zip(contigs, contig_names):
+            contig = ''.join(contig)
             f.write('>{} LN:{}\n'.format(contig_name, len(contig)))
-            f.write('{}\n'.format(''.join(contig)))
+            f.write('{}\n'.format(contig))
 
 
 def make_consensus(model_path, reference_path, pileup_generator,

@@ -231,7 +231,7 @@ def show_classes_statistics(labels, y_data):
         print('Number of {}: {}'.format(label, int(yi)))
 
 
-def plot_classes_statistics(labels, values, dataset_type):
+def plot_classes_statistics(labels, values, dataset_type, include_indels=True):
     """
     WARNING: This function is for racon-hax data format.
 
@@ -264,13 +264,13 @@ def plot_classes_statistics(labels, values, dataset_type):
 
     # Plot relative number of classes - bar plot.
     ax_1 = plt.subplot(gs[2])
-    explode = [0.08] * 6
+    explode = [0.08] * (6 if include_indels else 4)
     plt.pie(values, labels=labels, colors=class_colors, autopct='%1.1f%%',
             shadow=True, startangle=0, explode=explode)
     ax_1.set_title(dataset_type + '- relative number')
 
 
-def dataset_classes_summary(y_data, dataset_type):
+def dataset_classes_summary(y_data, dataset_type, include_indels=True):
     """
     WARNING: This function is for racon-hax data format.
 
@@ -287,14 +287,22 @@ def dataset_classes_summary(y_data, dataset_type):
     num_C = np.sum(y_data[:, 1])
     num_G = np.sum(y_data[:, 2])
     num_T = np.sum(y_data[:, 3])
-    num_I = np.sum(y_data[:, 4])
-    num_D = np.sum(y_data[:, 5])
 
-    x_values = ['A', 'C', 'G', 'T', 'I', 'D']
-    y_values = [num_A, num_C, num_G, num_T, num_I, num_D]
+    x_values = ['A', 'C', 'G', 'T']
+    y_values = [num_A, num_C, num_G, num_T]
+
+    if include_indels:
+        num_I = np.sum(y_data[:, 4])
+        num_D = np.sum(y_data[:, 5])
+
+        x_values.append('I')
+        x_values.append('D')
+
+        y_values.append(num_I)
+        y_values.append(num_D)
 
     show_classes_statistics(x_values, y_values)
-    plot_classes_statistics(x_values, y_values, dataset_type)
+    plot_classes_statistics(x_values, y_values, dataset_type, include_indels)
 
 
 def plot_confusion_matrix(cm, classes,

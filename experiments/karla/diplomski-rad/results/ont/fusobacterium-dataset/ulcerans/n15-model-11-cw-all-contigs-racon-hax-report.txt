@@ -1,0 +1,689 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/consensus.fasta
+NUCMER
+
+[REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                   18
+AlignedSeqs               1(100.00%)          18(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   3537675               536902
+AlignedBases          615943(17.41%)       535085(99.66%)
+UnalignedBases       2921732(82.59%)          1817(0.34%)
+
+[Alignments]
+1-to-1                            28                   28
+TotalLength                   518915               537200
+AvgLength                   18532.68             19185.71
+AvgIdentity                    94.50                94.50
+
+M-to-M                           115                  115
+TotalLength                   629723               650957
+AvgLength                    5475.85              5660.50
+AvgIdentity                    94.00                94.00
+
+[Feature Estimates]
+Breakpoints                      230                  203
+Relocations                        2                    4
+Translocations                    20                    0
+Inversions                         0                    1
+
+Insertions                       183                   18
+InsertionSum                 3031557                 2861
+InsertionAvg                16565.89               158.94
+
+TandemIns                          0                    0
+TandemInsSum                       0                    0
+TandemInsAvg                    0.00                 0.00
+
+[SNPs]
+TotalSNPs                       1682                 1682
+TC                       253(15.04%)          268(15.93%)
+TG                         53(3.15%)            60(3.57%)
+TA                       197(11.71%)           151(8.98%)
+CT                       268(15.93%)          253(15.04%)
+CG                         25(1.49%)            38(2.26%)
+CA                         40(2.38%)            76(4.52%)
+GA                       310(18.43%)          211(12.54%)
+GC                         38(2.26%)            25(1.49%)
+GT                         60(3.57%)            53(3.15%)
+AG                       211(12.54%)          310(18.43%)
+AT                        151(8.98%)          197(11.71%)
+AC                         76(4.52%)            40(2.38%)
+
+TotalGSNPs                       240                  240
+TC                        44(18.33%)           40(16.67%)
+TG                          4(1.67%)             7(2.92%)
+TA                        32(13.33%)            12(5.00%)
+CT                        40(16.67%)           44(18.33%)
+CG                          5(2.08%)             3(1.25%)
+CA                          4(1.67%)             8(3.33%)
+GT                          7(2.92%)             4(1.67%)
+GC                          3(1.25%)             5(2.08%)
+GA                        49(20.42%)           32(13.33%)
+AC                          8(3.33%)             4(1.67%)
+AT                         12(5.00%)           32(13.33%)
+AG                        32(13.33%)           49(20.42%)
+
+TotalIndels                    19327                19327
+T.                        243(1.26%)           249(1.29%)
+C.                         70(0.36%)            89(0.46%)
+G.                         50(0.26%)            60(0.31%)
+N.                          0(0.00%)        18149(93.90%)
+A.                        218(1.13%)           199(1.03%)
+.T                        249(1.29%)           243(1.26%)
+.C                         89(0.46%)            70(0.36%)
+.N                     18149(93.90%)             0(0.00%)
+.G                         60(0.31%)            50(0.26%)
+.A                        199(1.03%)           218(1.13%)
+
+TotalGIndels                    3506                 3506
+T.                         73(2.08%)            25(0.71%)
+C.                         13(0.37%)            10(0.29%)
+N.                          0(0.00%)         3270(93.27%)
+G.                         16(0.46%)             8(0.23%)
+A.                         62(1.77%)            29(0.83%)
+.N                      3270(93.27%)             0(0.00%)
+.G                          8(0.23%)            16(0.46%)
+.A                         29(0.83%)            62(1.77%)
+.T                         25(0.71%)            73(2.08%)
+.C                         10(0.29%)            13(0.37%)
+
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.17\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 8104\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.18\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.44\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1306208  1314047  |     8101        3  |     7840     8099  |    94.70  |     0.22    99.94  | CP028105.1	contig_0
+['1306208', '1314047', '|', '8101', '3', '|', '7840', '8099', '|', '94.70', '|', '0.22', '99.94', '|', 'CP028105.1', 'contig_0']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1306208, 1314047, 8101, 3, False, 'CP028105.1', 'contig_0']
+
+Running MUMmer on contig: "contig_1"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1306208, 1314047, 8101, 3, False, 'CP028105.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1306208  1314047  |     8101        3  |     7840     8099  |    94.70  |     0.22    99.94  | CP028105.1	contig_0
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.14\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 35897\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.17\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2942601  2977441  |        3    35897  |    34841    35895  |    95.36  |     0.98    99.99  | CP028105.1	contig_1
+['2942601', '2977441', '|', '3', '35897', '|', '34841', '35895', '|', '95.36', '|', '0.98', '99.99', '|', 'CP028105.1', 'contig_1']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[2942601, 2977441, 3, 35897, True, 'CP028105.1', 'contig_1']
+
+Running MUMmer on contig: "contig_2"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2942601, 2977441, 3, 35897, True, 'CP028105.1', 'contig_1']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2942601  2977441  |        3    35897  |    34841    35895  |    95.36  |     0.98    99.99  | CP028105.1	contig_1
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.14\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 37403\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.17\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.47\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2419088  2455107  |        1    37403  |    36020    37403  |    94.15  |     1.02   100.00  | CP028105.1	contig_2
+['2419088', '2455107', '|', '1', '37403', '|', '36020', '37403', '|', '94.15', '|', '1.02', '100.00', '|', 'CP028105.1', 'contig_2']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[2419088, 2455107, 1, 37403, True, 'CP028105.1', 'contig_2']
+
+Running MUMmer on contig: "contig_3"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2419088, 2455107, 1, 37403, True, 'CP028105.1', 'contig_2']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2419088  2455107  |        1    37403  |    36020    37403  |    94.15  |     1.02   100.00  | CP028105.1	contig_2
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.13\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 32932\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.16\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+32456    64152  |    32932        1  |    31697    32932  |    94.48  |     0.90   100.00  | CP028105.1	contig_3
+['32456', '64152', '|', '32932', '1', '|', '31697', '32932', '|', '94.48', '|', '0.90', '100.00', '|', 'CP028105.1', 'contig_3']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[32456, 64152, 32932, 1, False, 'CP028105.1', 'contig_3']
+
+Running MUMmer on contig: "contig_4"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[32456, 64152, 32932, 1, False, 'CP028105.1', 'contig_3']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+   32456    64152  |    32932        1  |    31697    32932  |    94.48  |     0.90   100.00  | CP028105.1	contig_3
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.50\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 25103\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.54\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+428386   429840  |     5851     4318  |     1455     1534  |    88.95  |     0.04     6.11  | CP028105.1	contig_4
+['428386', '429840', '|', '5851', '4318', '|', '1455', '1534', '|', '88.95', '|', '0.04', '6.11', '|', 'CP028105.1', 'contig_4']
+('fwd = ', False)
+2747144  2751541  |        1     4607  |     4398     4607  |    92.07  |     0.12    18.35  | CP028105.1	contig_4
+['2747144', '2751541', '|', '1', '4607', '|', '4398', '4607', '|', '92.07', '|', '0.12', '18.35', '|', 'CP028105.1', 'contig_4']
+('fwd = ', True)
+3166084  3184815  |    25103     5685  |    18732    19419  |    94.04  |     0.53    77.36  | CP028105.1	contig_4
+['3166084', '3184815', '|', '25103', '5685', '|', '18732', '19419', '|', '94.04', '|', '0.53', '77.36', '|', 'CP028105.1', 'contig_4']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[428386, 429840, 5851, 4318, False, 'CP028105.1', 'contig_4']
+[3166084, 3184815, 25103, 5685, False, 'CP028105.1', 'contig_4']
+
+Running MUMmer on contig: "contig_5"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[428386, 3184815, 5851, 5685, False, 'CP028105.1', 'contig_4']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  428386   429840  |     5851     4318  |     1455     1534  |    88.95  |     0.04     6.11  | CP028105.1	contig_4
+
+ 2747144  2751541  |        1     4607  |     4398     4607  |    92.07  |     0.12    18.35  | CP028105.1	contig_4
+
+ 3166084  3184815  |    25103     5685  |    18732    19419  |    94.04  |     0.53    77.36  | CP028105.1	contig_4
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.14\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 25896\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.16\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+719078   743899  |    25896        1  |    24822    25896  |    93.62  |     0.70   100.00  | CP028105.1	contig_5
+['719078', '743899', '|', '25896', '1', '|', '24822', '25896', '|', '93.62', '|', '0.70', '100.00', '|', 'CP028105.1', 'contig_5']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[719078, 743899, 25896, 1, False, 'CP028105.1', 'contig_5']
+
+Running MUMmer on contig: "contig_6"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[719078, 743899, 25896, 1, False, 'CP028105.1', 'contig_5']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  719078   743899  |    25896        1  |    24822    25896  |    93.62  |     0.70   100.00  | CP028105.1	contig_5
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.49\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 31485\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.53\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3479278  3509574  |    31485        1  |    30297    31485  |    93.90  |     0.86   100.00  | CP028105.1	contig_6
+['3479278', '3509574', '|', '31485', '1', '|', '30297', '31485', '|', '93.90', '|', '0.86', '100.00', '|', 'CP028105.1', 'contig_6']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3479278, 3509574, 31485, 1, False, 'CP028105.1', 'contig_6']
+
+Running MUMmer on contig: "contig_7"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3479278, 3509574, 31485, 1, False, 'CP028105.1', 'contig_6']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3479278  3509574  |    31485        1  |    30297    31485  |    93.90  |     0.86   100.00  | CP028105.1	contig_6
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.37\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 23566\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.39\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+206303   229158  |        3    23565  |    22856    23563  |    95.16  |     0.65    99.99  | CP028105.1	contig_7
+['206303', '229158', '|', '3', '23565', '|', '22856', '23563', '|', '95.16', '|', '0.65', '99.99', '|', 'CP028105.1', 'contig_7']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[206303, 229158, 3, 23565, True, 'CP028105.1', 'contig_7']
+
+Running MUMmer on contig: "contig_8"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[206303, 229158, 3, 23565, True, 'CP028105.1', 'contig_7']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  206303   229158  |        3    23565  |    22856    23563  |    95.16  |     0.65    99.99  | CP028105.1	contig_7
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.34\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 20226\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.36\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2111410  2130980  |        7    20226  |    19571    20220  |    94.65  |     0.55    99.97  | CP028105.1	contig_8
+['2111410', '2130980', '|', '7', '20226', '|', '19571', '20220', '|', '94.65', '|', '0.55', '99.97', '|', 'CP028105.1', 'contig_8']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[2111410, 2130980, 7, 20226, True, 'CP028105.1', 'contig_8']
+
+Running MUMmer on contig: "contig_9"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2111410, 2130980, 7, 20226, True, 'CP028105.1', 'contig_8']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2111410  2130980  |        7    20226  |    19571    20220  |    94.65  |     0.55    99.97  | CP028105.1	contig_8
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.18\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 31803\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.20\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1606079  1607071  |    18840    17797  |      993     1044  |    91.29  |     0.03     3.28  | CP028105.1	contig_9
+['1606079', '1607071', '|', '18840', '17797', '|', '993', '1044', '|', '91.29', '|', '0.03', '3.28', '|', 'CP028105.1', 'contig_9']
+('fwd = ', False)
+2064642  2066385  |    13676    11899  |     1744     1778  |    90.37  |     0.05     5.59  | CP028105.1	contig_9
+['2064642', '2066385', '|', '13676', '11899', '|', '1744', '1778', '|', '90.37', '|', '0.05', '5.59', '|', 'CP028105.1', 'contig_9']
+('fwd = ', False)
+2772015  2784623  |    31783    18941  |    12609    12843  |    96.66  |     0.36    40.38  | CP028105.1	contig_9
+['2772015', '2784623', '|', '31783', '18941', '|', '12609', '12843', '|', '96.66', '|', '0.36', '40.38', '|', 'CP028105.1', 'contig_9']
+('fwd = ', False)
+2785554  2789654  |    18744    14446  |     4101     4299  |    89.85  |     0.12    13.52  | CP028105.1	contig_9
+['2785554', '2789654', '|', '18744', '14446', '|', '4101', '4299', '|', '89.85', '|', '0.12', '13.52', '|', 'CP028105.1', 'contig_9']
+('fwd = ', False)
+2790403  2792529  |    13642    11465  |     2127     2178  |    90.19  |     0.06     6.85  | CP028105.1	contig_9
+['2790403', '2792529', '|', '13642', '11465', '|', '2127', '2178', '|', '90.19', '|', '0.06', '6.85', '|', 'CP028105.1', 'contig_9']
+('fwd = ', False)
+2792908  2803522  |    11041        8  |    10615    11034  |    93.29  |     0.30    34.69  | CP028105.1	contig_9
+['2792908', '2803522', '|', '11041', '8', '|', '10615', '11034', '|', '93.29', '|', '0.30', '34.69', '|', 'CP028105.1', 'contig_9']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1606079, 1607071, 18840, 17797, False, 'CP028105.1', 'contig_9']
+[2064642, 2066385, 13676, 11899, False, 'CP028105.1', 'contig_9']
+[2772015, 2784623, 31783, 18941, False, 'CP028105.1', 'contig_9']
+[2785554, 2789654, 18744, 14446, False, 'CP028105.1', 'contig_9']
+[2790403, 2792529, 13642, 11465, False, 'CP028105.1', 'contig_9']
+[2792908, 2803522, 11041, 8, False, 'CP028105.1', 'contig_9']
+
+Running MUMmer on contig: "contig_10"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1606079, 2803522, 18840, 8, False, 'CP028105.1', 'contig_9']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1606079  1607071  |    18840    17797  |      993     1044  |    91.29  |     0.03     3.28  | CP028105.1	contig_9
+
+ 2064642  2066385  |    13676    11899  |     1744     1778  |    90.37  |     0.05     5.59  | CP028105.1	contig_9
+
+ 2772015  2784623  |    31783    18941  |    12609    12843  |    96.66  |     0.36    40.38  | CP028105.1	contig_9
+
+ 2785554  2789654  |    18744    14446  |     4101     4299  |    89.85  |     0.12    13.52  | CP028105.1	contig_9
+
+ 2790403  2792529  |    13642    11465  |     2127     2178  |    90.19  |     0.06     6.85  | CP028105.1	contig_9
+
+ 2792908  2803522  |    11041        8  |    10615    11034  |    93.29  |     0.30    34.69  | CP028105.1	contig_9
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.14\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 12330\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.15\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.44\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+160121   172120  |        6    12330  |    12000    12325  |    95.51  |     0.34    99.96  | CP028105.1	contig_10
+['160121', '172120', '|', '6', '12330', '|', '12000', '12325', '|', '95.51', '|', '0.34', '99.96', '|', 'CP028105.1', 'contig_10']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[160121, 172120, 6, 12330, True, 'CP028105.1', 'contig_10']
+
+Running MUMmer on contig: "contig_11"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[160121, 172120, 6, 12330, True, 'CP028105.1', 'contig_10']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  160121   172120  |        6    12330  |    12000    12325  |    95.51  |     0.34    99.96  | CP028105.1	contig_10
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.12\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 30378\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.15\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2909396  2934874  |    30376     4116  |    25479    26261  |    95.24  |     0.72    86.45  | CP028105.1	contig_11
+['2909396', '2934874', '|', '30376', '4116', '|', '25479', '26261', '|', '95.24', '|', '0.72', '86.45', '|', 'CP028105.1', 'contig_11']
+('fwd = ', False)
+2935119  2938700  |     4069      392  |     3582     3678  |    92.51  |     0.10    12.11  | CP028105.1	contig_11
+['2935119', '2938700', '|', '4069', '392', '|', '3582', '3678', '|', '92.51', '|', '0.10', '12.11', '|', 'CP028105.1', 'contig_11']
+('fwd = ', False)
+2938832  2939081  |      262        1  |      250      262  |    88.21  |     0.01     0.86  | CP028105.1	contig_11
+['2938832', '2939081', '|', '262', '1', '|', '250', '262', '|', '88.21', '|', '0.01', '0.86', '|', 'CP028105.1', 'contig_11']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[2909396, 2934874, 30376, 4116, False, 'CP028105.1', 'contig_11']
+[2935119, 2938700, 4069, 392, False, 'CP028105.1', 'contig_11']
+[2938832, 2939081, 262, 1, False, 'CP028105.1', 'contig_11']
+
+Running MUMmer on contig: "contig_12"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2909396, 2939081, 30376, 1, False, 'CP028105.1', 'contig_11']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2909396  2934874  |    30376     4116  |    25479    26261  |    95.24  |     0.72    86.45  | CP028105.1	contig_11
+
+ 2935119  2938700  |     4069      392  |     3582     3678  |    92.51  |     0.10    12.11  | CP028105.1	contig_11
+
+ 2938832  2939081  |      262        1  |      250      262  |    88.21  |     0.01     0.86  | CP028105.1	contig_11
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.15\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 33312\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.18\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1161636  1182544  |        1    21527  |    20909    21527  |    95.13  |     0.59    64.62  | CP028105.1	contig_12
+['1161636', '1182544', '|', '1', '21527', '|', '20909', '21527', '|', '95.13', '|', '0.59', '64.62', '|', 'CP028105.1', 'contig_12']
+('fwd = ', True)
+1183224  1188008  |    21825    26721  |     4785     4897  |    97.00  |     0.14    14.70  | CP028105.1	contig_12
+['1183224', '1188008', '|', '21825', '26721', '|', '4785', '4897', '|', '97.00', '|', '0.14', '14.70', '|', 'CP028105.1', 'contig_12']
+('fwd = ', True)
+1188356  1194706  |    26712    33312  |     6351     6601  |    94.08  |     0.18    19.82  | CP028105.1	contig_12
+['1188356', '1194706', '|', '26712', '33312', '|', '6351', '6601', '|', '94.08', '|', '0.18', '19.82', '|', 'CP028105.1', 'contig_12']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1161636, 1182544, 1, 21527, True, 'CP028105.1', 'contig_12']
+[1183224, 1188008, 21825, 26721, True, 'CP028105.1', 'contig_12']
+[1188356, 1194706, 26712, 33312, True, 'CP028105.1', 'contig_12']
+
+Running MUMmer on contig: "contig_13"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1161636, 1194706, 1, 33312, True, 'CP028105.1', 'contig_12']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1161636  1182544  |        1    21527  |    20909    21527  |    95.13  |     0.59    64.62  | CP028105.1	contig_12
+
+ 1183224  1188008  |    21825    26721  |     4785     4897  |    97.00  |     0.14    14.70  | CP028105.1	contig_12
+
+ 1188356  1194706  |    26712    33312  |     6351     6601  |    94.08  |     0.18    19.82  | CP028105.1	contig_12
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.16\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 34459\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.19\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3376824  3410045  |    34459        1  |    33222    34459  |    94.63  |     0.94   100.00  | CP028105.1	contig_13
+['3376824', '3410045', '|', '34459', '1', '|', '33222', '34459', '|', '94.63', '|', '0.94', '100.00', '|', 'CP028105.1', 'contig_13']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3376824, 3410045, 34459, 1, False, 'CP028105.1', 'contig_13']
+
+Running MUMmer on contig: "contig_14"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3376824, 3410045, 34459, 1, False, 'CP028105.1', 'contig_13']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3376824  3410045  |    34459        1  |    33222    34459  |    94.63  |     0.94   100.00  | CP028105.1	contig_13
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.19\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 56529\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.24\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.48\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3068720  3123113  |    56529        1  |    54394    56529  |    94.30  |     1.54   100.00  | CP028105.1	contig_14
+['3068720', '3123113', '|', '56529', '1', '|', '54394', '56529', '|', '94.30', '|', '1.54', '100.00', '|', 'CP028105.1', 'contig_14']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3068720, 3123113, 56529, 1, False, 'CP028105.1', 'contig_14']
+
+Running MUMmer on contig: "contig_15"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3068720, 3123113, 56529, 1, False, 'CP028105.1', 'contig_14']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3068720  3123113  |    56529        1  |    54394    56529  |    94.30  |     1.54   100.00  | CP028105.1	contig_14
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.16\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 31690\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.18\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1027614  1058258  |        1    31687  |    30645    31687  |    94.47  |     0.87    99.99  | CP028105.1	contig_15
+['1027614', '1058258', '|', '1', '31687', '|', '30645', '31687', '|', '94.47', '|', '0.87', '99.99', '|', 'CP028105.1', 'contig_15']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1027614, 1058258, 1, 31687, True, 'CP028105.1', 'contig_15']
+
+Running MUMmer on contig: "contig_16"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1027614, 1058258, 1, 31687, True, 'CP028105.1', 'contig_15']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1027614  1058258  |        1    31687  |    30645    31687  |    94.47  |     0.87    99.99  | CP028105.1	contig_15
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.18\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 22910\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.20\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3419784  3441811  |    22910        1  |    22028    22910  |    94.08  |     0.62   100.00  | CP028105.1	contig_16
+['3419784', '3441811', '|', '22910', '1', '|', '22028', '22910', '|', '94.08', '|', '0.62', '100.00', '|', 'CP028105.1', 'contig_16']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3419784, 3441811, 22910, 1, False, 'CP028105.1', 'contig_16']
+
+Running MUMmer on contig: "contig_17"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3419784, 3441811, 22910, 1, False, 'CP028105.1', 'contig_16']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3419784  3441811  |    22910        1  |    22028    22910  |    94.08  |     0.62   100.00  | CP028105.1	contig_16
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.13\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 42879\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.17\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.47\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1983224  2024768  |    42879        1  |    41545    42879  |    95.06  |     1.17   100.00  | CP028105.1	contig_17
+['1983224', '2024768', '|', '42879', '1', '|', '41545', '42879', '|', '95.06', '|', '1.17', '100.00', '|', 'CP028105.1', 'contig_17']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1983224, 2024768, 42879, 1, False, 'CP028105.1', 'contig_17']
+
+coords: "[1983224, 2024768, 42879, 1, False, 'CP028105.1', 'contig_17']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1983224  2024768  |    42879        1  |    41545    42879  |    95.06  |     1.17   100.00  | CP028105.1	contig_17
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nw-contig.17.fasta ./f-bact-ulcerans-n15-model-11-cw-racon-hax/edit-dist-calc/nw-ref.17.fasta -m NW"
+
+Final edit distance: 3498249, aligned edit distance: 2119, unaligned ref len: 3496130, aligned ref len: 41545, aligned contig len: 42879
+
+('ref_hash\n', {'CP028105.1': 0, 'CP028105.1 Fusobacterium ulcerans strain ATCC 49185 chromosome, complete genome': 0})
+[0] edit dist: 2119	unaligned len: 3496130
+
+Number of Ns in consensus: 26835

@@ -1,0 +1,1 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR678/002/SRR6780912/SRR6780912.fastq.gz

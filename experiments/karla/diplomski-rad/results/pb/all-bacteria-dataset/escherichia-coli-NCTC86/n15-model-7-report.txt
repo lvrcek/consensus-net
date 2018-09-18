@@ -1,0 +1,87 @@
+/home/data/pacific_biosciences/bacteria/escherichia/coli/escherichia_coli_reference.fasta /home/diplomski-rad/blade/pb/consensus-inference/e-coli-NCTC86-n15-model-7/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   4641652              5104737
+AlignedBases         4422401(95.28%)      4463708(87.44%)
+UnalignedBases         219251(4.72%)       641029(12.56%)
+
+[Alignments]
+1-to-1                           172                  172
+TotalLength                  4407175              4408970
+AvgLength                   25623.11             25633.55
+AvgIdentity                    99.56                99.56
+
+M-to-M                           277                  277
+TotalLength                  4504705              4506838
+AvgLength                   16262.47             16270.17
+AvgIdentity                    99.49                99.49
+
+[Feature Estimates]
+Breakpoints                      552                  552
+Relocations                       51                   51
+Translocations                     0                    0
+Inversions                        20                   18
+
+Insertions                       150                  222
+InsertionSum                  247028               713567
+InsertionAvg                 1646.85              3214.27
+
+TandemIns                          9                    1
+TandemInsSum                    1324                   98
+TandemInsAvg                  147.11                98.00
+
+[SNPs]
+TotalSNPs                      14655                14655
+TG                        685(4.67%)           545(3.72%)
+TA                        599(4.09%)           593(4.05%)
+TC                      2512(17.14%)         2437(16.63%)
+CG                        384(2.62%)           388(2.65%)
+CT                      2437(16.63%)         2512(17.14%)
+CA                        591(4.03%)           704(4.80%)
+AC                        704(4.80%)           591(4.03%)
+AT                        593(4.05%)           599(4.09%)
+AG                      2568(17.52%)         2649(18.08%)
+GA                      2649(18.08%)         2568(17.52%)
+GC                        388(2.65%)           384(2.62%)
+GT                        545(3.72%)           685(4.67%)
+
+TotalGSNPs                      4547                 4547
+GT                        148(3.25%)           268(5.89%)
+GC                         93(2.05%)            98(2.16%)
+GA                       831(18.28%)          813(17.88%)
+CG                         98(2.16%)            93(2.05%)
+CA                        170(3.74%)           243(5.34%)
+CT                       794(17.46%)          780(17.15%)
+AC                        243(5.34%)           170(3.74%)
+AT                        159(3.50%)           150(3.30%)
+AG                       813(17.88%)          831(18.28%)
+TA                        150(3.30%)           159(3.50%)
+TC                       780(17.15%)          794(17.46%)
+TG                        268(5.89%)           148(3.25%)
+
+TotalIndels                     3739                 3739
+T.                        257(6.87%)          705(18.86%)
+C.                        249(6.66%)          670(17.92%)
+A.                        244(6.53%)          713(19.07%)
+G.                        237(6.34%)          664(17.76%)
+.G                       664(17.76%)           237(6.34%)
+.A                       713(19.07%)           244(6.53%)
+.C                       670(17.92%)           249(6.66%)
+.T                       705(18.86%)           257(6.87%)
+
+TotalGIndels                    1020                 1020
+G.                         48(4.71%)          164(16.08%)
+C.                         53(5.20%)          145(14.22%)
+A.                         59(5.78%)          247(24.22%)
+T.                         68(6.67%)          236(23.14%)
+.G                       164(16.08%)            48(4.71%)
+.A                       247(24.22%)            59(5.78%)
+.C                       145(14.22%)            53(5.20%)
+.T                       236(23.14%)            68(6.67%)

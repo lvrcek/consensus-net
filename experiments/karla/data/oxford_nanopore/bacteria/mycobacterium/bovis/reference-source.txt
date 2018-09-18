@@ -1,0 +1,1 @@
+https://www.ebi.ac.uk/ena/data/view/CP011455.1&display=fasta&download=fasta&filename=entry.fasta

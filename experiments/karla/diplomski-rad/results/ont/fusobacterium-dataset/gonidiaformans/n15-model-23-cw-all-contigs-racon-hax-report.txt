@@ -1,0 +1,189 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/gonidiaformans/f-gonidiaformans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-gonidiaformans-n15-model-23-cw-racon-hax/consensus.fasta
+NUCMER
+
+[REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   1678881              1706041
+AlignedBases         1678311(99.97%)      1704965(99.94%)
+UnalignedBases            570(0.03%)          1076(0.06%)
+
+[Alignments]
+1-to-1                            11                   11
+TotalLength                  1678771              1702599
+AvgLength                  152615.55            154781.73
+AvgIdentity                    97.31                97.31
+
+M-to-M                            18                   18
+TotalLength                  1688196              1712184
+AvgLength                   93788.67             95121.33
+AvgIdentity                    97.31                97.31
+
+[Feature Estimates]
+Breakpoints                       34                   35
+Relocations                        3                    3
+Translocations                     0                    0
+Inversions                         4                    4
+
+Insertions                        12                   10
+InsertionSum                    7172                 4113
+InsertionAvg                  597.67               411.30
+
+TandemIns                          0                    1
+TandemInsSum                       0                  145
+TandemInsAvg                    0.00               145.00
+
+[SNPs]
+TotalSNPs                       1376                 1376
+TA                       382(27.76%)            82(5.96%)
+TG                       208(15.12%)            23(1.67%)
+TC                       251(18.24%)            61(4.43%)
+AG                       146(10.61%)            97(7.05%)
+AC                         57(4.14%)            37(2.69%)
+AT                         82(5.96%)          382(27.76%)
+GT                         23(1.67%)          208(15.12%)
+GA                         97(7.05%)          146(10.61%)
+GC                         17(1.24%)            15(1.09%)
+CG                         15(1.09%)            17(1.24%)
+CA                         37(2.69%)            57(4.14%)
+CT                         61(4.43%)          251(18.24%)
+
+TotalGSNPs                       558                  558
+GT                          2(0.36%)           94(16.85%)
+GA                         35(6.27%)           67(12.01%)
+GC                          4(0.72%)             4(0.72%)
+AG                        67(12.01%)            35(6.27%)
+AC                         14(2.51%)            10(1.79%)
+AT                         19(3.41%)          172(30.82%)
+CT                         20(3.58%)          117(20.97%)
+CG                          4(0.72%)             4(0.72%)
+CA                         10(1.79%)            14(2.51%)
+TG                        94(16.85%)             2(0.36%)
+TC                       117(20.97%)            20(3.58%)
+TA                       172(30.82%)            19(3.41%)
+
+TotalIndels                    26188                26188
+T.                        583(2.23%)           100(0.38%)
+A.                        476(1.82%)           293(1.12%)
+G.                         76(0.29%)           167(0.64%)
+C.                         92(0.35%)            90(0.34%)
+N.                          0(0.00%)        24311(92.83%)
+.T                        100(0.38%)           583(2.23%)
+.A                        293(1.12%)           476(1.82%)
+.G                        167(0.64%)            76(0.29%)
+.C                         90(0.34%)            92(0.35%)
+.N                     24311(92.83%)             0(0.00%)
+
+TotalGIndels                   11346                11346
+G.                         25(0.22%)            66(0.58%)
+A.                        195(1.72%)            97(0.85%)
+C.                         41(0.36%)            32(0.28%)
+T.                        245(2.16%)            25(0.22%)
+N.                          0(0.00%)        10620(93.60%)
+.T                         25(0.22%)           245(2.16%)
+.C                         32(0.28%)            41(0.36%)
+.G                         66(0.58%)            25(0.22%)
+.A                         97(0.85%)           195(1.72%)
+.N                     10620(93.60%)             0(0.00%)
+
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/gonidiaformans/f-gonidiaformans.fasta ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 1678882\n# construct suffix tree for sequence of length 1678882\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 16788 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.ntref 0.41\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 1706041\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.38\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.25\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1   292661  |  1392882  1096248  |   292661   296635  |    97.40  |    17.43    17.39  | CP028106.1	contig_0
+['1', '292661', '|', '1392882', '1096248', '|', '292661', '296635', '|', '97.40', '|', '17.43', '17.39', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+292849   600658  |  1096052   783932  |   307810   312121  |    97.38  |    18.33    18.30  | CP028106.1	contig_0
+['292849', '600658', '|', '1096052', '783932', '|', '307810', '312121', '|', '97.38', '|', '18.33', '18.30', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+600672   639585  |   782269   742834  |    38914    39436  |    97.35  |     2.32     2.31  | CP028106.1	contig_0
+['600672', '639585', '|', '782269', '742834', '|', '38914', '39436', '|', '97.35', '|', '2.32', '2.31', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+639071   932305  |   743203   445740  |   293235   297464  |    97.18  |    17.47    17.44  | CP028106.1	contig_0
+['639071', '932305', '|', '743203', '445740', '|', '293235', '297464', '|', '97.18', '|', '17.47', '17.44', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+932527  1259833  |   445510   113383  |   327307   332128  |    97.24  |    19.50    19.47  | CP028106.1	contig_0
+['932527', '1259833', '|', '445510', '113383', '|', '327307', '332128', '|', '97.24', '|', '19.50', '19.47', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+1260023  1299936  |   111503    70987  |    39914    40517  |    97.25  |     2.38     2.37  | CP028106.1	contig_0
+['1260023', '1299936', '|', '111503', '70987', '|', '39914', '40517', '|', '97.25', '|', '2.38', '2.37', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+1299884  1300631  |    66835    67613  |      748      779  |    95.25  |     0.04     0.05  | CP028106.1	contig_0
+['1299884', '1300631', '|', '66835', '67613', '|', '748', '779', '|', '95.25', '|', '0.04', '0.05', '|', 'CP028106.1', 'contig_0']
+('fwd = ', True)
+1300613  1303313  |    70341    67595  |     2701     2747  |    96.80  |     0.16     0.16  | CP028106.1	contig_0
+['1300613', '1303313', '|', '70341', '67595', '|', '2701', '2747', '|', '96.80', '|', '0.16', '0.16', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+1303295  1303976  |    70323    71039  |      682      717  |    92.33  |     0.04     0.04  | CP028106.1	contig_0
+['1303295', '1303976', '|', '70323', '71039', '|', '682', '717', '|', '92.33', '|', '0.04', '0.04', '|', 'CP028106.1', 'contig_0']
+('fwd = ', True)
+1303912  1369879  |    66899        4  |    65968    66896  |    97.32  |     3.93     3.92  | CP028106.1	contig_0
+['1303912', '1369879', '|', '66899', '4', '|', '65968', '66896', '|', '97.32', '|', '3.93', '3.92', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+1370051  1678881  |  1706041  1392883  |   308831   313159  |    97.39  |    18.40    18.36  | CP028106.1	contig_0
+['1370051', '1678881', '|', '1706041', '1392883', '|', '308831', '313159', '|', '97.39', '|', '18.40', '18.36', '|', 'CP028106.1', 'contig_0']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1, 292661, 1392882, 1096248, False, 'CP028106.1', 'contig_0']
+[292849, 600658, 1096052, 783932, False, 'CP028106.1', 'contig_0']
+[600672, 639585, 782269, 742834, False, 'CP028106.1', 'contig_0']
+[639071, 932305, 743203, 445740, False, 'CP028106.1', 'contig_0']
+[932527, 1259833, 445510, 113383, False, 'CP028106.1', 'contig_0']
+[1260023, 1299936, 111503, 70987, False, 'CP028106.1', 'contig_0']
+[1300613, 1303313, 70341, 67595, False, 'CP028106.1', 'contig_0']
+[1303912, 1369879, 66899, 4, False, 'CP028106.1', 'contig_0']
+[1370051, 1678881, 1706041, 1392883, False, 'CP028106.1', 'contig_0']
+
+coords: "[1, 1678881, 1392882, 1392883, False, 'CP028106.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/gonidiaformans/f-gonidiaformans.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1   292661  |  1392882  1096248  |   292661   296635  |    97.40  |    17.43    17.39  | CP028106.1	contig_0
+
+  292849   600658  |  1096052   783932  |   307810   312121  |    97.38  |    18.33    18.30  | CP028106.1	contig_0
+
+  600672   639585  |   782269   742834  |    38914    39436  |    97.35  |     2.32     2.31  | CP028106.1	contig_0
+
+  639071   932305  |   743203   445740  |   293235   297464  |    97.18  |    17.47    17.44  | CP028106.1	contig_0
+
+  932527  1259833  |   445510   113383  |   327307   332128  |    97.24  |    19.50    19.47  | CP028106.1	contig_0
+
+ 1260023  1299936  |   111503    70987  |    39914    40517  |    97.25  |     2.38     2.37  | CP028106.1	contig_0
+
+ 1299884  1300631  |    66835    67613  |      748      779  |    95.25  |     0.04     0.05  | CP028106.1	contig_0
+
+ 1300613  1303313  |    70341    67595  |     2701     2747  |    96.80  |     0.16     0.16  | CP028106.1	contig_0
+
+ 1303295  1303976  |    70323    71039  |      682      717  |    92.33  |     0.04     0.04  | CP028106.1	contig_0
+
+ 1303912  1369879  |    66899        4  |    65968    66896  |    97.32  |     3.93     3.92  | CP028106.1	contig_0
+
+ 1370051  1678881  |  1706041  1392883  |   308831   313159  |    97.39  |    18.40    18.36  | CP028106.1	contig_0
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nw-contig.0.fasta ./f-bact-gonidiaformans-n15-model-23-cw-racon-hax/edit-dist-calc/nw-ref.0.fasta -m NW"
+
+Final edit distance: 49897, aligned edit distance: 49897, unaligned ref len: 0, aligned ref len: 1678881, aligned contig len: 1706041
+
+('ref_hash\n', {'CP028106.1': 0, 'CP028106.1 Fusobacterium gonidiaformans ATCC 25563 chromosome, complete genome': 0})
+[0] edit dist: 49897	unaligned len: 0
+
+Number of Ns in consensus: 43166

@@ -1,0 +1,665 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/fusobacterium-ulcerans/iter2.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                   18
+AlignedSeqs               1(100.00%)          18(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   3537675               517539
+AlignedBases          626968(17.72%)       516190(99.74%)
+UnalignedBases       2910707(82.28%)          1349(0.26%)
+
+[Alignments]
+1-to-1                            26                   26
+TotalLength                   520706               519667
+AvgLength                   20027.15             19987.19
+AvgIdentity                    98.28                98.28
+
+M-to-M                           107                  107
+TotalLength                   637349               636216
+AvgLength                    5956.53              5945.94
+AvgIdentity                    97.14                97.14
+
+[Feature Estimates]
+Breakpoints                      214                  176
+Relocations                        0                    1
+Translocations                    18                    0
+Inversions                         0                    1
+
+Insertions                       174                    6
+InsertionSum                 3027360                 1349
+InsertionAvg                17398.62               224.83
+
+TandemIns                          0                    0
+TandemInsSum                       0                    0
+TandemInsAvg                    0.00                 0.00
+
+[SNPs]
+TotalSNPs                       1996                 1996
+GC                         36(1.80%)            53(2.66%)
+GA                       418(20.94%)           131(6.56%)
+GT                        128(6.41%)            59(2.96%)
+TG                         59(2.96%)           128(6.41%)
+TA                       237(11.87%)          209(10.47%)
+TC                        124(6.21%)          423(21.19%)
+AC                         47(2.35%)           131(6.56%)
+AT                       209(10.47%)          237(11.87%)
+AG                        131(6.56%)          418(20.94%)
+CA                        131(6.56%)            47(2.35%)
+CG                         53(2.66%)            36(1.80%)
+CT                       423(21.19%)           124(6.21%)
+
+TotalGSNPs                       347                  347
+CG                          4(1.15%)             1(0.29%)
+CT                       119(34.29%)            22(6.34%)
+CA                          8(2.31%)             3(0.86%)
+GA                       108(31.12%)            21(6.05%)
+GT                          7(2.02%)             3(0.86%)
+GC                          1(0.29%)             4(1.15%)
+TA                         30(8.65%)            21(6.05%)
+TG                          3(0.86%)             7(2.02%)
+TC                         22(6.34%)          119(34.29%)
+AT                         21(6.05%)            30(8.65%)
+AG                         21(6.05%)          108(31.12%)
+AC                          3(0.86%)             8(2.31%)
+
+TotalIndels                     6488                 6488
+G.                        426(6.57%)           156(2.40%)
+T.                      1530(23.58%)         1385(21.35%)
+A.                      1302(20.07%)         1043(16.08%)
+C.                        479(7.38%)           167(2.57%)
+.C                        167(2.57%)           479(7.38%)
+.T                      1385(21.35%)         1530(23.58%)
+.G                        156(2.40%)           426(6.57%)
+.A                      1043(16.08%)         1302(20.07%)
+
+TotalGIndels                    2788                 2788
+C.                        187(6.71%)            47(1.69%)
+G.                        148(5.31%)            48(1.72%)
+T.                       745(26.72%)          555(19.91%)
+A.                       635(22.78%)          423(15.17%)
+.A                       423(15.17%)          635(22.78%)
+.G                         48(1.72%)           148(5.31%)
+.T                       555(19.91%)          745(26.72%)
+.C                         47(1.69%)           187(6.71%)
+
+Running MUMmer on contig: "utg000001l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.10\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 7839\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.11\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.44\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1306192  1314062  |     7839        1  |     7871     7839  |    98.73  |     0.22   100.00  | CP028105.1	utg000001l
+['1306192', '1314062', '|', '7839', '1', '|', '7871', '7839', '|', '98.73', '|', '0.22', '100.00', '|', 'CP028105.1', 'utg000001l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1306192, 1314062, 7839, 1, False, 'CP028105.1', 'utg000001l']
+
+Running MUMmer on contig: "utg000002l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1306192, 1314062, 7839, 1, False, 'CP028105.1', 'utg000001l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1306192  1314062  |     7839        1  |     7871     7839  |    98.73  |     0.22   100.00  | CP028105.1	utg000001l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.18\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 34588\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.24\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2942585  2944537  |        1     1947  |     1953     1947  |    98.27  |     0.06     5.63  | CP028105.1	utg000002l
+['2942585', '2944537', '|', '1', '1947', '|', '1953', '1947', '|', '98.27', '|', '0.06', '5.63', '|', 'CP028105.1', 'utg000002l']
+('fwd = ', True)
+2945073  2977456  |     2281    34588  |    32384    32308  |    98.86  |     0.92    93.41  | CP028105.1	utg000002l
+['2945073', '2977456', '|', '2281', '34588', '|', '32384', '32308', '|', '98.86', '|', '0.92', '93.41', '|', 'CP028105.1', 'utg000002l']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[2942585, 2944537, 1, 1947, True, 'CP028105.1', 'utg000002l']
+[2945073, 2977456, 2281, 34588, True, 'CP028105.1', 'utg000002l']
+
+Running MUMmer on contig: "utg000003l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2942585, 2977456, 1, 34588, True, 'CP028105.1', 'utg000002l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2942585  2944537  |        1     1947  |     1953     1947  |    98.27  |     0.06     5.63  | CP028105.1	utg000002l
+
+ 2945073  2977456  |     2281    34588  |    32384    32308  |    98.86  |     0.92    93.41  | CP028105.1	utg000002l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.14\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 35953\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.18\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2419073  2455123  |        1    35953  |    36051    35953  |    98.31  |     1.02   100.00  | CP028105.1	utg000003l
+['2419073', '2455123', '|', '1', '35953', '|', '36051', '35953', '|', '98.31', '|', '1.02', '100.00', '|', 'CP028105.1', 'utg000003l']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[2419073, 2455123, 1, 35953, True, 'CP028105.1', 'utg000003l']
+
+Running MUMmer on contig: "utg000004l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2419073, 2455123, 1, 35953, True, 'CP028105.1', 'utg000003l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2419073  2455123  |        1    35953  |    36051    35953  |    98.31  |     1.02   100.00  | CP028105.1	utg000003l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.14\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 31673\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.18\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+32441    64166  |    31673        1  |    31726    31673  |    98.67  |     0.90   100.00  | CP028105.1	utg000004l
+['32441', '64166', '|', '31673', '1', '|', '31726', '31673', '|', '98.67', '|', '0.90', '100.00', '|', 'CP028105.1', 'utg000004l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[32441, 64166, 31673, 1, False, 'CP028105.1', 'utg000004l']
+
+Running MUMmer on contig: "utg000005l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[32441, 64166, 31673, 1, False, 'CP028105.1', 'utg000004l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+   32441    64166  |    31673        1  |    31726    31673  |    98.67  |     0.90   100.00  | CP028105.1	utg000004l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.11\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 24087\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.13\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2747130  2753776  |        1     6593  |     6647     6593  |    94.89  |     0.19    27.37  | CP028105.1	utg000005l
+['2747130', '2753776', '|', '1', '6593', '|', '6647', '6593', '|', '94.89', '|', '0.19', '27.37', '|', 'CP028105.1', 'utg000005l']
+('fwd = ', True)
+3166069  3187120  |    24087     3127  |    21052    20961  |    96.07  |     0.60    87.02  | CP028105.1	utg000005l
+['3166069', '3187120', '|', '24087', '3127', '|', '21052', '20961', '|', '96.07', '|', '0.60', '87.02', '|', 'CP028105.1', 'utg000005l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3166069, 3187120, 24087, 3127, False, 'CP028105.1', 'utg000005l']
+
+Running MUMmer on contig: "utg000006l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3166069, 3187120, 24087, 3127, False, 'CP028105.1', 'utg000005l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2747130  2753776  |        1     6593  |     6647     6593  |    94.89  |     0.19    27.37  | CP028105.1	utg000005l
+
+ 3166069  3187120  |    24087     3127  |    21052    20961  |    96.07  |     0.60    87.02  | CP028105.1	utg000005l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.10\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 24788\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.13\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+719065   743913  |    24788        1  |    24849    24788  |    98.28  |     0.70   100.00  | CP028105.1	utg000006l
+['719065', '743913', '|', '24788', '1', '|', '24849', '24788', '|', '98.28', '|', '0.70', '100.00', '|', 'CP028105.1', 'utg000006l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[719065, 743913, 24788, 1, False, 'CP028105.1', 'utg000006l']
+
+Running MUMmer on contig: "utg000007l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[719065, 743913, 24788, 1, False, 'CP028105.1', 'utg000006l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  719065   743913  |    24788        1  |    24849    24788  |    98.28  |     0.70   100.00  | CP028105.1	utg000006l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.40\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 30271\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.44\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3479263  3509589  |    30271        1  |    30327    30271  |    98.24  |     0.86   100.00  | CP028105.1	utg000007l
+['3479263', '3509589', '|', '30271', '1', '|', '30327', '30271', '|', '98.24', '|', '0.86', '100.00', '|', 'CP028105.1', 'utg000007l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3479263, 3509589, 30271, 1, False, 'CP028105.1', 'utg000007l']
+
+Running MUMmer on contig: "utg000008l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3479263, 3509589, 30271, 1, False, 'CP028105.1', 'utg000007l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3479263  3509589  |    30271        1  |    30327    30271  |    98.24  |     0.86   100.00  | CP028105.1	utg000007l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.10\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 22865\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.12\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+206287   229172  |        1    22865  |    22886    22865  |    98.72  |     0.65   100.00  | CP028105.1	utg000008l
+['206287', '229172', '|', '1', '22865', '|', '22886', '22865', '|', '98.72', '|', '0.65', '100.00', '|', 'CP028105.1', 'utg000008l']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[206287, 229172, 1, 22865, True, 'CP028105.1', 'utg000008l']
+
+Running MUMmer on contig: "utg000009l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[206287, 229172, 1, 22865, True, 'CP028105.1', 'utg000008l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  206287   229172  |        1    22865  |    22886    22865  |    98.72  |     0.65   100.00  | CP028105.1	utg000008l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.15\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 19516\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.17\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2111393  2130992  |        1    19516  |    19600    19516  |    98.66  |     0.55   100.00  | CP028105.1	utg000009l
+['2111393', '2130992', '|', '1', '19516', '|', '19600', '19516', '|', '98.66', '|', '0.55', '100.00', '|', 'CP028105.1', 'utg000009l']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[2111393, 2130992, 1, 19516, True, 'CP028105.1', 'utg000009l']
+
+Running MUMmer on contig: "utg000010l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2111393, 2130992, 1, 19516, True, 'CP028105.1', 'utg000009l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2111393  2130992  |        1    19516  |    19600    19516  |    98.66  |     0.55   100.00  | CP028105.1	utg000009l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.11\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 30765\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.14\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2771985  2784623  |    30765    18141  |    12639    12625  |    98.07  |     0.36    41.04  | CP028105.1	utg000010l
+['2771985', '2784623', '|', '30765', '18141', '|', '12639', '12625', '|', '98.07', '|', '0.36', '41.04', '|', 'CP028105.1', 'utg000010l']
+('fwd = ', False)
+2785427  2786867  |    18140    16695  |     1441     1446  |    92.59  |     0.04     4.70  | CP028105.1	utg000010l
+['2785427', '2786867', '|', '18140', '16695', '|', '1441', '1446', '|', '92.59', '|', '0.04', '4.70', '|', 'CP028105.1', 'utg000010l']
+('fwd = ', False)
+2787371  2788028  |    16186    15540  |      658      647  |    82.55  |     0.02     2.10  | CP028105.1	utg000010l
+['2787371', '2788028', '|', '16186', '15540', '|', '658', '647', '|', '82.55', '|', '0.02', '2.10', '|', 'CP028105.1', 'utg000010l']
+('fwd = ', False)
+2788392  2803542  |    15162        1  |    15151    15162  |    94.40  |     0.43    49.28  | CP028105.1	utg000010l
+['2788392', '2803542', '|', '15162', '1', '|', '15151', '15162', '|', '94.40', '|', '0.43', '49.28', '|', 'CP028105.1', 'utg000010l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[2771985, 2784623, 30765, 18141, False, 'CP028105.1', 'utg000010l']
+[2785427, 2786867, 18140, 16695, False, 'CP028105.1', 'utg000010l']
+[2787371, 2788028, 16186, 15540, False, 'CP028105.1', 'utg000010l']
+[2788392, 2803542, 15162, 1, False, 'CP028105.1', 'utg000010l']
+
+Running MUMmer on contig: "utg000011c"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2771985, 2803542, 30765, 1, False, 'CP028105.1', 'utg000010l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2771985  2784623  |    30765    18141  |    12639    12625  |    98.07  |     0.36    41.04  | CP028105.1	utg000010l
+
+ 2785427  2786867  |    18140    16695  |     1441     1446  |    92.59  |     0.04     4.70  | CP028105.1	utg000010l
+
+ 2787371  2788028  |    16186    15540  |      658      647  |    82.55  |     0.02     2.10  | CP028105.1	utg000010l
+
+ 2788392  2803542  |    15162        1  |    15151    15162  |    94.40  |     0.43    49.28  | CP028105.1	utg000010l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.12\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 12008\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.14\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.44\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+160102   172141  |        1    12008  |    12040    12008  |    98.75  |     0.34   100.00  | CP028105.1	utg000011c
+['160102', '172141', '|', '1', '12008', '|', '12040', '12008', '|', '98.75', '|', '0.34', '100.00', '|', 'CP028105.1', 'utg000011c']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[160102, 172141, 1, 12008, True, 'CP028105.1', 'utg000011c']
+
+Running MUMmer on contig: "utg000012l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[160102, 172141, 1, 12008, True, 'CP028105.1', 'utg000011c']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+  160102   172141  |        1    12008  |    12040    12008  |    98.75  |     0.34   100.00  | CP028105.1	utg000011c
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.09\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 29264\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.12\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2909396  2934878  |    29249     3815  |    25483    25435  |    98.66  |     0.72    86.92  | CP028105.1	utg000012l
+['2909396', '2934878', '|', '29249', '3815', '|', '25483', '25435', '|', '98.66', '|', '0.72', '86.92', '|', 'CP028105.1', 'utg000012l']
+('fwd = ', False)
+2935247  2939093  |     3812        1  |     3847     3812  |    95.89  |     0.11    13.03  | CP028105.1	utg000012l
+['2935247', '2939093', '|', '3812', '1', '|', '3847', '3812', '|', '95.89', '|', '0.11', '13.03', '|', 'CP028105.1', 'utg000012l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[2909396, 2934878, 29249, 3815, False, 'CP028105.1', 'utg000012l']
+[2935247, 2939093, 3812, 1, False, 'CP028105.1', 'utg000012l']
+
+Running MUMmer on contig: "utg000013l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[2909396, 2939093, 29249, 1, False, 'CP028105.1', 'utg000012l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2909396  2934878  |    29249     3815  |    25483    25435  |    98.66  |     0.72    86.92  | CP028105.1	utg000012l
+
+ 2935247  2939093  |     3812        1  |     3847     3812  |    95.89  |     0.11    13.03  | CP028105.1	utg000012l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.10\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 32213\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.13\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1161623  1182595  |        1    20939  |    20973    20939  |    98.77  |     0.59    65.00  | CP028105.1	utg000013l
+['1161623', '1182595', '|', '1', '20939', '|', '20973', '20939', '|', '98.77', '|', '0.59', '65.00', '|', 'CP028105.1', 'utg000013l']
+('fwd = ', True)
+1183223  1188008  |    21054    25844  |     4786     4791  |    99.52  |     0.14    14.87  | CP028105.1	utg000013l
+['1183223', '1188008', '|', '21054', '25844', '|', '4786', '4791', '|', '99.52', '|', '0.14', '14.87', '|', 'CP028105.1', 'utg000013l']
+('fwd = ', True)
+1188356  1194719  |    25835    32213  |     6364     6379  |    98.75  |     0.18    19.80  | CP028105.1	utg000013l
+['1188356', '1194719', '|', '25835', '32213', '|', '6364', '6379', '|', '98.75', '|', '0.18', '19.80', '|', 'CP028105.1', 'utg000013l']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1161623, 1182595, 1, 20939, True, 'CP028105.1', 'utg000013l']
+[1183223, 1188008, 21054, 25844, True, 'CP028105.1', 'utg000013l']
+[1188356, 1194719, 25835, 32213, True, 'CP028105.1', 'utg000013l']
+
+Running MUMmer on contig: "utg000014l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1161623, 1194719, 1, 32213, True, 'CP028105.1', 'utg000013l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1161623  1182595  |        1    20939  |    20973    20939  |    98.77  |     0.59    65.00  | CP028105.1	utg000013l
+
+ 1183223  1188008  |    21054    25844  |     4786     4791  |    99.52  |     0.14    14.87  | CP028105.1	utg000013l
+
+ 1188356  1194719  |    25835    32213  |     6364     6379  |    98.75  |     0.18    19.80  | CP028105.1	utg000013l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.09\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 33204\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.12\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3376809  3410059  |    33204        1  |    33251    33204  |    98.80  |     0.94   100.00  | CP028105.1	utg000014l
+['3376809', '3410059', '|', '33204', '1', '|', '33251', '33204', '|', '98.80', '|', '0.94', '100.00', '|', 'CP028105.1', 'utg000014l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3376809, 3410059, 33204, 1, False, 'CP028105.1', 'utg000014l']
+
+Running MUMmer on contig: "utg000015l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3376809, 3410059, 33204, 1, False, 'CP028105.1', 'utg000014l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3376809  3410059  |    33204        1  |    33251    33204  |    98.80  |     0.94   100.00  | CP028105.1	utg000014l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.13\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 54342\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.18\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.48\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3068706  3123125  |    54342        1  |    54420    54342  |    98.57  |     1.54   100.00  | CP028105.1	utg000015l
+['3068706', '3123125', '|', '54342', '1', '|', '54420', '54342', '|', '98.57', '|', '1.54', '100.00', '|', 'CP028105.1', 'utg000015l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3068706, 3123125, 54342, 1, False, 'CP028105.1', 'utg000015l']
+
+Running MUMmer on contig: "utg000016l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3068706, 3123125, 54342, 1, False, 'CP028105.1', 'utg000015l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3068706  3123125  |    54342        1  |    54420    54342  |    98.57  |     1.54   100.00  | CP028105.1	utg000015l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.12\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 30606\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.15\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.46\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1027599  1058275  |        1    30606  |    30677    30606  |    98.63  |     0.87   100.00  | CP028105.1	utg000016l
+['1027599', '1058275', '|', '1', '30606', '|', '30677', '30606', '|', '98.63', '|', '0.87', '100.00', '|', 'CP028105.1', 'utg000016l']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1027599, 1058275, 1, 30606, True, 'CP028105.1', 'utg000016l']
+
+Running MUMmer on contig: "utg000017l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1027599, 1058275, 1, 30606, True, 'CP028105.1', 'utg000016l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1027599  1058275  |        1    30606  |    30677    30606  |    98.63  |     0.87   100.00  | CP028105.1	utg000016l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.10\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 22057\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.13\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.45\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+3419769  3441825  |    22057        1  |    22057    22057  |    98.55  |     0.62   100.00  | CP028105.1	utg000017l
+['3419769', '3441825', '|', '22057', '1', '|', '22057', '22057', '|', '98.55', '|', '0.62', '100.00', '|', 'CP028105.1', 'utg000017l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[3419769, 3441825, 22057, 1, False, 'CP028105.1', 'utg000017l']
+
+Running MUMmer on contig: "utg000018l"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ../fusobacterium-ulcerans/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta ../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ../fusobacterium-ulcerans/edit-dist-calc/nucmer.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.delta > ../fusobacterium-ulcerans/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[3419769, 3441825, 22057, 1, False, 'CP028105.1', 'utg000017l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 3419769  3441825  |    22057        1  |    22057    22057  |    98.55  |     0.62   100.00  | CP028105.1	utg000017l
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref" of length 3537676\n# construct suffix tree for sequence of length 3537676\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 35376 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.13\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta" of length 41500\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta"\n# against subject-file "../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 1.17\n# SPACE /home/diplomski-rad/mummer3.23/mummer ../fusobacterium-ulcerans/edit-dist-calc/nucmer.ntref 3.47\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1983211  2024783  |    41500        1  |    41573    41500  |    98.82  |     1.18   100.00  | CP028105.1	utg000018l
+['1983211', '2024783', '|', '41500', '1', '|', '41573', '41500', '|', '98.82', '|', '1.18', '100.00', '|', 'CP028105.1', 'utg000018l']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1983211, 2024783, 41500, 1, False, 'CP028105.1', 'utg000018l']
+
+coords: "[1983211, 2024783, 41500, 1, False, 'CP028105.1', 'utg000018l']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/ulcerans/f-ulcerans.fasta /home/diplomski-rad/blade/ont/consensus-inference/../fusobacterium-ulcerans/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1983211  2024783  |    41500        1  |    41573    41500  |    98.82  |     1.18   100.00  | CP028105.1	utg000018l
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ../fusobacterium-ulcerans/edit-dist-calc/nw-contig.17.fasta ../fusobacterium-ulcerans/edit-dist-calc/nw-ref.17.fasta -m NW"
+
+Final edit distance: 3496594, aligned edit distance: 492, unaligned ref len: 3496102, aligned ref len: 41573, aligned contig len: 41500
+
+('ref_hash\n', {'CP028105.1': 0, 'CP028105.1 Fusobacterium ulcerans strain ATCC 49185 chromosome, complete genome': 0})
+
+Number of Ns in consensus: 0

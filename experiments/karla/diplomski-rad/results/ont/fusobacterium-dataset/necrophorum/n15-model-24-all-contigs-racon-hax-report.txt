@@ -1,0 +1,160 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/necrophorum/f-necrophorum.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-necrophorum-n15-model-24-racon-hax/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   2286018              2321130
+AlignedBases         2284866(99.95%)      2276440(98.07%)
+UnalignedBases           1152(0.05%)         44690(1.93%)
+
+[Alignments]
+1-to-1                             6                    6
+TotalLength                  2285056              2274676
+AvgLength                  380842.67            379112.67
+AvgIdentity                    98.87                98.87
+
+M-to-M                             9                    9
+TotalLength                  2288471              2278059
+AvgLength                  254274.56            253117.67
+AvgIdentity                    98.87                98.87
+
+[Feature Estimates]
+Breakpoints                       16                   17
+Relocations                        3                    1
+Translocations                     0                    0
+Inversions                         0                    0
+
+Insertions                         2                    7
+InsertionSum                    1152                48223
+InsertionAvg                  576.00              6889.00
+
+TandemIns                          0                    1
+TandemInsSum                       0                  150
+TandemInsAvg                    0.00               150.00
+
+[SNPs]
+TotalSNPs                       1933                 1933
+GT                         31(1.60%)           114(5.90%)
+GA                        153(7.92%)          291(15.05%)
+GC                        122(6.31%)          363(18.78%)
+TG                        114(5.90%)            31(1.60%)
+TA                        112(5.79%)           135(6.98%)
+TC                       235(12.16%)          212(10.97%)
+AT                        135(6.98%)           112(5.79%)
+AG                       291(15.05%)           153(7.92%)
+AC                        108(5.59%)            57(2.95%)
+CG                       363(18.78%)           122(6.31%)
+CT                       212(10.97%)          235(12.16%)
+CA                         57(2.95%)           108(5.59%)
+
+TotalGSNPs                      1139                 1139
+TG                         56(4.92%)            12(1.05%)
+TC                       146(12.82%)           113(9.92%)
+TA                         60(5.27%)            58(5.09%)
+GC                         72(6.32%)          263(23.09%)
+GA                         81(7.11%)          183(16.07%)
+GT                         12(1.05%)            56(4.92%)
+AT                         58(5.09%)            60(5.27%)
+AG                       183(16.07%)            81(7.11%)
+AC                         61(5.36%)            34(2.99%)
+CG                       263(23.09%)            72(6.32%)
+CT                        113(9.92%)          146(12.82%)
+CA                         34(2.99%)            61(5.36%)
+
+TotalIndels                    13663                13663
+G.                        921(6.74%)           104(0.76%)
+T.                      4733(34.64%)           387(2.83%)
+A.                      5487(40.16%)           144(1.05%)
+N.                          0(0.00%)           757(5.54%)
+C.                        877(6.42%)           253(1.85%)
+.G                        104(0.76%)           921(6.74%)
+.T                        387(2.83%)         4733(34.64%)
+.C                        253(1.85%)           877(6.42%)
+.A                        144(1.05%)         5487(40.16%)
+.N                        757(5.54%)             0(0.00%)
+
+TotalGIndels                    8816                 8816
+T.                      3090(35.05%)           225(2.55%)
+G.                        608(6.90%)            67(0.76%)
+A.                      3525(39.98%)            82(0.93%)
+N.                          0(0.00%)           521(5.91%)
+C.                        530(6.01%)           168(1.91%)
+.A                         82(0.93%)         3525(39.98%)
+.N                        521(5.91%)             0(0.00%)
+.C                        168(1.91%)           530(6.01%)
+.T                        225(2.55%)         3090(35.05%)
+.G                         67(0.76%)           608(6.90%)
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/necrophorum/f-necrophorum.fasta ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref" of length 2286019\n# construct suffix tree for sequence of length 2286019\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 22860 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 0.62\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta" of length 2321130\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 2.16\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 4.43\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1    86648  |   657562   743862  |    86648    86301  |    98.95  |     3.79     3.72  | CP028107.1	contig_0
+['1', '86648', '|', '657562', '743862', '|', '86648', '86301', '|', '98.95', '|', '3.79', '3.72', '|', 'CP028107.1', 'contig_0']
+('fwd = ', True)
+86648   207320  |   745460   865593  |   120673   120134  |    98.94  |     5.28     5.18  | CP028107.1	contig_0
+['86648', '207320', '|', '745460', '865593', '|', '120673', '120134', '|', '98.94', '|', '5.28', '5.18', '|', 'CP028107.1', 'contig_0']
+('fwd = ', True)
+207155   734763  |   865578  1390750  |   527609   525173  |    98.87  |    23.08    22.63  | CP028107.1	contig_0
+['207155', '734763', '|', '865578', '1390750', '|', '527609', '525173', '|', '98.87', '|', '23.08', '22.63', '|', 'CP028107.1', 'contig_0']
+('fwd = ', True)
+735797  1626084  |  1435106  2321130  |   890288   886025  |    98.80  |    38.94    38.17  | CP028107.1	contig_0
+['735797', '1626084', '|', '1435106', '2321130', '|', '890288', '886025', '|', '98.80', '|', '38.94', '38.17', '|', 'CP028107.1', 'contig_0']
+('fwd = ', True)
+1626204  1722374  |        4    95736  |    96171    95733  |    98.85  |     4.21     4.12  | CP028107.1	contig_0
+['1626204', '1722374', '|', '4', '95736', '|', '96171', '95733', '|', '98.85', '|', '4.21', '4.12', '|', 'CP028107.1', 'contig_0']
+('fwd = ', True)
+1722352  2286018  |    96252   657561  |   563667   561310  |    98.95  |    24.66    24.18  | CP028107.1	contig_0
+['1722352', '2286018', '|', '96252', '657561', '|', '563667', '561310', '|', '98.95', '|', '24.66', '24.18', '|', 'CP028107.1', 'contig_0']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1, 86648, 657562, 743862, True, 'CP028107.1', 'contig_0']
+[86648, 207320, 745460, 865593, True, 'CP028107.1', 'contig_0']
+[207155, 734763, 865578, 1390750, True, 'CP028107.1', 'contig_0']
+[735797, 1626084, 1435106, 2321130, True, 'CP028107.1', 'contig_0']
+[1626204, 1722374, 4, 95736, True, 'CP028107.1', 'contig_0']
+[1722352, 2286018, 96252, 657561, True, 'CP028107.1', 'contig_0']
+
+coords: "[1, 2286018, 657562, 657561, True, 'CP028107.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/necrophorum/f-necrophorum.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1    86648  |   657562   743862  |    86648    86301  |    98.95  |     3.79     3.72  | CP028107.1	contig_0
+
+   86648   207320  |   745460   865593  |   120673   120134  |    98.94  |     5.28     5.18  | CP028107.1	contig_0
+
+  207155   734763  |   865578  1390750  |   527609   525173  |    98.87  |    23.08    22.63  | CP028107.1	contig_0
+
+  735797  1626084  |  1435106  2321130  |   890288   886025  |    98.80  |    38.94    38.17  | CP028107.1	contig_0
+
+ 1626204  1722374  |        4    95736  |    96171    95733  |    98.85  |     4.21     4.12  | CP028107.1	contig_0
+
+ 1722352  2286018  |    96252   657561  |   563667   561310  |    98.95  |    24.66    24.18  | CP028107.1	contig_0
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nw-contig.0.fasta ./f-bact-necrophorum-n15-model-24-racon-hax/edit-dist-calc/nw-ref.0.fasta -m NW"
+
+Final edit distance: 71321, aligned edit distance: 71321, unaligned ref len: 0, aligned ref len: 2286018, aligned contig len: 2321130
+
+('ref_hash\n', {'CP028107.1 Fusobacterium necrophorum subsp. funduliforme strain 1_1_36S chromosome, complete genome': 0, 'CP028107.1': 0})
+[0] edit dist: 71321	unaligned len: 0
+
+Number of Ns in consensus: 11385

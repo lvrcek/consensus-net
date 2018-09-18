@@ -1,0 +1,149 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/mortiferum/f-motriferum.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-mortiferum-n20-model-24-cw-racon-hax/consensus.fasta
+NUCMER
+
+[REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   2716766              2768473
+AlignedBases         2715531(99.95%)      2766994(99.95%)
+UnalignedBases           1235(0.05%)          1479(0.05%)
+
+[Alignments]
+1-to-1                             4                    4
+TotalLength                  2715512              2766994
+AvgLength                  678878.00            691748.50
+AvgIdentity                    96.49                96.49
+
+M-to-M                             5                    5
+TotalLength                  2716697              2768201
+AvgLength                  543339.40            553640.20
+AvgIdentity                    96.49                96.49
+
+[Feature Estimates]
+Breakpoints                        9                    8
+Relocations                        1                    2
+Translocations                     0                    0
+Inversions                         0                    0
+
+Insertions                         5                    3
+InsertionSum                    2420                 1479
+InsertionAvg                  484.00               493.00
+
+TandemIns                          0                    0
+TandemInsSum                       0                    0
+TandemInsAvg                    0.00                 0.00
+
+[SNPs]
+TotalSNPs                       7724                 7724
+AG                      1533(19.85%)           405(5.24%)
+AT                        503(6.51%)          834(10.80%)
+AC                        752(9.74%)           186(2.41%)
+GA                        405(5.24%)         1533(19.85%)
+GC                         73(0.95%)           119(1.54%)
+GT                        108(1.40%)          900(11.65%)
+CT                        552(7.15%)         1759(22.77%)
+CG                        119(1.54%)            73(0.95%)
+CA                        186(2.41%)           752(9.74%)
+TG                       900(11.65%)           108(1.40%)
+TA                       834(10.80%)           503(6.51%)
+TC                      1759(22.77%)           552(7.15%)
+
+TotalGSNPs                      2869                 2869
+AG                       551(19.21%)           113(3.94%)
+AT                        187(6.52%)          335(11.68%)
+AC                       325(11.33%)            52(1.81%)
+GC                         11(0.38%)            18(0.63%)
+GT                         22(0.77%)          340(11.85%)
+GA                        113(3.94%)          551(19.21%)
+TG                       340(11.85%)            22(0.77%)
+TA                       335(11.68%)           187(6.52%)
+TC                       722(25.17%)           193(6.73%)
+CA                         52(1.81%)          325(11.33%)
+CG                         18(0.63%)            11(0.38%)
+CT                        193(6.73%)          722(25.17%)
+
+TotalIndels                    55432                55432
+A.                        677(1.22%)           978(1.76%)
+G.                        163(0.29%)           962(1.74%)
+N.                          0(0.00%)        50147(90.47%)
+C.                        259(0.47%)           709(1.28%)
+T.                        876(1.58%)           661(1.19%)
+.T                        661(1.19%)           876(1.58%)
+.C                        709(1.28%)           259(0.47%)
+.G                        962(1.74%)           163(0.29%)
+.N                     50147(90.47%)             0(0.00%)
+.A                        978(1.76%)           677(1.22%)
+
+TotalGIndels                   17691                17691
+A.                        240(1.36%)           344(1.94%)
+G.                         60(0.34%)           359(2.03%)
+N.                          0(0.00%)        15649(88.46%)
+T.                        388(2.19%)           248(1.40%)
+C.                        111(0.63%)           292(1.65%)
+.T                        248(1.40%)           388(2.19%)
+.C                        292(1.65%)           111(0.63%)
+.G                        359(2.03%)            60(0.34%)
+.N                     15649(88.46%)             0(0.00%)
+.A                        344(1.94%)           240(1.36%)
+
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/mortiferum/f-motriferum.fasta ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 2716767\n# construct suffix tree for sequence of length 2716767\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 27167 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 0.77\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 2768473\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 3.31\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 5.27\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1   412755  |  1232206   812483  |   412755   419724  |    96.71  |    15.19    15.16  | CP028102.1	contig_0
+['1', '412755', '|', '1232206', '812483', '|', '412755', '419724', '|', '96.71', '|', '15.19', '15.16', '|', 'CP028102.1', 'contig_0']
+('fwd = ', False)
+413081  1209099  |   812032        1  |   796019   812032  |    96.43  |    29.30    29.33  | CP028102.1	contig_0
+['413081', '1209099', '|', '812032', '1', '|', '796019', '812032', '|', '96.43', '|', '29.30', '29.33', '|', 'CP028102.1', 'contig_0']
+('fwd = ', False)
+1209205  1466057  |  2768473  2506506  |   256853   261968  |    96.38  |     9.45     9.46  | CP028102.1	contig_0
+['1209205', '1466057', '|', '2768473', '2506506', '|', '256853', '261968', '|', '96.38', '|', '9.45', '9.46', '|', 'CP028102.1', 'contig_0']
+('fwd = ', False)
+1466876  2716760  |  2505483  1232214  |  1249885  1273270  |    96.47  |    46.01    45.99  | CP028102.1	contig_0
+['1466876', '2716760', '|', '2505483', '1232214', '|', '1249885', '1273270', '|', '96.47', '|', '46.01', '45.99', '|', 'CP028102.1', 'contig_0']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1, 412755, 1232206, 812483, False, 'CP028102.1', 'contig_0']
+[413081, 1209099, 812032, 1, False, 'CP028102.1', 'contig_0']
+[1209205, 1466057, 2768473, 2506506, False, 'CP028102.1', 'contig_0']
+[1466876, 2716760, 2505483, 1232214, False, 'CP028102.1', 'contig_0']
+
+coords: "[1, 2716760, 1232206, 1232214, False, 'CP028102.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/mortiferum/f-motriferum.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1   412755  |  1232206   812483  |   412755   419724  |    96.71  |    15.19    15.16  | CP028102.1	contig_0
+
+  413081  1209099  |   812032        1  |   796019   812032  |    96.43  |    29.30    29.33  | CP028102.1	contig_0
+
+ 1209205  1466057  |  2768473  2506506  |   256853   261968  |    96.38  |     9.45     9.46  | CP028102.1	contig_0
+
+ 1466876  2716760  |  2505483  1232214  |  1249885  1273270  |    96.47  |    46.01    45.99  | CP028102.1	contig_0
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nw-contig.0.fasta ./f-bact-mortiferum-n20-model-24-cw-racon-hax/edit-dist-calc/nw-ref.0.fasta -m NW"
+
+Final edit distance: 98022, aligned edit distance: 98016, unaligned ref len: 6, aligned ref len: 2716760, aligned contig len: 2768466
+
+('ref_hash\n', {'CP028102.1': 0, 'CP028102.1 Fusobacterium mortiferum ATCC 9817 chromosome, complete genome': 0})
+[0] edit dist: 98016	unaligned len: 6
+
+Number of Ns in consensus: 84713

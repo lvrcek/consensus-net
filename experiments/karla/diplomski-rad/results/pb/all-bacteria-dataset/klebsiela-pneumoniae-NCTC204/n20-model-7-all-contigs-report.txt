@@ -1,0 +1,87 @@
+/home/data/pacific_biosciences/bacteria/klebsiela/pneumoniae/klebsiella_pneumoniae_reference.fasta /home/diplomski-rad/blade/pb/consensus-inference/k-pneumoniae-NCTC204-all-contigs-n20-model-7/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          7                    4
+AlignedSeqs                3(42.86%)            3(75.00%)
+UnalignedSeqs              4(57.14%)            1(25.00%)
+
+[Bases]
+TotalBases                   5682322              5521085
+AlignedBases         4817018(84.77%)      4826915(87.43%)
+UnalignedBases        865304(15.23%)       694170(12.57%)
+
+[Alignments]
+1-to-1                           198                  198
+TotalLength                  4809262              4811029
+AvgLength                   24289.20             24298.13
+AvgIdentity                    98.93                98.93
+
+M-to-M                           282                  282
+TotalLength                  4880624              4882469
+AvgLength                   17307.18             17313.72
+AvgIdentity                    98.89                98.89
+
+[Feature Estimates]
+Breakpoints                      562                  562
+Relocations                       35                   38
+Translocations                     4                    3
+Inversions                         6                    6
+
+Insertions                       196                  167
+InsertionSum                  780868               725588
+InsertionAvg                 3984.02              4344.84
+
+TandemIns                          2                    5
+TandemInsSum                     253                  766
+TandemInsAvg                  126.50               153.20
+
+[SNPs]
+TotalSNPs                      44199                44199
+GT                       2059(4.66%)          2320(5.25%)
+GA                      6748(15.27%)         6920(15.66%)
+GC                       1941(4.39%)          2538(5.74%)
+TA                       1120(2.53%)          1339(3.03%)
+TC                      6428(14.54%)         8448(19.11%)
+TG                       2320(5.25%)          2059(4.66%)
+AT                       1339(3.03%)          1120(2.53%)
+AG                      6920(15.66%)         6748(15.27%)
+AC                       2339(5.29%)          1999(4.52%)
+CT                      8448(19.11%)         6428(14.54%)
+CG                       2538(5.74%)          1941(4.39%)
+CA                       1999(4.52%)          2339(5.29%)
+
+TotalGSNPs                     22932                22932
+CA                       1052(4.59%)          1351(5.89%)
+CG                       1190(5.19%)           879(3.83%)
+CT                      4695(20.47%)         3352(14.62%)
+AG                      3547(15.47%)         3373(14.71%)
+AT                        636(2.77%)           483(2.11%)
+AC                       1351(5.89%)          1052(4.59%)
+TG                       1295(5.65%)          1079(4.71%)
+TA                        483(2.11%)           636(2.77%)
+TC                      3352(14.62%)         4695(20.47%)
+GA                      3373(14.71%)         3547(15.47%)
+GC                        879(3.83%)          1190(5.19%)
+GT                       1079(4.71%)          1295(5.65%)
+
+TotalIndels                     6810                 6810
+G.                       779(11.44%)         1087(15.96%)
+T.                        445(6.53%)         1170(17.18%)
+A.                        455(6.68%)         1249(18.34%)
+C.                       840(12.33%)          785(11.53%)
+.G                      1087(15.96%)          779(11.44%)
+.T                      1170(17.18%)           445(6.53%)
+.A                      1249(18.34%)           455(6.68%)
+.C                       785(11.53%)          840(12.33%)
+
+TotalGIndels                    2061                 2061
+C.                       213(10.33%)           202(9.80%)
+A.                         54(2.62%)          576(27.95%)
+T.                         70(3.40%)          493(23.92%)
+G.                        188(9.12%)          265(12.86%)
+.T                       493(23.92%)            70(3.40%)
+.G                       265(12.86%)           188(9.12%)
+.C                        202(9.80%)          213(10.33%)
+.A                       576(27.95%)            54(2.62%)

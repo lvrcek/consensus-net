@@ -1,0 +1,136 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-25586/f-nucleatum-25586.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-25586-n20-model-11-racon-hax/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   2180101              2177051
+AlignedBases        2180001(100.00%)     2177050(100.00%)
+UnalignedBases            100(0.00%)             1(0.00%)
+
+[Alignments]
+1-to-1                             2                    2
+TotalLength                  2180001              2177050
+AvgLength                 1090000.50           1088525.00
+AvgIdentity                    98.95                98.95
+
+M-to-M                             2                    2
+TotalLength                  2180001              2177050
+AvgLength                 1090000.50           1088525.00
+AvgIdentity                    98.95                98.95
+
+[Feature Estimates]
+Breakpoints                        3                    2
+Relocations                        1                    1
+Translocations                     0                    0
+Inversions                         0                    0
+
+Insertions                         2                    1
+InsertionSum                     100                    1
+InsertionAvg                   50.00                 1.00
+
+TandemIns                          0                    0
+TandemInsSum                       0                    0
+TandemInsAvg                    0.00                 0.00
+
+[SNPs]
+TotalSNPs                       1066                 1066
+AG                         88(8.26%)          262(24.58%)
+AT                         60(5.63%)          153(14.35%)
+AC                         23(2.16%)            54(5.07%)
+CA                         54(5.07%)            23(2.16%)
+CG                         43(4.03%)            31(2.91%)
+CT                       172(16.14%)           104(9.76%)
+GT                         47(4.41%)            29(2.72%)
+GA                       262(24.58%)            88(8.26%)
+GC                         31(2.91%)            43(4.03%)
+TG                         29(2.72%)            47(4.41%)
+TA                       153(14.35%)            60(5.63%)
+TC                        104(9.76%)          172(16.14%)
+
+TotalGSNPs                       466                  466
+GT                         15(3.22%)             9(1.93%)
+GC                          9(1.93%)             9(1.93%)
+GA                       146(31.33%)            37(7.94%)
+TG                          9(1.93%)            15(3.22%)
+TC                         46(9.87%)           82(17.60%)
+TA                        64(13.73%)            25(5.36%)
+AG                         37(7.94%)          146(31.33%)
+AT                         25(5.36%)           64(13.73%)
+AC                          8(1.72%)            16(3.43%)
+CG                          9(1.93%)             9(1.93%)
+CT                        82(17.60%)            46(9.87%)
+CA                         16(3.43%)             8(1.72%)
+
+TotalIndels                     8025                 8025
+A.                      2522(31.43%)           275(3.43%)
+C.                        424(5.28%)            65(0.81%)
+N.                          0(0.00%)         1959(24.41%)
+G.                        418(5.21%)            80(1.00%)
+T.                      2124(26.47%)           158(1.97%)
+.A                        275(3.43%)         2522(31.43%)
+.C                         65(0.81%)           424(5.28%)
+.N                      1959(24.41%)             0(0.00%)
+.G                         80(1.00%)           418(5.21%)
+.T                        158(1.97%)         2124(26.47%)
+
+TotalGIndels                    5854                 5854
+G.                        260(4.44%)            43(0.73%)
+T.                      1607(27.45%)            80(1.37%)
+A.                      1953(33.36%)           150(2.56%)
+N.                          0(0.00%)         1453(24.82%)
+C.                        273(4.66%)            35(0.60%)
+.T                         80(1.37%)         1607(27.45%)
+.G                         43(0.73%)           260(4.44%)
+.C                         35(0.60%)           273(4.66%)
+.N                      1453(24.82%)             0(0.00%)
+.A                        150(2.56%)         1953(33.36%)
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-25586/f-nucleatum-25586.fasta ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.ntref" of length 2180102\n# construct suffix tree for sequence of length 2180102\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 21801 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.ntref 0.70\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/singlecontig.fasta" of length 2177051\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.ntref 2.43\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nucmer.ntref 4.19\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1   659796  |   659011        1  |   659796   659011  |    99.02  |    30.26    30.27  | NZ_CP028101.1	contig_0
+['1', '659796', '|', '659011', '1', '|', '659796', '659011', '|', '99.02', '|', '30.26', '30.27', '|', 'NZ_CP028101.1', 'contig_0']
+('fwd = ', False)
+659896  2180100  |  2177051   659013  |  1520205  1518039  |    98.92  |    69.73    69.73  | NZ_CP028101.1	contig_0
+['659896', '2180100', '|', '2177051', '659013', '|', '1520205', '1518039', '|', '98.92', '|', '69.73', '69.73', '|', 'NZ_CP028101.1', 'contig_0']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1, 659796, 659011, 1, False, 'NZ_CP028101.1', 'contig_0']
+[659896, 2180100, 2177051, 659013, False, 'NZ_CP028101.1', 'contig_0']
+
+coords: "[1, 2180100, 659011, 659013, False, 'NZ_CP028101.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-25586/f-nucleatum-25586.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1   659796  |   659011        1  |   659796   659011  |    99.02  |    30.26    30.27  | NZ_CP028101.1	contig_0
+
+  659896  2180100  |  2177051   659013  |  1520205  1518039  |    98.92  |    69.73    69.73  | NZ_CP028101.1	contig_0
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nw-contig.0.fasta ./f-bact-nucleatum-25586-n20-model-11-racon-hax/edit-dist-calc/nw-ref.0.fasta -m NW"
+
+Final edit distance: 22934, aligned edit distance: 22933, unaligned ref len: 1, aligned ref len: 2180100, aligned contig len: 2177050
+
+('ref_hash\n', {'NZ_CP028101.1 Fusobacterium nucleatum subsp. nucleatum strain 25586 chromosome, complete genome': 0, 'NZ_CP028101.1': 0})
+[0] edit dist: 22933	unaligned len: 1
+
+Number of Ns in consensus: 15703

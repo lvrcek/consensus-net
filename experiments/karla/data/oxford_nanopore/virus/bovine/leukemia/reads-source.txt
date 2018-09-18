@@ -1,0 +1,1 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR139/007/ERR1399757/ERR1399757.fastq.gz

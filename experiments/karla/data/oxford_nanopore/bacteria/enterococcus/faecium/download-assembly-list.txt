@@ -1,0 +1,3 @@
+1 - 3M len, 25 contigs, https://www.ebi.ac.uk/ena/data/view/GCA_000951815
+2 - 3.2M len, 8 contigs, https://www.ebi.ac.uk/ena/data/view/GCA_001471295
+3 - 3.6M len, 11 contigs, https://www.ebi.ac.uk/ena/data/view/GCA_001544055

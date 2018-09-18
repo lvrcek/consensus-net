@@ -1,0 +1,200 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    3
+AlignedSeqs               1(100.00%)           3(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   3303644              3285750
+AlignedBases         3300768(99.91%)      3284629(99.97%)
+UnalignedBases           2876(0.09%)          1121(0.03%)
+
+[Alignments]
+1-to-1                             5                    5
+TotalLength                  3302597              3284846
+AvgLength                  660519.40            656969.20
+AvgIdentity                    98.75                98.75
+
+M-to-M                             5                    5
+TotalLength                  3302597              3284846
+AvgLength                  660519.40            656969.20
+AvgIdentity                    98.75                98.75
+
+[Feature Estimates]
+Breakpoints                        8                    7
+Relocations                        0                    1
+Translocations                     3                    0
+Inversions                         0                    0
+
+Insertions                         2                    4
+InsertionSum                    2876                 1254
+InsertionAvg                 1438.00               313.50
+
+TandemIns                          0                    1
+TandemInsSum                       0                  133
+TandemInsAvg                    0.00               133.00
+
+[SNPs]
+TotalSNPs                       6075                 6075
+TA                        294(4.84%)         1479(24.35%)
+TG                        255(4.20%)           229(3.77%)
+TC                        351(5.78%)          945(15.56%)
+CG                        494(8.13%)           130(2.14%)
+CT                       945(15.56%)           351(5.78%)
+CA                        104(1.71%)           426(7.01%)
+GT                        229(3.77%)           255(4.20%)
+GC                        130(2.14%)           494(8.13%)
+GA                        390(6.42%)          978(16.10%)
+AG                       978(16.10%)           390(6.42%)
+AT                      1479(24.35%)           294(4.84%)
+AC                        426(7.01%)           104(1.71%)
+
+TotalGSNPs                      3265                 3265
+AC                        267(8.18%)            50(1.53%)
+AT                       745(22.82%)           129(3.95%)
+AG                       586(17.95%)           194(5.94%)
+TG                        139(4.26%)           102(3.12%)
+TC                        185(5.67%)          479(14.67%)
+TA                        129(3.95%)          745(22.82%)
+CA                         50(1.53%)           267(8.18%)
+CT                       479(14.67%)           185(5.67%)
+CG                        325(9.95%)            64(1.96%)
+GA                        194(5.94%)          586(17.95%)
+GC                         64(1.96%)           325(9.95%)
+GT                        102(3.12%)           139(4.26%)
+
+TotalIndels                    24782                24782
+T.                      7694(31.05%)          1285(5.19%)
+C.                       1212(4.89%)           346(1.40%)
+N.                          0(0.00%)          1167(4.71%)
+G.                       1523(6.15%)           255(1.03%)
+A.                     10823(43.67%)           477(1.92%)
+.G                        255(1.03%)          1523(6.15%)
+.N                       1167(4.71%)             0(0.00%)
+.T                       1285(5.19%)         7694(31.05%)
+.C                        346(1.40%)          1212(4.89%)
+.A                        477(1.92%)        10823(43.67%)
+
+TotalGIndels                   15214                15214
+A.                      6554(43.08%)           269(1.77%)
+T.                      4868(32.00%)           766(5.03%)
+C.                        707(4.65%)           232(1.52%)
+N.                          0(0.00%)           787(5.17%)
+G.                        897(5.90%)           134(0.88%)
+.C                        232(1.52%)           707(4.65%)
+.T                        766(5.03%)         4868(32.00%)
+.G                        134(0.88%)           897(5.90%)
+.N                        787(5.17%)             0(0.00%)
+.A                        269(1.77%)         6554(43.08%)
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref" of length 3303645\n# construct suffix tree for sequence of length 3303645\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 33036 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 1.05\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta" of length 2539258\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 3.50\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 5.62\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1  1759980  |   786996  2538283  |  1759980  1751288  |    98.80  |    53.27    68.97  | CP028103.1	contig_0
+['1', '1759980', '|', '786996', '2538283', '|', '1759980', '1751288', '|', '98.80', '|', '53.27', '68.97', '|', 'CP028103.1', 'contig_0']
+('fwd = ', True)
+2512186  2659134  |        1   145948  |   146949   145948  |    98.63  |     4.45     5.75  | CP028103.1	contig_0
+['2512186', '2659134', '|', '1', '145948', '|', '146949', '145948', '|', '98.63', '|', '4.45', '5.75', '|', 'CP028103.1', 'contig_0']
+('fwd = ', True)
+2658785  3303644  |   145732   786995  |   644860   641264  |    98.72  |    19.52    25.25  | CP028103.1	contig_0
+['2658785', '3303644', '|', '145732', '786995', '|', '644860', '641264', '|', '98.72', '|', '19.52', '25.25', '|', 'CP028103.1', 'contig_0']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1, 1759980, 786996, 2538283, True, 'CP028103.1', 'contig_0']
+[2512186, 2659134, 1, 145948, True, 'CP028103.1', 'contig_0']
+[2658785, 3303644, 145732, 786995, True, 'CP028103.1', 'contig_0']
+
+Running MUMmer on contig: "contig_1"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1, 3303644, 786996, 786995, True, 'CP028103.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1  1759980  |   786996  2538283  |  1759980  1751288  |    98.80  |    53.27    68.97  | CP028103.1	contig_0
+
+ 2512186  2659134  |        1   145948  |   146949   145948  |    98.63  |     4.45     5.75  | CP028103.1	contig_0
+
+ 2658785  3303644  |   145732   786995  |   644860   641264  |    98.72  |    19.52    25.25  | CP028103.1	contig_0
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref" of length 3303645\n# construct suffix tree for sequence of length 3303645\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 33036 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 1.25\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta" of length 669280\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 1.86\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 3.84\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1760194  2433415  |        4   669280  |   673222   669277  |    98.69  |    20.38   100.00  | CP028103.1	contig_1
+['1760194', '2433415', '|', '4', '669280', '|', '673222', '669277', '|', '98.69', '|', '20.38', '100.00', '|', 'CP028103.1', 'contig_1']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1760194, 2433415, 4, 669280, True, 'CP028103.1', 'contig_1']
+
+Running MUMmer on contig: "contig_2"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1760194, 2433415, 4, 669280, True, 'CP028103.1', 'contig_1']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1760194  2433415  |        4   669280  |   673222   669277  |    98.69  |    20.38   100.00  | CP028103.1	contig_1
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref" of length 3303645\n# construct suffix tree for sequence of length 3303645\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 33036 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 1.03\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta" of length 77212\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 1.10\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nucmer.ntref 3.28\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+2431937  2509522  |    77069        1  |    77586    77069  |    98.54  |     2.35    99.81  | CP028103.1	contig_2
+['2431937', '2509522', '|', '77069', '1', '|', '77586', '77069', '|', '98.54', '|', '2.35', '99.81', '|', 'CP028103.1', 'contig_2']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[2431937, 2509522, 77069, 1, False, 'CP028103.1', 'contig_2']
+
+coords: "[2431937, 2509522, 77069, 1, False, 'CP028103.1', 'contig_2']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/varium/f-varium.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 2431937  2509522  |    77069        1  |    77586    77069  |    98.54  |     2.35    99.81  | CP028103.1	contig_2
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nw-contig.2.fasta ./f-bact-varium-n15-model-24-racon-hax/edit-dist-calc/nw-ref.2.fasta -m NW"
+
+Final edit distance: 3227196, aligned edit distance: 1138, unaligned ref len: 3226058, aligned ref len: 77586, aligned contig len: 77069
+
+('ref_hash\n', {'CP028103.1': 0, 'CP028103.1 Fusobacterium varium ATCC 27725 chromosome, complete genome': 0})
+[0] edit dist: 1138	unaligned len: 3226058
+
+Number of Ns in consensus: 11525

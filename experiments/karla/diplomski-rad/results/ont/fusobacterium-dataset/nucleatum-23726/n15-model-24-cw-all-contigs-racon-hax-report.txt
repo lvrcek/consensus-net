@@ -1,0 +1,238 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-23726/f-nucleatum-23726.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/consensus.fasta
+NUCMER
+
+[REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    2
+AlignedSeqs               1(100.00%)           2(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   2299539              2266838
+AlignedBases         2244363(97.60%)      2263413(99.85%)
+UnalignedBases          55176(2.40%)          3425(0.15%)
+
+[Alignments]
+1-to-1                            15                   15
+TotalLength                  2240607              2263264
+AvgLength                  149373.80            150884.27
+AvgIdentity                    85.88                85.88
+
+M-to-M                            22                   22
+TotalLength                  2254153              2277068
+AvgLength                  102461.50            103503.09
+AvgIdentity                    85.88                85.88
+
+[Feature Estimates]
+Breakpoints                       43                   41
+Relocations                        1                    4
+Translocations                     2                    0
+Inversions                         0                    0
+
+Insertions                        20                   14
+InsertionSum                   66584                 5630
+InsertionAvg                 3329.20               402.14
+
+TandemIns                          0                    0
+TandemInsSum                       0                    0
+TandemInsAvg                    0.00                 0.00
+
+[SNPs]
+TotalSNPs                      42117                42117
+CA                       4159(9.87%)          1281(3.04%)
+CT                      9485(22.52%)          1514(3.59%)
+CG                        942(2.24%)           825(1.96%)
+TG                       1066(2.53%)          3690(8.76%)
+TC                       1514(3.59%)         9485(22.52%)
+TA                       4093(9.72%)         4470(10.61%)
+AC                       1281(3.04%)          4159(9.87%)
+AT                      4470(10.61%)          4093(9.72%)
+AG                       1865(4.43%)         8727(20.72%)
+GC                        825(1.96%)           942(2.24%)
+GT                       3690(8.76%)          1066(2.53%)
+GA                      8727(20.72%)          1865(4.43%)
+
+TotalGSNPs                      3561                 3561
+GC                         52(1.46%)            71(1.99%)
+GA                       755(21.20%)           154(4.32%)
+GT                        299(8.40%)            72(2.02%)
+CG                         71(1.99%)            52(1.46%)
+CA                        342(9.60%)           109(3.06%)
+CT                       823(23.11%)           114(3.20%)
+TC                        114(3.20%)          823(23.11%)
+TA                       382(10.73%)          388(10.90%)
+TG                         72(2.02%)           299(8.40%)
+AT                       388(10.90%)          382(10.73%)
+AC                        109(3.06%)           342(9.60%)
+AG                        154(4.32%)          755(21.20%)
+
+TotalIndels                   101517               101517
+C.                       6664(6.56%)           405(0.40%)
+N.                          0(0.00%)        56993(56.14%)
+T.                     13230(13.03%)          2239(2.21%)
+A.                     12515(12.33%)          2012(1.98%)
+G.                       7021(6.92%)           438(0.43%)
+.G                        438(0.43%)          7021(6.92%)
+.T                       2239(2.21%)        13230(13.03%)
+.N                     56993(56.14%)             0(0.00%)
+.A                       2012(1.98%)        12515(12.33%)
+.C                        405(0.40%)          6664(6.56%)
+
+TotalGIndels                    8761                 8761
+G.                        679(7.75%)            35(0.40%)
+C.                        661(7.54%)            28(0.32%)
+T.                      1352(15.43%)           147(1.68%)
+N.                          0(0.00%)         4421(50.46%)
+A.                      1289(14.71%)           149(1.70%)
+.C                         28(0.32%)           661(7.54%)
+.T                        147(1.68%)         1352(15.43%)
+.N                      4421(50.46%)             0(0.00%)
+.A                        149(1.70%)         1289(14.71%)
+.G                         35(0.40%)           679(7.75%)
+
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-23726/f-nucleatum-23726.fasta ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 2299540\n# construct suffix tree for sequence of length 2299540\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 22995 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 0.62\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 2130040\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 1.76\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 4.26\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1    11039  |  1900666  1889543  |    11039    11124  |    85.11  |     0.48     0.52  | ENA|CP028109|CP028109.1	contig_0
+['1', '11039', '|', '1900666', '1889543', '|', '11039', '11124', '|', '85.11', '|', '0.48', '0.52', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+11293   281529  |  1889279  1615193  |   270237   274087  |    85.62  |    11.75    12.87  | ENA|CP028109|CP028109.1	contig_0
+['11293', '281529', '|', '1889279', '1615193', '|', '270237', '274087', '|', '85.62', '|', '11.75', '12.87', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+281626   389134  |  1615084  1505727  |   107509   109358  |    85.76  |     4.68     5.13  | ENA|CP028109|CP028109.1	contig_0
+['281626', '389134', '|', '1615084', '1505727', '|', '107509', '109358', '|', '85.76', '|', '4.68', '5.13', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+389258   462152  |  1505591  1431827  |    72895    73765  |    86.27  |     3.17     3.46  | ENA|CP028109|CP028109.1	contig_0
+['389258', '462152', '|', '1505591', '1431827', '|', '72895', '73765', '|', '86.27', '|', '3.17', '3.46', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+462205   680770  |  1431773  1210776  |   218566   220998  |    86.32  |     9.50    10.38  | ENA|CP028109|CP028109.1	contig_0
+['462205', '680770', '|', '1431773', '1210776', '|', '218566', '220998', '|', '86.32', '|', '9.50', '10.38', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+680881   961977  |  1210659   927013  |   281097   283647  |    86.37  |    12.22    13.32  | ENA|CP028109|CP028109.1	contig_0
+['680881', '961977', '|', '1210659', '927013', '|', '281097', '283647', '|', '86.37', '|', '12.22', '13.32', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+962114  1241541  |   926863   644945  |   279428   281919  |    86.14  |    12.15    13.24  | ENA|CP028109|CP028109.1	contig_0
+['962114', '1241541', '|', '926863', '644945', '|', '279428', '281919', '|', '86.14', '|', '12.15', '13.24', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+1241688  1557412  |   644780   326581  |   315725   318200  |    85.48  |    13.73    14.94  | ENA|CP028109|CP028109.1	contig_0
+['1241688', '1557412', '|', '644780', '326581', '|', '315725', '318200', '|', '85.48', '|', '13.73', '14.94', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+1557509  1783954  |   326476    98430  |   226446   228047  |    85.93  |     9.85    10.71  | ENA|CP028109|CP028109.1	contig_0
+['1557509', '1783954', '|', '326476', '98430', '|', '226446', '228047', '|', '85.93', '|', '9.85', '10.71', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+1784083  1881428  |    98294      163  |    97346    98132  |    85.25  |     4.23     4.61  | ENA|CP028109|CP028109.1	contig_0
+['1784083', '1881428', '|', '98294', '163', '|', '97346', '98132', '|', '85.25', '|', '4.23', '4.61', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+2072915  2092897  |  2130040  2109740  |    19983    20301  |    84.84  |     0.87     0.95  | ENA|CP028109|CP028109.1	contig_0
+['2072915', '2092897', '|', '2130040', '2109740', '|', '19983', '20301', '|', '84.84', '|', '0.87', '0.95', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+2094487  2247775  |  2108146  1953033  |   153289   155114  |    85.74  |     6.67     7.28  | ENA|CP028109|CP028109.1	contig_0
+['2094487', '2247775', '|', '2108146', '1953033', '|', '153289', '155114', '|', '85.74', '|', '6.67', '7.28', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+2248245  2291330  |  1952551  1908996  |    43086    43556  |    86.09  |     1.87     2.04  | ENA|CP028109|CP028109.1	contig_0
+['2248245', '2291330', '|', '1952551', '1908996', '|', '43086', '43556', '|', '86.09', '|', '1.87', '2.04', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+2291430  2299536  |  1908886  1900669  |     8107     8218  |    85.04  |     0.35     0.39  | ENA|CP028109|CP028109.1	contig_0
+['2291430', '2299536', '|', '1908886', '1900669', '|', '8107', '8218', '|', '85.04', '|', '0.35', '0.39', '|', 'ENA|CP028109|CP028109.1', 'contig_0']
+('fwd = ', False)
+('correct_orient = ', False)
+Printing frags:
+[1, 11039, 1900666, 1889543, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[11293, 281529, 1889279, 1615193, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[281626, 389134, 1615084, 1505727, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[389258, 462152, 1505591, 1431827, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[462205, 680770, 1431773, 1210776, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[680881, 961977, 1210659, 927013, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[962114, 1241541, 926863, 644945, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[1241688, 1557412, 644780, 326581, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[1557509, 1783954, 326476, 98430, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[1784083, 1881428, 98294, 163, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[2072915, 2092897, 2130040, 2109740, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[2094487, 2247775, 2108146, 1953033, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[2248245, 2291330, 1952551, 1908996, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+[2291430, 2299536, 1908886, 1900669, False, 'ENA|CP028109|CP028109.1', 'contig_0']
+
+Running MUMmer on contig: "contig_1"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-23726/f-nucleatum-23726.fasta ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+
+coords: "[1, 2299536, 1900666, 1900669, False, 'ENA|CP028109|CP028109.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-23726/f-nucleatum-23726.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1    11039  |  1900666  1889543  |    11039    11124  |    85.11  |     0.48     0.52  | ENA|CP028109|CP028109.1	contig_0
+
+   11293   281529  |  1889279  1615193  |   270237   274087  |    85.62  |    11.75    12.87  | ENA|CP028109|CP028109.1	contig_0
+
+  281626   389134  |  1615084  1505727  |   107509   109358  |    85.76  |     4.68     5.13  | ENA|CP028109|CP028109.1	contig_0
+
+  389258   462152  |  1505591  1431827  |    72895    73765  |    86.27  |     3.17     3.46  | ENA|CP028109|CP028109.1	contig_0
+
+  462205   680770  |  1431773  1210776  |   218566   220998  |    86.32  |     9.50    10.38  | ENA|CP028109|CP028109.1	contig_0
+
+  680881   961977  |  1210659   927013  |   281097   283647  |    86.37  |    12.22    13.32  | ENA|CP028109|CP028109.1	contig_0
+
+  962114  1241541  |   926863   644945  |   279428   281919  |    86.14  |    12.15    13.24  | ENA|CP028109|CP028109.1	contig_0
+
+ 1241688  1557412  |   644780   326581  |   315725   318200  |    85.48  |    13.73    14.94  | ENA|CP028109|CP028109.1	contig_0
+
+ 1557509  1783954  |   326476    98430  |   226446   228047  |    85.93  |     9.85    10.71  | ENA|CP028109|CP028109.1	contig_0
+
+ 1784083  1881428  |    98294      163  |    97346    98132  |    85.25  |     4.23     4.61  | ENA|CP028109|CP028109.1	contig_0
+
+ 2072915  2092897  |  2130040  2109740  |    19983    20301  |    84.84  |     0.87     0.95  | ENA|CP028109|CP028109.1	contig_0
+
+ 2094487  2247775  |  2108146  1953033  |   153289   155114  |    85.74  |     6.67     7.28  | ENA|CP028109|CP028109.1	contig_0
+
+ 2248245  2291330  |  1952551  1908996  |    43086    43556  |    86.09  |     1.87     2.04  | ENA|CP028109|CP028109.1	contig_0
+
+ 2291430  2299536  |  1908886  1900669  |     8107     8218  |    85.04  |     0.35     0.39  | ENA|CP028109|CP028109.1	contig_0
+
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref" of length 2299540\n# construct suffix tree for sequence of length 2299540\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 22995 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 0.65\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta" of length 136798\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 0.72\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nucmer.ntref 2.36\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1891754  2027607  |        1   136798  |   135854   136798  |    85.74  |     5.91   100.00  | ENA|CP028109|CP028109.1	contig_1
+['1891754', '2027607', '|', '1', '136798', '|', '135854', '136798', '|', '85.74', '|', '5.91', '100.00', '|', 'ENA|CP028109|CP028109.1', 'contig_1']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1891754, 2027607, 1, 136798, True, 'ENA|CP028109|CP028109.1', 'contig_1']
+
+coords: "[1891754, 2027607, 1, 136798, True, 'ENA|CP028109|CP028109.1', 'contig_1']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/nucleatum-23726/f-nucleatum-23726.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+ 1891754  2027607  |        1   136798  |   135854   136798  |    85.74  |     5.91   100.00  | ENA|CP028109|CP028109.1	contig_1
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nw-contig.1.fasta ./f-bact-nucleatum-23726-n15-model-24-cw-racon-hax/edit-dist-calc/nw-ref.1.fasta -m NW"
+
+Final edit distance: 2183564, aligned edit distance: 19879, unaligned ref len: 2163685, aligned ref len: 135854, aligned contig len: 136798
+
+('ref_hash\n', {'ENA|CP028109|CP028109.1 Fusobacterium nucleatum subsp. nucleatum ATCC 23726 chromosome, complete genome.': 0, 'ENA|CP028109|CP028109.1': 0})
+[0] edit dist: 19879	unaligned len: 2163685
+
+Number of Ns in consensus: 239118

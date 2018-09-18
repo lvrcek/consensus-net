@@ -1,0 +1,87 @@
+/home/data/oxford_nanopore/saccharomyces/cerevisiae/saccharomyces_cerevisiae_reference.fasta /home/diplomski-rad/blade/ont/consensus-inference/s-cerv-r7-288c-n20-model-2/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                         17                   28
+AlignedSeqs              17(100.00%)          28(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                  12157105             11856352
+AlignedBases        12061718(99.22%)     11848586(99.93%)
+UnalignedBases          95387(0.78%)          7766(0.07%)
+
+[Alignments]
+1-to-1                            63                   63
+TotalLength                 11951192             11813088
+AvgLength                  189701.46            187509.33
+AvgIdentity                    98.74                98.74
+
+M-to-M                           211                  211
+TotalLength                 12337102             12196401
+AvgLength                   58469.68             57802.85
+AvgIdentity                    98.67                98.67
+
+[Feature Estimates]
+Breakpoints                      406                  362
+Relocations                        6                    6
+Translocations                    14                    4
+Inversions                         0                    0
+
+Insertions                       193                   77
+InsertionSum                  398271                99271
+InsertionAvg                 2063.58              1289.23
+
+TandemIns                          1                    7
+TandemInsSum                     252                 4872
+TandemInsAvg                  252.00               696.00
+
+[SNPs]
+TotalSNPs                       3599                 3599
+TA                        350(9.72%)          361(10.03%)
+TG                        339(9.42%)           150(4.17%)
+TC                       551(15.31%)           254(7.06%)
+GA                        304(8.45%)          545(15.14%)
+GC                        134(3.72%)           120(3.33%)
+GT                        150(4.17%)           339(9.42%)
+CT                        254(7.06%)          551(15.31%)
+CG                        120(3.33%)           134(3.72%)
+CA                        127(3.53%)          364(10.11%)
+AT                       361(10.03%)           350(9.72%)
+AC                       364(10.11%)           127(3.53%)
+AG                       545(15.14%)           304(8.45%)
+
+TotalGSNPs                       471                  471
+AG                        90(19.11%)           54(11.46%)
+AC                         23(4.88%)            12(2.55%)
+AT                         41(8.70%)            46(9.77%)
+TA                         46(9.77%)            41(8.70%)
+TC                       101(21.44%)            41(8.70%)
+TG                         22(4.67%)            10(2.12%)
+GA                        54(11.46%)           90(19.11%)
+GC                         13(2.76%)            18(3.82%)
+GT                         10(2.12%)            22(4.67%)
+CG                         18(3.82%)            13(2.76%)
+CT                         41(8.70%)          101(21.44%)
+CA                         12(2.55%)            23(4.88%)
+
+TotalIndels                   144594               144594
+T.                     66817(46.21%)          1059(0.73%)
+G.                       3171(2.19%)           876(0.61%)
+C.                       3134(2.17%)           863(0.60%)
+A.                     67667(46.80%)          1007(0.70%)
+.T                       1059(0.73%)        66817(46.21%)
+.C                        863(0.60%)          3134(2.17%)
+.G                        876(0.61%)          3171(2.19%)
+.A                       1007(0.70%)        67667(46.80%)
+
+TotalGIndels                   45813                45813
+A.                     21893(47.79%)           258(0.56%)
+T.                     21467(46.86%)           207(0.45%)
+G.                        851(1.86%)           156(0.34%)
+C.                        831(1.81%)           150(0.33%)
+.A                        258(0.56%)        21893(47.79%)
+.G                        156(0.34%)           851(1.86%)
+.C                        150(0.33%)           831(1.81%)
+.T                        207(0.45%)        21467(46.86%)

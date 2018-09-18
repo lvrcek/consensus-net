@@ -1,0 +1,160 @@
+/home/data/oxford_nanopore/bacteria/fusobacterium/periodonticum/f-periodonticum.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-periodonticum-n15-model-11-racon-hax/consensus.fasta
+NUCMER
+
+                               [REF]                [QRY]
+[Sequences]
+TotalSeqs                          1                    1
+AlignedSeqs               1(100.00%)           1(100.00%)
+UnalignedSeqs               0(0.00%)             0(0.00%)
+
+[Bases]
+TotalBases                   2541084              2536109
+AlignedBases         2538354(99.89%)      2534006(99.92%)
+UnalignedBases           2730(0.11%)          2103(0.08%)
+
+[Alignments]
+1-to-1                             6                    6
+TotalLength                  2539126              2534484
+AvgLength                  423187.67            422414.00
+AvgIdentity                    98.87                98.87
+
+M-to-M                             8                    8
+TotalLength                  2539969              2535295
+AvgLength                  317496.12            316911.88
+AvgIdentity                    98.87                98.87
+
+[Feature Estimates]
+Breakpoints                       14                   14
+Relocations                        1                    3
+Translocations                     0                    0
+Inversions                         0                    0
+
+Insertions                         5                    4
+InsertionSum                    3573                 2780
+InsertionAvg                  714.60               695.00
+
+TandemIns                          0                    1
+TandemInsSum                       0                  677
+TandemInsAvg                    0.00               677.00
+
+[SNPs]
+TotalSNPs                       2159                 2159
+CT                       777(35.99%)            92(4.26%)
+CA                         71(3.29%)            42(1.95%)
+CG                         33(1.53%)            37(1.71%)
+TG                         10(0.46%)           154(7.13%)
+TC                         92(4.26%)          777(35.99%)
+TA                         44(2.04%)          253(11.72%)
+AT                       253(11.72%)            44(2.04%)
+AC                         42(1.95%)            71(3.29%)
+AG                        173(8.01%)          473(21.91%)
+GC                         37(1.71%)            33(1.53%)
+GA                       473(21.91%)           173(8.01%)
+GT                        154(7.13%)            10(0.46%)
+
+TotalGSNPs                       869                  869
+GA                       204(23.48%)            81(9.32%)
+GT                         28(3.22%)             1(0.12%)
+GC                         15(1.73%)            11(1.27%)
+AG                         81(9.32%)          204(23.48%)
+AT                       115(13.23%)            16(1.84%)
+AC                          6(0.69%)             7(0.81%)
+TC                         25(2.88%)          360(41.43%)
+TA                         16(1.84%)          115(13.23%)
+TG                          1(0.12%)            28(3.22%)
+CT                       360(41.43%)            25(2.88%)
+CA                          7(0.81%)             6(0.69%)
+CG                         11(1.27%)            15(1.73%)
+
+TotalIndels                     9594                 9594
+C.                        480(5.00%)            33(0.34%)
+N.                          0(0.00%)         2062(21.49%)
+T.                      3233(33.70%)           212(2.21%)
+A.                      2924(30.48%)            91(0.95%)
+G.                        516(5.38%)            43(0.45%)
+.G                         43(0.45%)           516(5.38%)
+.T                        212(2.21%)         3233(33.70%)
+.A                         91(0.95%)         2924(30.48%)
+.C                         33(0.34%)           480(5.00%)
+.N                      2062(21.49%)             0(0.00%)
+
+TotalGIndels                    6751                 6751
+G.                        274(4.06%)            20(0.30%)
+A.                      2163(32.04%)            42(0.62%)
+T.                      2508(37.15%)            99(1.47%)
+C.                        272(4.03%)            17(0.25%)
+N.                          0(0.00%)         1356(20.09%)
+.G                         20(0.30%)           274(4.06%)
+.N                      1356(20.09%)             0(0.00%)
+.C                         17(0.25%)           272(4.03%)
+.A                         42(0.62%)         2163(32.04%)
+.T                         99(1.47%)         2508(37.15%)
+
+Running MUMmer on contig: "contig_0"
+Executing command: "/home/diplomski-rad/mummer3.23//nucmer --maxmatch --extend -p ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer /home/data/oxford_nanopore/bacteria/fusobacterium/periodonticum/f-periodonticum.fasta ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/singlecontig.fasta; /home/diplomski-rad/mummer3.23//delta-filter -r -q ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.delta > ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.filt.delta; /home/diplomski-rad/mummer3.23//show-coords -r -c ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.filt.delta > ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.filt.coords"
+
+
+Parsing the coords file.
+/home/diplomski-rad/racon-edcontigs/racon/scripts/../codebase/samscripts/src/
+('errroooor\n', '1: PREPARING DATA\n2,3: RUNNING mummer AND CREATING CLUSTERS\n# reading input file "./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.ntref" of length 2541085\n# construct suffix tree for sequence of length 2541085\n# (maximum reference length is 536870908)\n# (maximum query length is 4294967295)\n# process 25410 characters per dot\n#....................................................................................................\n# CONSTRUCTIONTIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.ntref 0.71\n# reading input file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/singlecontig.fasta" of length 2536109\n# matching query-file "/home/diplomski-rad/blade/ont/consensus-inference/f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/singlecontig.fasta"\n# against subject-file "./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.ntref"\n# COMPLETETIME /home/diplomski-rad/mummer3.23/mummer ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.ntref 2.52\n# SPACE /home/diplomski-rad/mummer3.23/mummer ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nucmer.ntref 4.88\n4: FINISHING DATA\n')
+('state_coord_lines = ', True)
+1   930335  |   267035  1195465  |   930335   928431  |    98.83  |    36.61    36.61  | CP028108.1	contig_0
+['1', '930335', '|', '267035', '1195465', '|', '930335', '928431', '|', '98.83', '|', '36.61', '36.61', '|', 'CP028108.1', 'contig_0']
+('fwd = ', True)
+932677   957700  |  1196772  1221700  |    25024    24929  |    98.55  |     0.98     0.98  | CP028108.1	contig_0
+['932677', '957700', '|', '1196772', '1221700', '|', '25024', '24929', '|', '98.55', '|', '0.98', '0.98', '|', 'CP028108.1', 'contig_0']
+('fwd = ', True)
+958014  1094771  |  1221957  1358360  |   136758   136404  |    98.59  |     5.38     5.38  | CP028108.1	contig_0
+['958014', '1094771', '|', '1221957', '1358360', '|', '136758', '136404', '|', '98.59', '|', '5.38', '5.38', '|', 'CP028108.1', 'contig_0']
+('fwd = ', True)
+1093618  1151225  |  1357884  1415351  |    57608    57468  |    98.97  |     2.27     2.27  | CP028108.1	contig_0
+['1093618', '1151225', '|', '1357884', '1415351', '|', '57608', '57468', '|', '98.97', '|', '2.27', '2.27', '|', 'CP028108.1', 'contig_0']
+('fwd = ', True)
+1151525  2273566  |  1415893  2536109  |  1122042  1120217  |    98.91  |    44.16    44.17  | CP028108.1	contig_0
+['1151525', '2273566', '|', '1415893', '2536109', '|', '1122042', '1120217', '|', '98.91', '|', '44.16', '44.17', '|', 'CP028108.1', 'contig_0']
+('fwd = ', True)
+2273726  2541084  |        1   267035  |   267359   267035  |    98.99  |    10.52    10.53  | CP028108.1	contig_0
+['2273726', '2541084', '|', '1', '267035', '|', '267359', '267035', '|', '98.99', '|', '10.52', '10.53', '|', 'CP028108.1', 'contig_0']
+('fwd = ', True)
+('correct_orient = ', True)
+Printing frags:
+[1, 930335, 267035, 1195465, True, 'CP028108.1', 'contig_0']
+[932677, 957700, 1196772, 1221700, True, 'CP028108.1', 'contig_0']
+[958014, 1094771, 1221957, 1358360, True, 'CP028108.1', 'contig_0']
+[1093618, 1151225, 1357884, 1415351, True, 'CP028108.1', 'contig_0']
+[1151525, 2273566, 1415893, 2536109, True, 'CP028108.1', 'contig_0']
+[2273726, 2541084, 1, 267035, True, 'CP028108.1', 'contig_0']
+
+coords: "[1, 2541084, 267035, 267035, True, 'CP028108.1', 'contig_0']"
+lines:
+/home/data/oxford_nanopore/bacteria/fusobacterium/periodonticum/f-periodonticum.fasta /home/diplomski-rad/blade/ont/consensus-inference/f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/singlecontig.fasta
+
+NUCMER
+
+
+
+    [S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  |  [COV R]  [COV Q]  | [TAGS]
+
+==========================================================================================================
+
+       1   930335  |   267035  1195465  |   930335   928431  |    98.83  |    36.61    36.61  | CP028108.1	contig_0
+
+  932677   957700  |  1196772  1221700  |    25024    24929  |    98.55  |     0.98     0.98  | CP028108.1	contig_0
+
+  958014  1094771  |  1221957  1358360  |   136758   136404  |    98.59  |     5.38     5.38  | CP028108.1	contig_0
+
+ 1093618  1151225  |  1357884  1415351  |    57608    57468  |    98.97  |     2.27     2.27  | CP028108.1	contig_0
+
+ 1151525  2273566  |  1415893  2536109  |  1122042  1120217  |    98.91  |    44.16    44.17  | CP028108.1	contig_0
+
+ 2273726  2541084  |        1   267035  |   267359   267035  |    98.99  |    10.52    10.53  | CP028108.1	contig_0
+
+Running Edlib to determine the edit distance...
+Executing command: "/home/diplomski-rad/racon-edcontigs/racon/tools/edlib/build/bin/edlib-aligner ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nw-contig.0.fasta ./f-bact-periodonticum-n15-model-11-racon-hax/edit-dist-calc/nw-ref.0.fasta -m NW"
+
+Final edit distance: 2541083, aligned edit distance: 2541083, unaligned ref len: 0, aligned ref len: 2541084, aligned contig len: 1
+
+('ref_hash\n', {'CP028108.1': 0, 'CP028108.1 Fusobacterium periodonticum strain 2_1_31 chromosome, complete genome': 0})
+[0] edit dist: 2541083	unaligned len: 0
+
+Number of Ns in consensus: 19587

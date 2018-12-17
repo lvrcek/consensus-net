@@ -453,7 +453,7 @@ class RaconMSAGenerator(PileupGenerator):
                     if base == '-':  # insertion
                         y_oh[contig_id][position][4] = 1  # 4 is insertion id
                     elif num_Ds > num_bases:  # deletion
-                        y_oh[contig_id][position][5] = 1  # 5 is insertion id
+                        y_oh[contig_id][position][5] = 1  # 5 is deletion id
                     else:
                         y_oh[contig_id][position][
                             mapping.get(base, -1)] = 1

@@ -174,6 +174,7 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
                                                           total_pileups)
 
     X_neighbourhood_list, y_neighbourhood_list = list(), list()
+    missing_index_list = list()
 
     if X_list is None and y_list is None:
         X_list = [np.load(X_path) for X_path in X_paths]
@@ -195,14 +196,17 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
             # TODO(ajuric): Check if this can be speed up.
             for i in range(curr_X.shape[0]):
 
+                i_list = list()
                 progress_bar.update(progress_counter)
                 progress_counter += 1
 
                 if empty_rows[i] == 1:
+                    i_list.append(i)
                     continue  # current row is empty row
                 if i < neighbourhood_size or \
                    i >= curr_X.shape[0] - neighbourhood_size:
                     # Current position is not suitable to build an example.
+                    i_list.append(i)
                     continue
                 zeros_to_left = np.sum(empty_rows[i - neighbourhood_size:i])
                 zeros_to_right = np.sum(
@@ -213,9 +217,12 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
                             i - neighbourhood_size:
                             i + neighbourhood_size + 1])
                     new_curr_y.append(curr_y[i])
+                else:
+                    i_list.append(i)
 
             X_neighbourhood_list.append(np.array(new_curr_X))
             y_neighbourhood_list.append(np.array(new_curr_y))
+            missing_index_list.append(np.array(i_list))
 
     if mode == 'training':
         X_neighbourhood_list = [np.concatenate(X_neighbourhood_list, axis=0)]
@@ -234,7 +241,7 @@ def create_dataset_with_neighbourhood(neighbourhood_size, mode, X_list=None,
                X_save_paths, \
                y_save_paths
 
-    return X_neighbourhood_list, y_neighbourhood_list
+    return X_neighbourhood_list, y_neighbourhood_list, missing_index_list
 
 
 def _generate_save_paths(neighbourhood_size, save_directory_path,
